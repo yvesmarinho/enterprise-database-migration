@@ -1,0 +1,170 @@
+prompt:
+  role: user
+  content:
+    description: "Sistema completo de migração de dados PostgreSQL enterprise com automação, monitoramento e validação para ambientes de produção"
+    specification:
+      - project_name: "postgresql-migration-system"
+      - response: "Sistema robusto de migração de dados PostgreSQL com orquestração automática"
+      - docstyle: "Documentar o código segundo padrão reStructuredText do Docstring, incluindo Doct test"
+      - workflow: "objetivo.yaml → análise → migração → validação → relatórios"
+      - database_engines: ["PostgreSQL 14", "PostgreSQL 16"]
+      - migration_types: ["Schema Migration", "Data Migration", "Full Database Migration", "Incremental Migration"]
+      - rules:
+          - "Todas as migrações devem ser transacionais e com rollback automático"
+          - "Sistema deve validar integridade dos dados antes e após migração"
+          - "Logs detalhados devem ser gerados para auditoria"
+          - "Configurações sensíveis devem ficar na pasta secrets/"
+          - "Templates de configuração devem estar disponíveis para diferentes ambientes"
+          - "Sistema deve suportar migrações incrementais e completas"
+          - "Validação de performance deve ser executada após migração"
+    hardware_specification:
+      minimum_requirements:
+        - "Servidor com pelo menos 16GB de RAM (desenvolvimento)"
+        - "Processador com 8 núcleos (desenvolvimento)"
+        - "Espaço em disco de pelo menos 500GB (desenvolvimento)"
+        - "Conexão de rede estável entre origem e destino"
+      recommended_requirements:
+        - "Servidor com pelo menos 64GB de RAM (produção)"
+        - "Processador com 24 núcleos (produção)"
+        - "Espaço em disco de pelo menos 2TB SSD (produção)"
+        - "Discos separados para dados temporários e logs de migração"
+        - "Conexão de rede dedicada de alta velocidade"
+      enterprise_requirements:
+        - "Servidor com pelo menos 128GB de RAM (alta disponibilidade)"
+        - "Processador com 32+ núcleos (alta disponibilidade)"
+        - "Armazenamento NVMe para máxima performance"
+        - "Redundância de rede e backup em tempo real"
+    migration_specification:
+      supported_sources:
+        - name: "PostgreSQL 14"
+          versions: ["14.x"]
+          compatibility: "full"
+        - name: "PostgreSQL 15"
+          versions: ["15.x"]
+          compatibility: "full"
+        - name: "PostgreSQL 16"
+          versions: ["16.x"]
+          compatibility: "native"
+      supported_destinations:
+        - name: "PostgreSQL 16"
+          versions: ["16.x"]
+          compatibility: "optimized"
+          features: ["enhanced_performance", "new_indexing", "improved_vacuum"]
+      migration_strategies:
+        - name: "logical_replication"
+          description: "Migração usando replicação lógica PostgreSQL"
+          use_case: "Produção com downtime mínimo"
+          downtime: "< 5 minutos"
+        - name: "dump_restore"
+          description: "Migração tradicional com pg_dump/pg_restore"
+          use_case: "Migração completa com downtime planejado"
+          downtime: "Dependente do tamanho dos dados"
+        - name: "parallel_migration"
+          description: "Migração paralela por tabelas/schemas"
+          use_case: "Grandes volumes de dados"
+          performance: "Otimizada para throughput"
+    operational_requirements:
+      monitoring:
+        - "Monitoramento em tempo real do progresso da migração"
+        - "Alertas automáticos para falhas ou lentidão"
+        - "Métricas de performance detalhadas"
+        - "Dashboard web para acompanhamento"
+      backup_strategy:
+        - "Backup completo antes da migração"
+        - "Snapshots de estado durante o processo"
+        - "Plano de rollback automático"
+        - "Retenção de backups por 30 dias"
+      security:
+        - "Criptografia de dados em trânsito"
+        - "Autenticação robusta entre sistemas"
+        - "Logs de auditoria completos"
+        - "Segregação de credenciais por ambiente"
+      validation:
+        - "Validação de integridade referencial"
+        - "Comparação de checksums de dados"
+        - "Testes de performance pós-migração"
+        - "Validação de aplicações dependentes"
+    automation_features:
+      orchestration:
+        - "Orquestração automática de todo o processo"
+        - "Recuperação automática de falhas pontuais"
+        - "Scheduling de migrações em horários de baixo uso"
+        - "Coordenação de múltiplas instâncias de migração"
+      reporting:
+        - "Relatórios detalhados de execução"
+        - "Métricas de performance comparativas"
+        - "Análise de tempo de execução por componente"
+        - "Recomendações de otimização"
+      integration:
+        - "Integração com sistemas de monitoramento existentes"
+        - "APIs REST para controle externo"
+        - "Webhooks para notificações"
+        - "Integração com ferramentas de CI/CD"
+    quality_assurance:
+      testing_framework:
+        - "Testes unitários para todos os componentes"
+        - "Testes de integração entre sistemas"
+        - "Testes de carga para validar performance"
+        - "Testes de disaster recovery"
+      data_validation:
+        - "Validação de tipos de dados"
+        - "Verificação de constraints e índices"
+        - "Comparação de contadores de registros"
+        - "Validação de stored procedures e functions"
+      performance_validation:
+        - "Benchmarks de consultas críticas"
+        - "Análise de planos de execução"
+        - "Verificação de índices otimizados"
+        - "Monitoramento de recursos do sistema"
+delivery_specification:
+  components:
+    core_system:
+      - "Sistema de orquestração de migração"
+      - "Módulos de conectividade PostgreSQL"
+      - "Sistema de validação e verificação"
+      - "Engine de relatórios e métricas"
+    utilities:
+      - "Scripts de preparação de ambiente"
+      - "Ferramentas de backup e restore"
+      - "Utilitários de limpeza e manutenção"
+      - "Geradores de configuração"
+    documentation:
+      - "Manual de instalação e configuração"
+      - "Guia de operação e troubleshooting"
+      - "Referência de APIs e configurações"
+      - "Casos de uso e exemplos práticos"
+    monitoring:
+      - "Dashboard de monitoramento web"
+      - "Sistema de alertas configuráveis"
+      - "Métricas exportáveis para Prometheus"
+      - "Logs estruturados em JSON"
+  deployment_targets:
+    development:
+      - "Ambiente de desenvolvimento local"
+      - "Containers Docker para testes"
+      - "Scripts de dados de exemplo"
+    staging:
+      - "Ambiente de homologação espelhado"
+      - "Dados anonimizados para testes"
+      - "Simulação de cenários de produção"
+    production:
+      - "Deploy em ambiente enterprise"
+      - "Alta disponibilidade e redundância"
+      - "Monitoramento 24/7"
+      - "Procedimentos de disaster recovery"
+success_criteria:
+  performance:
+    - "Migração de 1TB de dados em menos de 4 horas"
+    - "Downtime máximo de 5 minutos para aplicações críticas"
+    - "Zero perda de dados durante o processo"
+    - "Degradação de performance < 10% no destino"
+  reliability:
+    - "Taxa de sucesso > 99.9% em migrações"
+    - "Recuperação automática de 95% das falhas transitórias"
+    - "Rollback completo em menos de 15 minutos"
+    - "Validação 100% dos dados migrados"
+  operational:
+    - "Configuração completa em menos de 30 minutos"
+    - "Treinamento da equipe em 1 dia"
+    - "Documentação completa e atualizada"
+    - "Suporte a múltiplos ambientes simultaneamente"

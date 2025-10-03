@@ -1,0 +1,118 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Migration: Debug Interactive",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_migration.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [],
+      "justMyCode": false
+    },
+    {
+      "name": "Migration: Debug Auto",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_migration.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--auto",
+        "--verbose"
+      ],
+      "justMyCode": false
+    },
+    {
+      "name": "Migration: Debug Orchestrator",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/core/orchestrator_pure_python.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--auto"
+      ],
+      "justMyCode": false
+    },
+    {
+      "name": "Migration: Debug Validator",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/core/validator.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--validate-all"
+      ],
+      "justMyCode": false
+    },
+    {
+      "name": "Migration: Debug Cleanup",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/cleanup/cleanup_database.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [],
+      "justMyCode": false
+    },
+    {
+      "name": "Migration: Test Current File",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "-v",
+        "-s"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "Migration: Test All",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "test/",
+        "-v",
+        "-s"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "MIGRATION_LOG_LEVEL": "DEBUG",
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "justMyCode": false
+    }
+  ]
+}

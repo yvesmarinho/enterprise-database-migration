@@ -1,0 +1,153 @@
+version: '3.8'
+
+services:
+  # Migration System Main Service
+  migration-system:
+    build: .
+    container_name: postgresql-migration-system
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./backups:/app/backups
+    environment:
+      - MIGRATION_LOG_LEVEL=INFO
+      - PYTHONPATH=/app
+      - ENVIRONMENT=docker
+    ports:
+      - "8080:8080"  # Web dashboard
+      - "9090:9090"  # Prometheus metrics
+    networks:
+      - migration-network
+    depends_on:
+      - postgres-monitoring
+    restart: unless-stopped
+
+  # PostgreSQL for testing (source simulation)
+  postgres-source:
+    image: postgres:14
+    container_name: migration-postgres-source
+    environment:
+      POSTGRES_DB: source_db
+      POSTGRES_USER: migration_user
+      POSTGRES_PASSWORD: migration_pass
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=en_US.UTF-8"
+    volumes:
+      - postgres_source_data:/var/lib/postgresql/data
+      - ./test/fixtures:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+    networks:
+      - migration-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U migration_user -d source_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL for testing (destination simulation)
+  postgres-destination:
+    image: postgres:16
+    container_name: migration-postgres-destination
+    environment:
+      POSTGRES_DB: destination_db
+      POSTGRES_USER: migration_user
+      POSTGRES_PASSWORD: migration_pass
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=en_US.UTF-8"
+    volumes:
+      - postgres_destination_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    networks:
+      - migration-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U migration_user -d destination_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Prometheus for metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: migration-prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9091:9090"
+    networks:
+      - migration-network
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+
+  # Grafana for visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: migration-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    ports:
+      - "3001:3000"
+    networks:
+      - migration-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: migration-redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - migration-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # PostgreSQL for migration control and logging
+  postgres-monitoring:
+    image: postgres:16
+    container_name: migration-postgres-monitoring
+    environment:
+      POSTGRES_DB: migration_control
+      POSTGRES_USER: migration_admin
+      POSTGRES_PASSWORD: migration_admin_pass
+    volumes:
+      - postgres_monitoring_data:/var/lib/postgresql/data
+      - ./sql/init_monitoring.sql:/docker-entrypoint-initdb.d/init_monitoring.sql
+    ports:
+      - "5435:5432"
+    networks:
+      - migration-network
+    restart: unless-stopped
+
+networks:
+  migration-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  postgres_source_data:
+  postgres_destination_data:
+  postgres_monitoring_data:
+  prometheus_data:
+  grafana_data:
+  redis_data:

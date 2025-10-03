@@ -1,0 +1,23 @@
+{
+  "host": "YOUR_SOURCE_HOST",
+  "port": 5432,
+  "database": "postgres",
+  "ssl_mode": "prefer",
+  "possible_users": [
+    {
+      "username": "YOUR_USERNAME",
+      "password": "YOUR_PASSWORD"
+    }
+  ],
+  "cleanup_protection": {
+    "protected_databases": [
+      "postgres",
+      "template0",
+      "template1"
+    ],
+    "protected_users": [
+      "postgres",
+      "YOUR_USERNAME"
+    ]
+  }
+}

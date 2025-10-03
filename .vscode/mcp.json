@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "postgresql-migration": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "src.migration.core.mcp_server"
+      ],
+      "env": {
+        "MIGRATION_CONFIG_PATH": "./secrets",
+        "MIGRATION_LOG_LEVEL": "INFO"
+      }
+    }
+  },
+  "project": {
+    "name": "postgresql-migration-system",
+    "type": "database-migration-automation",
+    "version": "1.0.0",
+    "description": "Sistema completo de migração PostgreSQL enterprise",
+    "main_components": [
+      "core/orchestrator_pure_python.py",
+      "core/sqlalchemy_migration.py",
+      "core/validator.py",
+      "core/monitor.py"
+    ],
+    "configuration_files": [
+      "objetivo.yaml",
+      "mcp-questions.yaml",
+      "secrets/source_config.json",
+      "secrets/destination_config.json"
+    ],
+    "documentation": [
+      "README.md",
+      "docs/ORQUESTRADOR_PYTHON_MODULAR.md"
+    ]
+  },
+  "development": {
+    "language": "python",
+    "framework": "sqlalchemy-asyncio",
+    "testing": "pytest",
+    "linting": [
+      "pylint",
+      "flake8"
+    ],
+    "formatting": "black"
+  },
+  "deployment": {
+    "target": "enterprise-production",
+    "containerization": "docker-compose",
+    "monitoring": "prometheus-grafana"
+  }
+}
