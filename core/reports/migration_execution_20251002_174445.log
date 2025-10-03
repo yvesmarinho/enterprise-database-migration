@@ -1,0 +1,61 @@
+2025-10-02 17:44:45 - __main__ - DEBUG - [_setup_logging:210] - Sistema de logging configurado com sucesso
+2025-10-02 17:44:45 - __main__ - INFO - [__init__:169] - ================================================================================
+2025-10-02 17:44:45 - __main__ - INFO - [__init__:170] - PostgreSQL Structure Migrator v1.0.0 Iniciado
+2025-10-02 17:44:45 - __main__ - INFO - [__init__:171] - Data: 2025-10-02T20:44:45.229858+00:00
+2025-10-02 17:44:45 - __main__ - INFO - [__init__:172] - ================================================================================
+2025-10-02 17:44:45 - __main__ - INFO - [load_configurations:240] - 🔧 Carregando configurações do sistema...
+2025-10-02 17:44:45 - __main__ - DEBUG - [load_configurations:244] - Carregando configuração do servidor de origem...
+2025-10-02 17:44:45 - __main__ - INFO - [load_configurations:261] - ✅ Configuração de origem carregada: wf004.vya.digital:5432
+2025-10-02 17:44:45 - __main__ - DEBUG - [load_configurations:265] - Carregando configuração do servidor de destino...
+2025-10-02 17:44:45 - __main__ - INFO - [load_configurations:284] - ✅ Configuração de destino carregada: wfdb02.vya.digital:5432 (porta direta)
+2025-10-02 17:44:45 - __main__ - DEBUG - [load_configurations:288] - Carregando regras de migração...
+2025-10-02 17:44:45 - __main__ - INFO - [load_configurations:297] - ✅ Regras de migração carregadas: 4 fases configuradas
+2025-10-02 17:44:45 - __main__ - INFO - [load_configurations:300] - 🎯 Todas as configurações carregadas com sucesso!
+2025-10-02 17:44:45 - __main__ - INFO - [test_connectivity:414] - 🔍 Testando conectividade com servidores PostgreSQL...
+2025-10-02 17:44:45 - __main__ - DEBUG - [test_connectivity:421] - Testando conectividade com servidor de origem...
+2025-10-02 17:44:45 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wf004.vya.digital:5432/postgres
+2025-10-02 17:44:45 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:44:46 - __main__ - INFO - [test_connectivity:435] - ✅ Origem conectada: migration_user@wf004.vya.digital
+2025-10-02 17:44:46 - __main__ - DEBUG - [test_connectivity:436] - Versão origem: 14.11
+2025-10-02 17:44:46 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:44:46 - __main__ - DEBUG - [test_connectivity:439] - Testando conectividade com servidor de destino...
+2025-10-02 17:44:46 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:44:47 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:44:47 - __main__ - INFO - [test_connectivity:453] - ✅ Destino conectado: migration_user@wfdb02.vya.digital
+2025-10-02 17:44:47 - __main__ - DEBUG - [test_connectivity:454] - Versão destino: 16.10
+2025-10-02 17:44:47 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:44:47 - __main__ - INFO - [test_connectivity:457] - 🎯 Teste de conectividade concluído em 2.12s
+2025-10-02 17:44:47 - __main__ - DEBUG - [get_databases_list:642] - 📋 Obtendo lista de bancos de dados...
+2025-10-02 17:44:47 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wf004.vya.digital:5432/postgres
+2025-10-02 17:44:47 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:44:48 - __main__ - INFO - [get_databases_list:670] - 📋 Encontrados 29 bancos de dados
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - ai_process_db (12 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - app_workforce (13 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - botpress_db (435 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - botpress_db_dev (135 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - chatwoot002_db (871 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - chatwoot003_db (14 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - chatwoot004_db (1199 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - chatwoot_db (277 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - dify_db (12 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - dw_chatwoot_db (23 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - dw_journey_db (367 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - evolution_api_db (489 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - evolution_api_wea001_db (148 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - evolution_api_wea003_db (40 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - evolution_api_wea004_db (11 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - evolution_api_wea005_db (89 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - flowia_db (23 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - hibernate (8577 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - jackrabbit (8577 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - khomp_db (1150 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - kutt_db (9313 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - kutt_fatura_db (9105 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - langfuse_db (89 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - metabase_db (298 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - n8n_db (1009 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - quartz (8873 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - typebot_db (79 MB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - workflow_ai (8905 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_databases_list:672] -   - workflow_evo_ai (9409 kB)
+2025-10-02 17:44:48 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada

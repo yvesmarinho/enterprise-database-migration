@@ -1,0 +1,129 @@
+{
+  "migration_rules": {
+    "structure_migration": {
+      "enabled": true,
+      "include_databases": true,
+      "include_schemas": true,
+      "include_tables": true,
+      "include_views": true,
+      "include_functions": true,
+      "include_procedures": true,
+      "include_triggers": true,
+      "include_indexes": true,
+      "include_constraints": true,
+      "include_sequences": true
+    },
+    "user_migration": {
+      "enabled": true,
+      "include_roles": true,
+      "include_permissions": true,
+      "preserve_passwords": true,
+      "create_missing_users": true,
+      "update_existing_users": false
+    },
+    "data_migration": {
+      "enabled": false,
+      "table_data": false,
+      "sequence_values": true,
+      "large_objects": false
+    },
+    "validation_rules": {
+      "pre_migration_checks": [
+        "connectivity_test",
+        "permissions_check",
+        "version_compatibility",
+        "disk_space_check"
+      ],
+      "post_migration_checks": [
+        "structure_comparison",
+        "user_validation",
+        "connection_test",
+        "integrity_check"
+      ]
+    },
+    "error_handling": {
+      "continue_on_error": false,
+      "rollback_on_failure": true,
+      "max_retry_attempts": 3,
+      "retry_delay_seconds": 5,
+      "create_error_report": true
+    },
+    "logging_rules": {
+      "log_all_queries": true,
+      "log_execution_time": true,
+      "log_row_counts": true,
+      "debug_mode": true,
+      "create_detailed_report": true
+    },
+    "performance_settings": {
+      "batch_size": 1000,
+      "parallel_connections": 2,
+      "connection_pool_size": 5,
+      "query_timeout": 300,
+      "transaction_timeout": 600
+    }
+  },
+  "excluded_objects": {
+    "system_databases": [
+      "template0",
+      "template1",
+      "postgres"
+    ],
+    "system_schemas": [
+      "information_schema",
+      "pg_catalog",
+      "pg_toast",
+      "pg_temp_1",
+      "pg_toast_temp_1"
+    ],
+    "system_users": [
+      "postgres",
+      "pg_signal_backend",
+      "pg_read_server_files",
+      "pg_write_server_files",
+      "pg_execute_server_program"
+    ]
+  },
+  "migration_phases": {
+    "phase_1_preparation": {
+      "description": "Preparação e validação inicial",
+      "steps": [
+        "load_configurations",
+        "test_source_connectivity",
+        "test_destination_connectivity",
+        "validate_permissions",
+        "create_backup_structure"
+      ]
+    },
+    "phase_2_collection": {
+      "description": "Coleta de estruturas do servidor origem",
+      "steps": [
+        "enumerate_databases",
+        "extract_database_structures",
+        "extract_user_definitions",
+        "extract_permissions",
+        "generate_create_scripts"
+      ]
+    },
+    "phase_3_creation": {
+      "description": "Criação no servidor destino",
+      "steps": [
+        "create_databases",
+        "create_users",
+        "create_structures",
+        "apply_permissions",
+        "validate_creation"
+      ]
+    },
+    "phase_4_validation": {
+      "description": "Validação final",
+      "steps": [
+        "compare_structures",
+        "test_user_connections",
+        "validate_permissions",
+        "test_pgbouncer_connectivity",
+        "generate_final_report"
+      ]
+    }
+  }
+}

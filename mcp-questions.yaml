@@ -1,0 +1,226 @@
+# Perguntas para configuração do MCP - Sistema de Migração PostgreSQL
+# Edite este arquivo para personalizar o setup do seu projeto de migração
+
+# === INFORMAÇÕES BÁSICAS DO PROJETO ===
+project_name: "postgresql-migration-system"
+project_type: "database-migration-automation" # Sistema de migração de dados PostgreSQL
+language: "python" # Scripts de migração em Python
+framework: "sqlalchemy-asyncio" # Framework baseado em SQLAlchemy com AsyncIO
+main_developer: ""
+description: "Sistema completo de migração de dados PostgreSQL enterprise com automação, monitoramento e validação para ambientes de produção"
+version: "1.0.0"
+license: "MIT"
+
+# === CONFIGURAÇÃO DE ARQUITETURA ===
+deployment_mode: "distributed-migration" # Sistema distribuído de migração
+deployment_target: "enterprise-production" # Ambiente empresarial de produção
+target_environment: "multi-environment" # Suporte a dev, staging e produção
+operating_system: "debian-12-bookworm" # Debian 12 (Bookworm)
+system_locales:
+  default_locale: "en_US.UTF-8"
+  supported_locales: ["en_US.UTF-8", "pt_BR.UTF-8"]
+  required_packages: ["locales-all", "language-pack-en", "language-pack-pt"]
+  timezone_config: "UTC"
+  locale_setup_commands:
+    - "locale-gen en_US.UTF-8"
+    - "locale-gen pt_BR.UTF-8"
+    - "update-locale LANG=en_US.UTF-8"
+
+# === CONFIGURAÇÃO DE SERVIDORES DE MIGRAÇÃO ===
+migration_servers:
+  source_server: "wf004.vya.digital (PostgreSQL 14)" # Servidor de origem
+  destination_server: "wfdb02.vya.digital (PostgreSQL 16)" # Servidor de destino
+  management_server: "wfdb02.vya.digital" # Servidor de orquestração
+  backup_server: "wfdb02.vya.digital" # Servidor de backup
+
+# === CONFIGURAÇÃO DE BANCO DE DADOS ===
+database_configuration:
+  source_database:
+    engine: "postgresql"
+    version: "14.x"
+    host: "wf004.vya.digital"
+    port: 5432
+    ssl_mode: "disable"
+    connection_pool_size: 20
+    max_connections: 100
+  destination_database:
+    engine: "postgresql"
+    version: "16.x"
+    host: "wfdb02.vya.digital"
+    port: 5432
+    ssl_mode: "prefer"
+    connection_pool_size: 50
+    max_connections: 200
+  migration_database:
+    engine: "postgresql"
+    version: "16.x"
+    host: "wfdb02.vya.digital"
+    port: 5432
+    database_name: "migration_control"
+    purpose: "Controle e logs de migração"
+
+# === CONFIGURAÇÃO DE MIGRAÇÃO ===
+migration_configuration:
+  strategy: "hybrid" # logical_replication, dump_restore, parallel_migration, hybrid
+  batch_size: 10000 # Registros por lote
+  parallel_workers: 8 # Workers paralelos
+  chunk_size_mb: 100 # Tamanho do chunk em MB
+  timeout_seconds: 3600 # Timeout por operação
+  retry_attempts: 3 # Tentativas de retry
+  validation_level: "full" # none, basic, full
+  performance_monitoring: true
+  real_time_progress: true
+
+# === CONFIGURAÇÕES DE SEGURANÇA ===
+security_configuration:
+  encryption_in_transit: true
+  ssl_verification: true
+  credential_management: "secrets" # secrets, environment, vault
+  audit_logging: true
+  access_control: "rbac" # Role-Based Access Control
+  sensitive_data_masking: false # Para ambientes de não-produção
+
+# === CONFIGURAÇÕES DE MONITORAMENTO ===
+monitoring_configuration:
+  enable_prometheus_metrics: true
+  enable_grafana_dashboard: true
+  log_level: "INFO" # DEBUG, INFO, WARNING, ERROR
+  log_format: "json" # json, text
+  progress_reporting_interval: 30 # segundos
+  health_check_interval: 60 # segundos
+  alert_channels: ["email", "slack"] # email, slack, webhook
+  performance_thresholds:
+    max_migration_time_hours: 8
+    min_throughput_rows_per_second: 1000
+    max_error_rate_percent: 1
+
+# === CONFIGURAÇÕES DE BACKUP E RECOVERY ===
+backup_configuration:
+  enable_pre_migration_backup: true
+  enable_incremental_snapshots: true
+  backup_retention_days: 30
+  backup_compression: true
+  backup_verification: true
+  rollback_strategy: "automatic" # manual, automatic, hybrid
+  recovery_point_objective_minutes: 15 # RPO
+  recovery_time_objective_minutes: 30 # RTO
+
+# === CONFIGURAÇÕES DE VALIDAÇÃO ===
+validation_configuration:
+  enable_schema_validation: true
+  enable_data_validation: true
+  enable_performance_validation: true
+  enable_referential_integrity_check: true
+  checksum_validation: "sha256"
+  row_count_validation: true
+  constraint_validation: true
+  index_validation: true
+  stored_procedure_validation: true
+
+# === CONFIGURAÇÕES DE PERFORMANCE ===
+performance_configuration:
+  connection_pooling: true
+  async_operations: true
+  bulk_operations: true
+  index_optimization: true
+  vacuum_optimization: true
+  statistics_update: true
+  memory_optimization:
+    shared_buffers_mb: 4096
+    work_mem_mb: 256
+    maintenance_work_mem_mb: 1024
+    effective_cache_size_mb: 8192
+
+# === CONFIGURAÇÕES DE INTEGRAÇÃO ===
+integration_configuration:
+  enable_rest_api: true
+  enable_webhooks: true
+  enable_event_streaming: false
+  ci_cd_integration: true
+  notification_services:
+    email_smtp: "smtp.gmail.com:587"
+    slack_webhook: ""
+    teams_webhook: ""
+  external_monitoring:
+    prometheus_endpoint: "http://localhost:9090"
+    grafana_endpoint: "http://localhost:3000"
+    alertmanager_endpoint: "http://localhost:9093"
+
+# === CONFIGURAÇÕES DE DESENVOLVIMENTO ===
+development_configuration:
+  enable_test_mode: true
+  enable_dry_run: true
+  enable_debug_mode: false
+  sample_data_generation: true
+  synthetic_data_size: "small" # small, medium, large
+  development_shortcuts: true
+  mock_external_services: false
+
+# === CONFIGURAÇÕES DE DEPLOYMENT ===
+deployment_configuration:
+  container_orchestration: "docker-compose" # docker, docker-compose, kubernetes
+  resource_requirements:
+    cpu_cores: 8
+    memory_gb: 16
+    storage_gb: 500
+    network_bandwidth_mbps: 1000
+  high_availability: false
+  load_balancing: false
+  auto_scaling: false
+  deployment_strategy: "blue_green" # rolling, blue_green, canary
+
+# === CONFIGURAÇÕES DE COMPLIANCE ===
+compliance_configuration:
+  gdpr_compliance: true
+  hipaa_compliance: false
+  sox_compliance: false
+  data_residency_requirements: "EU" # US, EU, APAC, GLOBAL
+  audit_trail_retention_years: 7
+  encryption_standards: ["AES-256", "TLS-1.3"]
+  access_logging: true
+  change_management: true
+
+# === CONFIGURAÇÕES ESPECÍFICAS DO PROJETO ===
+project_specific_configuration:
+  custom_migration_rules: true
+  legacy_system_support: true
+  business_logic_validation: true
+  custom_data_transformations: true
+  application_downtime_coordination: true
+  rollback_testing: true
+  disaster_recovery_testing: true
+  load_testing: true
+
+# === CONFIGURAÇÕES DE SUPORTE ===
+support_configuration:
+  documentation_level: "comprehensive" # basic, standard, comprehensive
+  training_materials: true
+  troubleshooting_guides: true
+  faq_documentation: true
+  video_tutorials: false
+  support_channels: ["documentation", "email"] # documentation, email, chat, phone
+  escalation_procedures: true
+  maintenance_windows: true
+
+# === CONFIGURAÇÕES AVANÇADAS ===
+advanced_configuration:
+  custom_plugins: false
+  extensibility_framework: true
+  api_versioning: true
+  backward_compatibility: true
+  feature_flags: true
+  a_b_testing: false
+  experimentation_framework: false
+  machine_learning_optimization: false
+
+# === METADADOS DO PROJETO ===
+project_metadata:
+  created_date: "2025-10-03"
+  last_modified: "2025-10-03"
+  configuration_version: "1.0"
+  team_size: 3
+  project_duration_months: 6
+  expected_data_volume_tb: 5
+  expected_concurrent_users: 100
+  business_criticality: "high" # low, medium, high, critical
+  maintenance_level: "standard" # minimal, standard, premium

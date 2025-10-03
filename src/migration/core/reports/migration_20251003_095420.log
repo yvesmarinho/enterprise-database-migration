@@ -1,0 +1,10 @@
+2025-10-03 09:54:20,513 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 09:54:20,648 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 09:54:20,656 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 09:54:20,671 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 09:54:20,675 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 09:54:20,677 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 09:54:20,677 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_095420
+2025-10-03 09:54:20,677 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 09:54:20,677 | INFO     | migration | [environment] Python 3.12.3
+2025-10-03 09:54:20,677 | ERROR    | migration | [step.validate_environment] ❌ Falhou: Validar ambiente e dependências (0.00s) - Diretório essencial não encontrado: src/migration/utils

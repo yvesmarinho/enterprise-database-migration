@@ -1,0 +1,206 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Migration: Load MCP Context",
+      "type": "shell",
+      "command": "./activate-mcp.sh",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "detail": "Ativa o contexto MCP do projeto de migração PostgreSQL"
+    },
+    {
+      "label": "Migration: Run Tests",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "-m",
+        "pytest",
+        "-v",
+        "test/"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "detail": "Executa todos os testes de migração"
+    },
+    {
+      "label": "Migration: Setup Environment",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "setup"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "detail": "Setup inicial do projeto de migração"
+    },
+    {
+      "label": "Migration: Run Interactive",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "run_migration.py"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "detail": "Executa migração em modo interativo"
+    },
+    {
+      "label": "Migration: Run Auto",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "run_migration.py",
+        "--auto"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "detail": "Executa migração em modo automático"
+    },
+    {
+      "label": "Migration: Run Auto Verbose",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "run_migration.py",
+        "--auto",
+        "--verbose"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "detail": "Executa migração automática com logs detalhados"
+    },
+    {
+      "label": "Migration: Orchestrator Direct",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "core/orchestrator_pure_python.py"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "detail": "Executa orquestrador de migração diretamente"
+    },
+    {
+      "label": "Migration: Validate",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "core/validator.py",
+        "--validate-all"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "detail": "Valida integridade dos dados migrados"
+    },
+    {
+      "label": "Migration: Cleanup Database",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "cleanup/cleanup_database.py"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "detail": "Executa limpeza do banco de dados"
+    },
+    {
+      "label": "Migration: Generate Reports",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "-c",
+        "from core.monitor import generate_reports; generate_reports()"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "detail": "Gera relatórios de migração"
+    },
+    {
+      "label": "Migration: Check Status",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "-c",
+        "from core.monitor import check_migration_status; check_migration_status()"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "detail": "Verifica status da migração"
+    },
+    {
+      "label": "Migration: Install Dependencies",
+      "type": "shell",
+      "command": "pip3",
+      "args": [
+        "install",
+        "-r",
+        "requirements.txt"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "detail": "Instala dependências Python do projeto"
+    }
+  ]
+}

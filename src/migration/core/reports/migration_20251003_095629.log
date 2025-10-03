@@ -1,0 +1,10 @@
+2025-10-03 09:56:29,333 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 09:56:29,476 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 09:56:29,483 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 09:56:29,497 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 09:56:29,498 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 09:56:29,498 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 09:56:29,499 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_095629
+2025-10-03 09:56:29,499 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 09:56:29,499 | INFO     | migration | [environment] Python 3.12.3
+2025-10-03 09:56:29,499 | ERROR    | migration | [step.validate_environment] ❌ Falhou: Validar ambiente e dependências (0.00s) - Diretório essencial não encontrado: /home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-install/src/migration/src/migration/config

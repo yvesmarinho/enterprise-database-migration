@@ -1,0 +1,10 @@
+2025-10-03 09:50:46,374 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 09:50:47,568 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 09:50:47,600 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 09:50:47,925 | ERROR    | migration | [module_manager] Classe WFDB02ConnectionTester não encontrada em src.migration.validation.test_wfdb02_connection: module 'src.migration.validation.test_wfdb02_connection' has no attribute 'WFDB02ConnectionTester'
+2025-10-03 09:50:47,935 | ERROR    | migration | [module_manager] Classe UserDiscoverer não encontrada em src.migration.utils.discover_users: module 'src.migration.utils.discover_users' has no attribute 'UserDiscoverer'
+2025-10-03 09:50:47,944 | ERROR    | migration | [module_manager] Classe PasswordAnalyzer não encontrada em src.migration.utils.analyze_password: module 'src.migration.utils.analyze_password' has no attribute 'PasswordAnalyzer'
+2025-10-03 09:50:47,944 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_095046
+2025-10-03 09:50:47,944 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 09:50:47,944 | INFO     | migration | [environment] Python 3.12.3
+2025-10-03 09:50:47,945 | ERROR    | migration | [step.validate_environment] ❌ Falhou: Validar ambiente e dependências (0.00s) - Diretório essencial não encontrado: src/migration/config
