@@ -1,0 +1,137 @@
+{
+  "timestamp": "20251006_104053",
+  "summary": {
+    "total_databases": 10,
+    "conformant": 0,
+    "divergent": 10,
+    "conformity_rate": "0.0%"
+  },
+  "detailed_results": [
+    {
+      "database": "ai_process_db",
+      "source_count": 1,
+      "dest_count": 0,
+      "differences_count": 1,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: root -> ['ALL']"
+      ]
+    },
+    {
+      "database": "app_workforce",
+      "source_count": 4,
+      "dest_count": 0,
+      "differences_count": 4,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: testemigracao -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: root -> ['ALL']",
+        "Falta no destino: app_workforce_user -> ['ALL']"
+      ]
+    },
+    {
+      "database": "botpress_db",
+      "source_count": 3,
+      "dest_count": 0,
+      "differences_count": 3,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: botpress_user -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: root -> ['ALL']"
+      ]
+    },
+    {
+      "database": "botpress_db_dev",
+      "source_count": 3,
+      "dest_count": 0,
+      "differences_count": 3,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: botpress_user -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: root -> ['ALL']"
+      ]
+    },
+    {
+      "database": "chatwoot002_db",
+      "source_count": 5,
+      "dest_count": 0,
+      "differences_count": 5,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: chatwoot_user -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: journey_system -> ['CONNECT']",
+        "Falta no destino: root -> ['ALL']",
+        "Falta no destino: \"admin@vya.digital\" -> ['ALL']"
+      ]
+    },
+    {
+      "database": "chatwoot003_db",
+      "source_count": 5,
+      "dest_count": 0,
+      "differences_count": 5,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: chatwoot_user -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: journey_system -> ['CONNECT']",
+        "Falta no destino: root -> ['ALL']",
+        "Falta no destino: \"admin@vya.digital\" -> ['ALL']"
+      ]
+    },
+    {
+      "database": "chatwoot004_db",
+      "source_count": 5,
+      "dest_count": 0,
+      "differences_count": 5,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: chatwoot_user -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: journey_system -> ['CONNECT']",
+        "Falta no destino: root -> ['ALL']",
+        "Falta no destino: \"admin@vya.digital\" -> ['ALL']"
+      ]
+    },
+    {
+      "database": "chatwoot_db",
+      "source_count": 5,
+      "dest_count": 0,
+      "differences_count": 5,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: chatwoot_user -> ['ALL']",
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: journey_system -> ['CONNECT']",
+        "Falta no destino: root -> ['ALL']",
+        "Falta no destino: \"admin@vya.digital\" -> ['ALL']"
+      ]
+    },
+    {
+      "database": "dify_db",
+      "source_count": 1,
+      "dest_count": 0,
+      "differences_count": 1,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: root -> ['ALL']"
+      ]
+    },
+    {
+      "database": "dw_chatwoot_db",
+      "source_count": 4,
+      "dest_count": 0,
+      "differences_count": 4,
+      "status": "DIVERGENTE",
+      "differences": [
+        "Falta no destino: public -> ['TEMPORARY', 'CONNECT']",
+        "Falta no destino: journey_system -> ['ALL']",
+        "Falta no destino: root -> ['ALL']",
+        "Falta no destino: metabase_viewer -> ['CONNECT']"
+      ]
+    }
+  ]
+}

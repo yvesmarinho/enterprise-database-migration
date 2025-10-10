@@ -41,4 +41,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD python3 -c "from core.monitor import health_check; health_check()" || exit 1
 
 # Default command
-CMD ["python3", "run_migration.py", "--help"]
+CMD ["python3", "cli/run_migration.py", "--help"]

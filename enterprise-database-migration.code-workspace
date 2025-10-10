@@ -1,32 +1,8 @@
 {
   "folders": [
     {
-      "name": "PostgreSQL Migration System",
+      "name": "Enterprise Database Migration",
       "path": "."
-    },
-    {
-      "name": "Core Components",
-      "path": "./core"
-    },
-    {
-      "name": "Configuration",
-      "path": "./config"
-    },
-    {
-      "name": "Secrets",
-      "path": "./secrets"
-    },
-    {
-      "name": "Documentation",
-      "path": "./docs"
-    },
-    {
-      "name": "Scripts",
-      "path": "./scripts"
-    },
-    {
-      "name": "Tests",
-      "path": "./test"
     }
   ],
   "settings": {
@@ -37,9 +13,26 @@
       "objetivo.yaml": "yaml",
       "mcp-questions.yaml": "yaml",
       "*config*.json": "jsonc",
+      "*_config.json": "jsonc",
+      "*template*.json": "jsonc",
       "Dockerfile": "dockerfile",
+      "Dockerfile.*": "dockerfile",
       "docker-compose.yml": "dockercompose",
-      "Makefile": "makefile"
+      "docker-compose.*.yml": "dockercompose",
+      "Makefile": "makefile",
+      "makefile": "makefile",
+      "GNUmakefile": "makefile",
+      "*.lock": "json",
+      "uv.lock": "toml",
+      "pyproject.toml": "toml",
+      "requirements*.txt": "pip-requirements",
+      ".env*": "properties",
+      ".envrc": "shellscript",
+      "activate-mcp.sh": "shellscript",
+      "*.migration.py": "python",
+      "*.migration.sql": "sql",
+      "*.test.py": "python",
+      ".python-version": "properties"
     },
     "yaml.schemas": {
       "objetivo": "objetivo.yaml",
@@ -48,15 +41,28 @@
     "files.exclude": {
       "**/__pycache__": true,
       "**/*.pyc": true,
+      "**/*.pyo": true,
       "**/.pytest_cache": true,
       "**/logs/*.log": true,
       "**/reports/*.json": true,
       "**/reports/*.csv": true,
+      "**/reports/*.html": true,
       "**/backups/**": true,
       "**/.mcp-status": true,
       "**/venv": true,
       "**/.venv": true,
-      "**/.env": true
+      "**/.env": true,
+      "**/node_modules": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/*.egg-info": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.coverage": true,
+      "**/htmlcov": true,
+      "**/.mypy_cache": true,
+      "**/.ruff_cache": true,
+      "**/uv.lock": false
     },
     "search.exclude": {
       "**/node_modules": true,
@@ -67,7 +73,16 @@
       "**/reports": true,
       "**/backups": true,
       "**/venv": true,
-      "**/.venv": true
+      "**/.venv": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/*.egg-info": true,
+      "**/.pytest_cache": true,
+      "**/.mypy_cache": true,
+      "**/.ruff_cache": true,
+      "**/htmlcov": true,
+      "**/.coverage": true,
+      "**/legacy/**": false
     },
     "editor.rulers": [
       80,
@@ -163,18 +178,46 @@
     },
     "workbench.colorTheme": "Default Dark+",
     "git.ignoreLimitWarning": true,
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.patterns": {
-      "*.py": "${capture}.pyc",
-      "requirements.txt": "requirements*.txt",
-      "docker-compose.yml": "docker-compose.*.yml, Dockerfile*",
-      "README.md": "*.md",
-      "objetivo.yaml": "mcp-questions.yaml",
-      ".env.example": ".env*"
-    },
+    "explorer.fileNesting.enabled": false,
     "breadcrumbs.enabled": true,
     "breadcrumbs.filePath": "on",
-    "breadcrumbs.symbolPath": "on"
+    "breadcrumbs.symbolPath": "on",
+    "explorer.sortOrder": "type",
+    "explorer.compactFolders": false,
+    "explorer.decorations.colors": true,
+    "explorer.decorations.badges": true,
+    "workbench.tree.indent": 8,
+    "workbench.tree.renderIndentGuides": "onHover",
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.revealIfOpen": true,
+    "files.defaultLanguage": "python",
+    "explorer.autoReveal": "focusNoScroll",
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "mcp.json": "jsonc",
+    "objetivo.yaml": "yaml",
+    "mcp-questions.yaml": "yaml",
+    "*config*.json": "jsonc",
+    "*_config.json": "jsonc",
+    "*template*.json": "jsonc",
+    "Dockerfile": "dockerfile",
+    "Dockerfile.*": "dockerfile",
+    "docker-compose.yml": "dockercompose",
+    "docker-compose.*.yml": "dockercompose",
+    "Makefile": "makefile",
+    "makefile": "makefile",
+    "GNUmakefile": "makefile",
+    "*.lock": "json",
+    "uv.lock": "toml",
+    "pyproject.toml": "toml",
+    "requirements*.txt": "pip-requirements",
+    ".env*": "properties",
+    ".envrc": "shellscript",
+    "activate-mcp.sh": "shellscript",
+    "*.migration.py": "python",
+    "*.migration.sql": "sql",
+    "*.test.py": "python",
+    ".python-version": "properties"
   },
   "tasks": {
     "version": "2.0.0",

@@ -1,0 +1,320 @@
+{
+  "timestamp": "2025-10-06T14:03:00.949120",
+  "config_file": "config.ini",
+  "moved_files": {
+    "test": [
+      {
+        "source": "test_commit_fix.py",
+        "target": "test/test_commit_fix.py",
+        "size": 2948,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_privileges.py",
+        "target": "test/test_privileges.py",
+        "size": 1273,
+        "action": "MOVED"
+      },
+      {
+        "source": "investigate_contradiction.py",
+        "target": "test/investigate_contradiction.py",
+        "size": 7729,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_protections.py",
+        "target": "test/test_protections.py",
+        "size": 2218,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_grants_stackoverflow.py",
+        "target": "test/test_grants_stackoverflow.py",
+        "size": 9051,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_cleanup_config.py",
+        "target": "test/test_cleanup_config.py",
+        "size": 3313,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_privilege_collection.py",
+        "target": "test/test_privilege_collection.py",
+        "size": 1597,
+        "action": "MOVED"
+      },
+      {
+        "source": "debug_grants_destino.py",
+        "target": "test/debug_grants_destino.py",
+        "size": 4173,
+        "action": "MOVED"
+      },
+      {
+        "source": "debug_apply_privileges.py",
+        "target": "test/debug_apply_privileges.py",
+        "size": 7489,
+        "action": "MOVED"
+      },
+      {
+        "source": "debug_privileges_issue.py",
+        "target": "test/debug_privileges_issue.py",
+        "size": 17191,
+        "action": "MOVED"
+      },
+      {
+        "source": "debug_quick.py",
+        "target": "test/debug_quick.py",
+        "size": 5983,
+        "action": "MOVED"
+      },
+      {
+        "source": "debug_privileges.py",
+        "target": "test/debug_privileges.py",
+        "size": 1827,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_user_creation.py",
+        "target": "test/test_user_creation.py",
+        "size": 3101,
+        "action": "MOVED"
+      },
+      {
+        "source": "debug_get_privileges.py",
+        "target": "test/debug_get_privileges.py",
+        "size": 4928,
+        "action": "MOVED"
+      },
+      {
+        "source": "test_grant_application.py",
+        "target": "test/test_grant_application.py",
+        "size": 6989,
+        "action": "MOVED"
+      },
+      {
+        "source": "analise_resultados_grants.py",
+        "target": "test/analise_resultados_grants.py",
+        "size": 3147,
+        "action": "MOVED"
+      }
+    ],
+    "core": [
+      {
+        "source": "phase3_controlled_executor.py",
+        "target": "core/phase3_controlled_executor.py",
+        "size": 13100,
+        "action": "MOVED"
+      },
+      {
+        "source": "phase1_extract_wf004.py",
+        "target": "core/phase1_extract_wf004.py",
+        "size": 11892,
+        "action": "MOVED"
+      },
+      {
+        "source": "execute_real_migration_fixed.py",
+        "target": "core/execute_real_migration_fixed.py",
+        "size": 7042,
+        "action": "MOVED"
+      },
+      {
+        "source": "migration_orchestrator.py",
+        "target": "core/migration_orchestrator.py",
+        "size": 16632,
+        "action": "MOVED"
+      },
+      {
+        "source": "execute_real_migration.py",
+        "target": "core/execute_real_migration.py",
+        "size": 5440,
+        "action": "MOVED"
+      },
+      {
+        "source": "phase2_generate_scripts.py",
+        "target": "core/phase2_generate_scripts.py",
+        "size": 14382,
+        "action": "MOVED"
+      }
+    ],
+    "docs": [
+      {
+        "source": "SESSÃO_DEBUG_20251003.md",
+        "target": "docs/SESSÃO_DEBUG_20251003.md",
+        "size": 4864,
+        "action": "MOVED"
+      },
+      {
+        "source": "STATUS_SISTEMA.md",
+        "target": "docs/STATUS_SISTEMA.md",
+        "size": 2786,
+        "action": "MOVED"
+      },
+      {
+        "source": "ANÁLISE_ORIGEM_DESTINO_IDÊNTICOS.md",
+        "target": "docs/ANÁLISE_ORIGEM_DESTINO_IDÊNTICOS.md",
+        "size": 3778,
+        "action": "MOVED"
+      },
+      {
+        "source": "INTEGRAÇÃO_COMPLETA_FINALIZADA.md",
+        "target": "docs/INTEGRAÇÃO_COMPLETA_FINALIZADA.md",
+        "size": 7141,
+        "action": "MOVED"
+      },
+      {
+        "source": "MEMORIA_MCP_20251003.md",
+        "target": "docs/MEMORIA_MCP_20251003.md",
+        "size": 4103,
+        "action": "MOVED"
+      },
+      {
+        "source": "requirements-dev.txt",
+        "target": "docs/requirements-dev.txt",
+        "size": 700,
+        "action": "MOVED"
+      },
+      {
+        "source": "ANÁLISE_INTEGRAÇÃO_COMPLETA.md",
+        "target": "docs/ANÁLISE_INTEGRAÇÃO_COMPLETA.md",
+        "size": 9006,
+        "action": "MOVED"
+      }
+    ],
+    "validation": [
+      {
+        "source": "validate_grants_corrected.py",
+        "target": "validation/validate_grants_corrected.py",
+        "size": 8790,
+        "action": "MOVED"
+      },
+      {
+        "source": "validate_grants_final.py",
+        "target": "validation/validate_grants_final.py",
+        "size": 9665,
+        "action": "MOVED"
+      },
+      {
+        "source": "validate_grants.py",
+        "target": "validation/validate_grants.py",
+        "size": 9466,
+        "action": "MOVED"
+      },
+      {
+        "source": "verify_after_debug.py",
+        "target": "validation/verify_after_debug.py",
+        "size": 5049,
+        "action": "MOVED"
+      },
+      {
+        "source": "validate_grants_simple.py",
+        "target": "validation/validate_grants_simple.py",
+        "size": 4925,
+        "action": "MOVED"
+      }
+    ],
+    "config/templates": [
+      {
+        "source": "destination_config_template.json",
+        "target": "config/templates/destination_config_template.json",
+        "size": 518,
+        "action": "MOVED"
+      },
+      {
+        "source": "source_config_template.json",
+        "target": "config/templates/source_config_template.json",
+        "size": 400,
+        "action": "MOVED"
+      }
+    ],
+    "docs/examples": [
+      {
+        "source": "exemplo_uso.py",
+        "target": "docs/examples/exemplo_uso.py",
+        "size": 7243,
+        "action": "MOVED"
+      }
+    ],
+    "extracted_data": [
+      {
+        "source": "extracted_data_20251006_114724.json",
+        "target": "extracted_data/extracted_data_20251006_114724.json",
+        "size": 49453,
+        "action": "MOVED"
+      }
+    ]
+  },
+  "skipped_files": [
+    {
+      "file": "config.ini",
+      "reason": "Arquivo protegido: config.ini"
+    },
+    {
+      "file": "docker-compose.yml",
+      "reason": "Arquivo protegido: docker-compose.yml"
+    },
+    {
+      "file": ".python-version",
+      "reason": "Sem regra de categorização"
+    },
+    {
+      "file": "uv.lock",
+      "reason": "Arquivo protegido: uv.lock"
+    },
+    {
+      "file": "pyproject.toml",
+      "reason": "Arquivo protegido: pyproject.toml"
+    },
+    {
+      "file": "main.py",
+      "reason": "Arquivo protegido: main.py"
+    },
+    {
+      "file": "README.md",
+      "reason": "Arquivo protegido: README.md"
+    },
+    {
+      "file": "enterprise-database-migration.code-workspace",
+      "reason": "Sem regra de categorização"
+    },
+    {
+      "file": ".env.example",
+      "reason": "Arquivo protegido: .env.example"
+    },
+    {
+      "file": "activate-mcp.sh",
+      "reason": "Arquivo protegido: activate-mcp.sh"
+    },
+    {
+      "file": "setup.sh",
+      "reason": "Arquivo protegido: setup.sh"
+    },
+    {
+      "file": "objetivo.yaml",
+      "reason": "Arquivo protegido: objetivo.yaml"
+    },
+    {
+      "file": "mcp-questions.yaml",
+      "reason": "Arquivo protegido: mcp-questions.yaml"
+    },
+    {
+      "file": "Makefile",
+      "reason": "Arquivo protegido: Makefile"
+    },
+    {
+      "file": "requirements.txt",
+      "reason": "Arquivo protegido: requirements.txt"
+    },
+    {
+      "file": "Dockerfile",
+      "reason": "Arquivo protegido: Dockerfile"
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "total_moved": 38,
+    "total_skipped": 16,
+    "total_errors": 0
+  }
+}

@@ -48,5 +48,226 @@
     "target": "enterprise-production",
     "containerization": "docker-compose",
     "monitoring": "prometheus-grafana"
+  },
+  "file_organization": {
+    "description": "Diretrizes de organização automática de arquivos por tipo e funcionalidade",
+    "folder_structure": {
+      "core": {
+        "description": "Componentes principais de migração",
+        "file_patterns": [
+          "*migration*.py",
+          "*.sql"
+        ],
+        "snippet": "new-migration",
+        "examples": [
+          "user_migration.py",
+          "table_migration.sql"
+        ]
+      },
+      "orchestrators": {
+        "description": "Orquestradores de processo",
+        "file_patterns": [
+          "*orchestrator*.py"
+        ],
+        "snippet": "new-orchestrator",
+        "examples": [
+          "database_orchestrator.py",
+          "migration_orchestrator.py"
+        ]
+      },
+      "validation": {
+        "description": "Validadores de dados e schema",
+        "file_patterns": [
+          "*validator*.py",
+          "*validation*.py"
+        ],
+        "snippet": "new-validator",
+        "examples": [
+          "data_validator.py",
+          "schema_validation.py"
+        ]
+      },
+      "utils": {
+        "description": "Utilitários e helpers",
+        "file_patterns": [
+          "*util*.py",
+          "*helper*.py"
+        ],
+        "snippet": "new-util",
+        "examples": [
+          "database_util.py",
+          "file_helper.py"
+        ]
+      },
+      "components": {
+        "description": "Componentes modulares",
+        "file_patterns": [
+          "*component*.py"
+        ],
+        "snippet": "new-migration",
+        "examples": [
+          "auth_component.py",
+          "logging_component.py"
+        ]
+      },
+      "cli": {
+        "description": "Interfaces de linha de comando",
+        "file_patterns": [
+          "*cli*.py",
+          "*command*.py"
+        ],
+        "examples": [
+          "migration_cli.py",
+          "status_command.py"
+        ]
+      },
+      "cleanup": {
+        "description": "Scripts de limpeza",
+        "file_patterns": [
+          "*cleanup*.py"
+        ],
+        "examples": [
+          "database_cleanup.py",
+          "temp_cleanup.py"
+        ]
+      },
+      "src": {
+        "description": "Código Python geral (padrão)",
+        "file_patterns": [
+          "*.py"
+        ],
+        "usage": "Arquivos Python que não se encaixam em outras categorias"
+      },
+      "config": {
+        "description": "Arquivos de configuração",
+        "file_patterns": [
+          "*.json",
+          "*.yaml",
+          "*.yml",
+          "*config*.*"
+        ],
+        "snippet": "new-config",
+        "examples": [
+          "database_config.json",
+          "migration_rules.yaml"
+        ]
+      },
+      "secrets": {
+        "description": "Arquivos sensíveis e credenciais",
+        "file_patterns": [
+          "*secret*.json",
+          "*credentials*.*",
+          "*auth*.*"
+        ],
+        "examples": [
+          "db_credentials.json",
+          "api_secrets.json"
+        ]
+      },
+      "docs": {
+        "description": "Documentação do projeto",
+        "file_patterns": [
+          "*.md",
+          "*.txt"
+        ],
+        "snippet": "new-doc",
+        "examples": [
+          "installation.md",
+          "api_guide.md"
+        ]
+      },
+      "scripts": {
+        "description": "Scripts de automação",
+        "file_patterns": [
+          "*.sh",
+          "*.bash"
+        ],
+        "examples": [
+          "deploy.sh",
+          "backup.sh"
+        ]
+      },
+      "legacy": {
+        "description": "Código legado em migração",
+        "usage": "Arquivos em processo de refatoração"
+      }
+    },
+    "snippets": {
+      "new-migration": {
+        "description": "Cria componente de migração completo",
+        "target_folder": "core",
+        "template": "Python migration class with BaseComponent inheritance"
+      },
+      "new-orchestrator": {
+        "description": "Cria orquestrador estruturado",
+        "target_folder": "orchestrators",
+        "template": "Python orchestrator class with BaseOrchestrator inheritance"
+      },
+      "new-validator": {
+        "description": "Cria validador com padrões",
+        "target_folder": "validation",
+        "template": "Python validator class with BaseValidator inheritance"
+      },
+      "new-util": {
+        "description": "Cria utilitário com métodos",
+        "target_folder": "utils",
+        "template": "Python utility class with static methods"
+      },
+      "new-doc": {
+        "description": "Cria documentação estruturada",
+        "target_folder": "docs",
+        "template": "Markdown documentation with standard sections"
+      },
+      "new-config": {
+        "description": "Cria configuração JSON estruturada",
+        "target_folder": "config",
+        "template": "JSON configuration with schema and metadata"
+      }
+    },
+    "naming_conventions": {
+      "python_files": {
+        "*_migration.py": "core/",
+        "*_orchestrator.py": "orchestrators/",
+        "*_validator.py": "validation/",
+        "*_util.py": "utils/",
+        "*_component.py": "components/",
+        "*_cli.py": "cli/",
+        "*_cleanup.py": "cleanup/"
+      },
+      "config_files": {
+        "*_config.json": "config/",
+        "*_secrets.json": "secrets/",
+        "*_template.json": "config/",
+        "*.yaml": "config/"
+      },
+      "documentation": {
+        "*.md": "docs/",
+        "README*.txt": "docs/"
+      },
+      "scripts": {
+        "*.sh": "scripts/",
+        "*.bash": "scripts/"
+      }
+    },
+    "copilot_integration": {
+      "automatic_recognition": [
+        "File type associations",
+        "Syntax highlighting contexts",
+        "Workspace-specific patterns",
+        "Language configurations"
+      ],
+      "context_awareness": [
+        "Folder-based code suggestions",
+        "Pattern-based completions",
+        "Template-guided development",
+        "Convention-following imports"
+      ],
+      "workflow_optimization": [
+        "Use snippets as starting points",
+        "Save files in correct folders",
+        "Follow naming conventions",
+        "Leverage contextual completions"
+      ]
+    }
   }
 }

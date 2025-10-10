@@ -22,7 +22,9 @@ def analyze_password_issue():
     print(f"   Encoding: {working_password.encode('utf-8')}")
 
     # Senha do arquivo JSON
-    with open('config/source_config.json', 'r', encoding='utf-8') as f:
+    from components.config_manager import get_db_config_path
+    source_config_path = get_db_config_path('source_config')
+    with open(source_config_path, 'r', encoding='utf-8') as f:
         source_data = json.load(f)
 
     json_password = source_data['authentication']['password']
@@ -109,7 +111,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
-    from base_component import UtilityComponent, ComponentResult, component_method
+    from components.base_component import UtilityComponent, ComponentResult, component_method
 except ImportError:
     # Fallback se base_component não estiver disponível
     class UtilityComponent:

@@ -26,9 +26,13 @@ import hashlib
 def load_configs():
     """Carrega configurações de ambos os servidores."""
     try:
-        with open('config/source_config.json', 'r', encoding='utf-8') as f:
+        from components.config_manager import get_db_config_path
+        source_config_path = get_db_config_path('postgresql_source_config')
+        dest_config_path = get_db_config_path('postgresql_destination_config')
+
+        with open(source_config_path, 'r', encoding='utf-8') as f:
             source = json.load(f)
-        with open('config/destination_config.json', 'r', encoding='utf-8') as f:
+        with open(dest_config_path, 'r', encoding='utf-8') as f:
             destination = json.load(f)
         return source, destination
     except Exception as e:
@@ -40,15 +44,8 @@ def get_users_from_source(source_config):
     print("📋 Coletando usuários do servidor origem...")
 
     try:
-        conn_string = (
-            f"host={source_config['server']['host']} "
-            f"port={source_config['server']['port']} "
-            f"dbname=postgres "
-            f"user={source_config['authentication']['user']} "
-            f"password={source_config['authentication']['password']} "
-            f"sslmode={source_config['server']['ssl_mode']} "
-            f"connect_timeout={source_config['connection_settings']['connection_timeout']}"
-        )
+        from components.config_normalizer import get_connection_string
+        conn_string = get_connection_string(source_config)
 
         conn = psycopg2.connect(conn_string)
         cursor = conn.cursor()
@@ -120,15 +117,8 @@ def get_existing_users_destination(dest_config):
     print("🔍 Verificando usuários existentes no destino...")
 
     try:
-        conn_string = (
-            f"host={dest_config['server']['host']} "
-            f"port={dest_config['connection_settings']['setup_port']} "
-            f"dbname=postgres "
-            f"user={dest_config['authentication']['user']} "
-            f"password={dest_config['authentication']['password']} "
-            f"sslmode={dest_config['server']['ssl_mode']} "
-            f"connect_timeout={dest_config['connection_settings']['connection_timeout']}"
-        )
+        from components.config_normalizer import get_connection_string
+        conn_string = get_connection_string(dest_config)
 
         conn = psycopg2.connect(conn_string)
         cursor = conn.cursor()
@@ -158,15 +148,8 @@ def create_user_in_destination(user_info, dest_config, dry_run=False):
         return True
 
     try:
-        conn_string = (
-            f"host={dest_config['server']['host']} "
-            f"port={dest_config['connection_settings']['setup_port']} "
-            f"dbname=postgres "
-            f"user={dest_config['authentication']['user']} "
-            f"password={dest_config['authentication']['password']} "
-            f"sslmode={dest_config['server']['ssl_mode']} "
-            f"connect_timeout={dest_config['connection_settings']['connection_timeout']}"
-        )
+        from components.config_normalizer import get_connection_string
+        conn_string = get_connection_string(dest_config)
 
         conn = psycopg2.connect(conn_string)
         conn.autocommit = True

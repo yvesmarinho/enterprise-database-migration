@@ -1,0 +1,76 @@
+2025-10-03 17:24:55,300 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 17:24:55,425 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 17:24:55,432 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 17:24:55,446 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 17:24:55,446 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 17:24:55,447 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 17:24:55,447 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_172455
+2025-10-03 17:24:57,400 | INFO     | migration | [step.load_configurations] 🚀 Iniciando: Carregar configurações de migração
+2025-10-03 17:24:57,400 | INFO     | migration | [config] Regras carregadas: 3 seções
+2025-10-03 17:24:57,400 | INFO     | migration | [config] Configurações de servidor carregadas: 0/2
+2025-10-03 17:24:57,400 | INFO     | migration | [step.load_configurations] ✅ Concluído: Carregar configurações de migração (0.00s)
+2025-10-03 17:25:25,114 | INFO     | migration | [orchestrator] ======================================================================
+2025-10-03 17:25:25,114 | INFO     | migration | [orchestrator] 🚀 INICIANDO MIGRAÇÃO POSTGRESQL COMPLETA
+2025-10-03 17:25:25,114 | INFO     | migration | [orchestrator] ======================================================================
+2025-10-03 17:25:25,114 | INFO     | migration | [orchestrator] Session ID: 20251003_172455
+2025-10-03 17:25:25,114 | INFO     | migration | [orchestrator] Timestamp: 2025-10-03 17:25:25.114141
+2025-10-03 17:25:25,114 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 17:25:25,114 | INFO     | migration | [environment] Python 3.13.3
+2025-10-03 17:25:25,115 | INFO     | migration | [step.validate_environment] ✅ Concluído: Validar ambiente e dependências (0.00s)
+2025-10-03 17:25:25,115 | INFO     | migration | [step.load_configurations] 🚀 Iniciando: Carregar configurações de migração
+2025-10-03 17:25:25,115 | INFO     | migration | [config] Regras carregadas: 3 seções
+2025-10-03 17:25:25,115 | INFO     | migration | [config] Configurações de servidor carregadas: 0/2
+2025-10-03 17:25:25,115 | INFO     | migration | [step.load_configurations] ✅ Concluído: Carregar configurações de migração (0.00s)
+2025-10-03 17:25:25,115 | INFO     | migration | [step.check_modules] 🚀 Iniciando: Verificar módulos carregados
+2025-10-03 17:25:25,115 | INFO     | migration | [module_manager] Todos os módulos carregados com sucesso
+2025-10-03 17:25:25,115 | INFO     | migration | [step.check_modules] ✅ Concluído: Verificar módulos carregados (0.00s)
+2025-10-03 17:25:25,116 | INFO     | migration | [step.test_connectivity] 🚀 Iniciando: Testar conectividade com servidores
+2025-10-03 17:25:25,116 | INFO     | migration | [connectivity] Testando conectividade com servidores...
+2025-10-03 17:25:25,116 | INFO     | migration | [connectivity] Usando métodos reais do SQLAlchemy migrator
+2025-10-03 17:25:30,211 | INFO     | migration | [connectivity] Conectividade real testada com sucesso
+2025-10-03 17:25:30,212 | INFO     | migration | [step.test_connectivity] ✅ Concluído: Testar conectividade com servidores (5.10s)
+2025-10-03 17:25:30,212 | INFO     | migration | [step.discover_source] 🚀 Iniciando: Descobrir estrutura do servidor origem
+2025-10-03 17:25:30,212 | INFO     | migration.user_discoverer | [user_discoverer] Inicializando componente user_discoverer
+2025-10-03 17:25:30,212 | INFO     | migration.user_discoverer | [user_discoverer] Inicializando descobridor de usuários
+2025-10-03 17:25:30,212 | INFO     | migration.user_discoverer | [user_discoverer] ✅ Componente user_discoverer pronto
+2025-10-03 17:25:30,212 | INFO     | migration | [discovery] Descobrindo usuários do servidor origem...
+2025-10-03 17:25:30,212 | DEBUG    | migration.user_discoverer | [user_discoverer] Executando método: discover_all_users
+2025-10-03 17:25:30,212 | INFO     | migration.user_discoverer | [user_discoverer] Iniciando descoberta de usuários em todos os servidores
+2025-10-03 17:25:30,213 | DEBUG    | migration.user_discoverer | [user_discoverer] Executando método: discover_server_users
+2025-10-03 17:25:30,213 | INFO     | migration.user_discoverer | [user_discoverer] Descobrindo usuários em origem...
+2025-10-03 17:25:30,213 | ERROR    | migration.user_discoverer | [user_discoverer] ❌ Erro na descoberta em origem: 'host'
+2025-10-03 17:25:30,213 | DEBUG    | migration.user_discoverer | [user_discoverer] Executando método: discover_server_users
+2025-10-03 17:25:30,213 | INFO     | migration.user_discoverer | [user_discoverer] Descobrindo usuários em destino...
+2025-10-03 17:25:30,213 | ERROR    | migration.user_discoverer | [user_discoverer] ❌ Erro na descoberta em destino: 'host'
+2025-10-03 17:25:30,213 | ERROR    | migration.user_discoverer | [user_discoverer] ❌ Falha na descoberta de usuários
+2025-10-03 17:25:30,213 | WARNING  | migration | [discovery] Descoberta não retornou usuários
+2025-10-03 17:25:30,213 | INFO     | migration | [step.discover_source] ✅ Concluído: Descobrir estrutura do servidor origem (0.00s)
+2025-10-03 17:25:30,213 | INFO     | migration | [step.analyze_compatibility] 🚀 Iniciando: Analisar compatibilidade SCRAM-SHA-256
+2025-10-03 17:25:30,214 | INFO     | migration.scram_auth_checker | [scram_auth_checker] Inicializando componente scram_auth_checker
+2025-10-03 17:25:30,214 | INFO     | migration.scram_auth_checker | [scram_auth_checker] Inicializando verificador SCRAM
+2025-10-03 17:25:30,214 | INFO     | migration.scram_auth_checker | [scram_auth_checker] ✅ Componente scram_auth_checker pronto
+2025-10-03 17:25:30,214 | INFO     | migration | [scram] Analisando compatibilidade SCRAM-SHA-256...
+2025-10-03 17:25:31,214 | INFO     | migration | [step.analyze_compatibility] ✅ Concluído: Analisar compatibilidade SCRAM-SHA-256 (1.00s)
+2025-10-03 17:25:31,214 | INFO     | migration | [step.pre_migration_backup] ⏭️ Pulando: Criar backup pré-migração - Backup opcional desabilitado
+2025-10-03 17:25:31,214 | INFO     | migration | [step.execute_migration] 🚀 Iniciando: Executar migração principal
+2025-10-03 17:25:31,215 | INFO     | migration | [migration] Executando migração principal...
+2025-10-03 17:25:31,215 | WARNING  | migration | [migration] Método migrate_all_users não encontrado, usando fallback
+2025-10-03 17:25:31,215 | WARNING  | migration | [migration] Nenhum método de migração encontrado, executando simulação
+2025-10-03 17:25:33,215 | INFO     | migration | [step.execute_migration] ✅ Concluído: Executar migração principal (2.00s)
+2025-10-03 17:25:33,215 | INFO     | migration | [step.validate_migration] 🚀 Iniciando: Validar resultado da migração
+2025-10-03 17:25:33,215 | INFO     | migration | [validation] Validando resultado da migração...
+2025-10-03 17:25:34,216 | INFO     | migration | [step.validate_migration] ✅ Concluído: Validar resultado da migração (1.00s)
+2025-10-03 17:25:34,216 | INFO     | migration | [step.test_connections] 🚀 Iniciando: Testar conexões pós-migração
+2025-10-03 17:25:34,216 | INFO     | migration | [post_test] Testando conexões pós-migração...
+2025-10-03 17:25:35,216 | INFO     | migration | [step.test_connections] ✅ Concluído: Testar conexões pós-migração (1.00s)
+2025-10-03 17:25:35,216 | INFO     | migration | [step.generate_report] 🚀 Iniciando: Gerar relatório final
+2025-10-03 17:25:35,218 | INFO     | migration | [report] Relatórios gerados:
+2025-10-03 17:25:35,218 | INFO     | migration | [report]   📄 JSON: /home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-migration/core/reports/migration_report_20251003_172455.json
+2025-10-03 17:25:35,218 | INFO     | migration | [report]   📝 Markdown: /home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-migration/core/reports/migration_report_20251003_172455.md
+2025-10-03 17:25:35,219 | INFO     | migration | [report]   📋 Log: /home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-migration/core/reports/migration_20251003_172455.log
+2025-10-03 17:25:35,219 | INFO     | migration | [step.generate_report] ✅ Concluído: Gerar relatório final (0.00s)
+2025-10-03 17:25:35,219 | INFO     | migration | [orchestrator] ======================================================================
+2025-10-03 17:25:35,219 | INFO     | migration | [orchestrator] 🎉 MIGRAÇÃO CONCLUÍDA COM SUCESSO!
+2025-10-03 17:25:35,219 | INFO     | migration | [orchestrator] Duração total: 10.11s
+2025-10-03 17:25:35,220 | INFO     | migration | [orchestrator] Passos concluídos: 11/11
+2025-10-03 17:25:35,220 | INFO     | migration | [orchestrator] ======================================================================

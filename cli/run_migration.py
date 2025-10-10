@@ -14,15 +14,15 @@ import sys
 import os
 from pathlib import Path
 
-# Adicionar diretório do projeto ao Python path
-project_root = Path(__file__).parent
+# Adicionar diretório do projeto ao Python path (pasta pai, pois estamos em cli/)
+project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 def main():
     """Launcher principal."""
     try:
-        # Importar e executar o orquestrador
-        from src.migration.orchestrator_pure_python import main as orchestrator_main
+        # Importar e executar o orquestrador (agora na pasta orchestrators/)
+        from orchestrators.orchestrator_pure_python import main as orchestrator_main
         return orchestrator_main()
     except ImportError as e:
         print(f"❌ Erro ao importar orquestrador: {e}")

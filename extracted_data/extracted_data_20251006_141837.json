@@ -1,0 +1,1722 @@
+{
+  "extraction_info": {
+    "timestamp": "2025-10-06T14:18:38.420202",
+    "source_server": "wf004.vya.digital:5432",
+    "extractor_version": "4.0.0"
+  },
+  "users": [
+    {
+      "rolname": "admin@vya.digital",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "ai_process_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "airflow_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "app_workforce_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "authelia_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "botpress_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "botpress_user_vivo",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "calendso_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "chatwoot004_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "chatwoot_user",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": true,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "confluence_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "dify_user",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": true,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "evolution_api_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "evoluton_api_user",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "flowia_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "guacamole_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "hibuser",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "jcr_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "journey_system",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "journey_typebot",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "journeydb_user",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": true,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "journeytypebot",
+      "rolsuper": false,
+      "rolinherit": false,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": false,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "khomp_readonly",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "khomp_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "kutt_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "langfuse_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "metabase_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "metabase_viewer",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "migration_user",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": true,
+      "rolcreatedb": true,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "n8n_admin",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "n8n_dev_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "n8n_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "netbox_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "netbox_userwith",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "pentaho_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "pmm",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": 10,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "postgres",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": true,
+      "rolcreatedb": true,
+      "rolcanlogin": true,
+      "rolreplication": true,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "root",
+      "rolsuper": true,
+      "rolinherit": true,
+      "rolcreaterole": true,
+      "rolcreatedb": true,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "testemigracao",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "typebot_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    },
+    {
+      "rolname": "unleash_user",
+      "rolsuper": false,
+      "rolinherit": true,
+      "rolcreaterole": false,
+      "rolcreatedb": false,
+      "rolcanlogin": true,
+      "rolreplication": false,
+      "rolconnlimit": -1,
+      "rolpassword": "********",
+      "rolvaliduntil": null
+    }
+  ],
+  "databases": [
+    {
+      "datname": "ai_process_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 11.0,
+      "is_system": false
+    },
+    {
+      "datname": "app_workforce",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 12.0,
+      "is_system": false
+    },
+    {
+      "datname": "botpress_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 435.0,
+      "is_system": false
+    },
+    {
+      "datname": "botpress_db_dev",
+      "datdba": 17012,
+      "owner": "botpress_user",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 134.0,
+      "is_system": false
+    },
+    {
+      "datname": "chatwoot002_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 871.0,
+      "is_system": false
+    },
+    {
+      "datname": "chatwoot003_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 14.0,
+      "is_system": false
+    },
+    {
+      "datname": "chatwoot004_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 1202.0,
+      "is_system": false
+    },
+    {
+      "datname": "chatwoot_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 278.0,
+      "is_system": false
+    },
+    {
+      "datname": "dify_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 12.0,
+      "is_system": false
+    },
+    {
+      "datname": "dw_chatwoot_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 23.0,
+      "is_system": false
+    },
+    {
+      "datname": "dw_journey_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 374.0,
+      "is_system": false
+    },
+    {
+      "datname": "evolution_api_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 488.0,
+      "is_system": false
+    },
+    {
+      "datname": "evolution_api_wea001_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 151.0,
+      "is_system": false
+    },
+    {
+      "datname": "evolution_api_wea003_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 39.0,
+      "is_system": false
+    },
+    {
+      "datname": "evolution_api_wea004_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 10.0,
+      "is_system": false
+    },
+    {
+      "datname": "evolution_api_wea005_db",
+      "datdba": 44650954,
+      "owner": "evoluton_api_user",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 88.0,
+      "is_system": false
+    },
+    {
+      "datname": "flowia_db",
+      "datdba": 1656291,
+      "owner": "flowia_user",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 23.0,
+      "is_system": false
+    },
+    {
+      "datname": "hibernate",
+      "datdba": 45814653,
+      "owner": "hibuser",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": false
+    },
+    {
+      "datname": "jackrabbit",
+      "datdba": 45814096,
+      "owner": "jcr_user",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": false
+    },
+    {
+      "datname": "khomp_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 1172.0,
+      "is_system": false
+    },
+    {
+      "datname": "kutt_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 9.0,
+      "is_system": false
+    },
+    {
+      "datname": "kutt_fatura_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": false
+    },
+    {
+      "datname": "langfuse_db",
+      "datdba": 1897508,
+      "owner": "langfuse_user",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 88.0,
+      "is_system": false
+    },
+    {
+      "datname": "metabase_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 299.0,
+      "is_system": false
+    },
+    {
+      "datname": "n8n_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 1365.0,
+      "is_system": false
+    },
+    {
+      "datname": "postgres",
+      "datdba": 10,
+      "owner": "postgres",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 9.0,
+      "is_system": true
+    },
+    {
+      "datname": "quartz",
+      "datdba": 45814105,
+      "owner": "pentaho_user",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": false
+    },
+    {
+      "datname": "template0",
+      "datdba": 10,
+      "owner": "postgres",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": true
+    },
+    {
+      "datname": "template1",
+      "datdba": 10,
+      "owner": "postgres",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": true
+    },
+    {
+      "datname": "typebot_db",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 78.0,
+      "is_system": false
+    },
+    {
+      "datname": "workflow_ai",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 8.0,
+      "is_system": false
+    },
+    {
+      "datname": "workflow_evo_ai",
+      "datdba": 16384,
+      "owner": "root",
+      "encoding": 6,
+      "datcollate": "en_US.UTF-8",
+      "datctype": "en_US.UTF-8",
+      "datconnlimit": -1,
+      "size_mb": 9.0,
+      "is_system": false
+    }
+  ],
+  "grants": {
+    "ai_process_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "app_workforce": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "app_workforce_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "testemigracao",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "botpress_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "botpress_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "botpress_db_dev": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "botpress_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "chatwoot002_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "\"admin@vya.digital\"",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "chatwoot_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "chatwoot003_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "\"admin@vya.digital\"",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "chatwoot_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "chatwoot004_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "\"admin@vya.digital\"",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "chatwoot_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "chatwoot_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "\"admin@vya.digital\"",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "chatwoot_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "dify_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "dw_chatwoot_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "metabase_viewer",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "dw_journey_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "metabase_viewer",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "evolution_api_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evolution_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evoluton_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "evolution_api_wea001_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evolution_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evoluton_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "evolution_api_wea003_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evolution_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evoluton_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "evolution_api_wea004_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evoluton_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "evolution_api_wea005_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "evoluton_api_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "flowia_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "flowia_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "hibernate": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "hibuser",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "jackrabbit": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "jcr_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "khomp_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "khomp_readonly",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "khomp_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "kutt_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "kutt_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "kutt_fatura_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "kutt_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "langfuse_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "langfuse_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "metabase_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "chatwoot_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "metabase_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "n8n_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "n8n_admin",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "n8n_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "postgres",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "quartz": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "pentaho_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "typebot_db": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_typebot",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "journeytypebot",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "typebot_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "workflow_ai": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "\"admin@vya.digital\"",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journeydb_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ],
+    "workflow_evo_ai": [
+      {
+        "grantee": "-",
+        "privileges": [
+          "CONNECT",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "\"admin@vya.digital\"",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journeydb_user",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      },
+      {
+        "grantee": "journey_system",
+        "privileges": [
+          "CONNECT"
+        ]
+      },
+      {
+        "grantee": "root",
+        "privileges": [
+          "CONNECT",
+          "CREATE",
+          "TEMPORARY"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "total_users": 41,
+    "total_databases": 32,
+    "user_databases": 29,
+    "system_databases": 3,
+    "total_grants": 106,
+    "databases_with_grants": 29
+  }
+}

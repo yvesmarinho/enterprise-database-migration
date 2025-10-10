@@ -1,0 +1,138 @@
+{
+  "migration": {
+    "name": "PostgreSQL Enterprise Migration System",
+    "version": "4.0.0",
+    "description": "Sistema completo de migração PostgreSQL desenvolvido e testado na migração WF004→WFDB02",
+    "source": {
+      "config_file": "secrets/postgresql_source_config.json",
+      "description": "Servidor PostgreSQL origem (wf004.vya.digital)",
+      "connection_timeout": 30
+    },
+    "destination": {
+      "config_file": "secrets/postgresql_destination_config.json",
+      "description": "Servidor PostgreSQL destino (wfdb02.vya.digital)",
+      "connection_timeout": 30
+    }
+  },
+  "extraction": {
+    "enabled": true,
+    "output_dir": "extracted_data",
+    "filename_pattern": "extracted_data_{timestamp}.json",
+    "filters": {
+      "exclude_system_users": true,
+      "exclude_system_databases": true,
+      "exclude_users": [
+        "postgres",
+        "migration_user",
+        "root"
+      ],
+      "exclude_databases": [
+        "postgres",
+        "template0",
+        "template1"
+      ],
+      "include_password_hashes": true,
+      "include_role_attributes": true
+    },
+    "validation": {
+      "verify_connections": true,
+      "check_permissions": true,
+      "validate_data_integrity": true
+    }
+  },
+  "generation": {
+    "enabled": true,
+    "output_dir": "generated_scripts",
+    "locale": {
+      "collation": "pt_BR.UTF-8",
+      "ctype": "pt_BR.UTF-8",
+      "encoding": "UTF8"
+    },
+    "templates": {
+      "use_template0": true,
+      "default_owner": "postgres",
+      "connection_limit": -1
+    },
+    "scripts": {
+      "create_users": true,
+      "create_databases": true,
+      "apply_grants": true,
+      "validation": true,
+      "master_script": true
+    },
+    "optimization": {
+      "remove_transactions": true,
+      "clean_quotes": true,
+      "filter_system_grants": true,
+      "statement_separation": true
+    }
+  },
+  "execution": {
+    "enabled": true,
+    "dry_run_first": true,
+    "interactive_mode": false,
+    "continue_on_error": false,
+    "execution_order": [
+      "01_create_users.sql",
+      "02_create_databases.sql",
+      "03_apply_grants.sql",
+      "04_validate_migration.sql"
+    ],
+    "error_handling": {
+      "ignore_already_exists": true,
+      "log_all_errors": true,
+      "stop_on_critical": true
+    },
+    "validation": {
+      "verify_users": true,
+      "verify_databases": true,
+      "verify_grants": true,
+      "generate_report": true
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "console_output": true,
+    "file_output": true,
+    "detailed_reports": true,
+    "log_dir": "logs",
+    "filename_pattern": "migration_{timestamp}.log",
+    "rotation": {
+      "enabled": true,
+      "max_files": 10,
+      "max_size_mb": 50
+    }
+  },
+  "monitoring": {
+    "progress_tracking": true,
+    "performance_metrics": true,
+    "memory_usage": true,
+    "connection_status": true,
+    "real_time_feedback": true
+  },
+  "reporting": {
+    "enabled": true,
+    "output_dir": "reports",
+    "formats": [
+      "json",
+      "html"
+    ],
+    "include_statistics": true,
+    "include_errors": true,
+    "include_performance": true,
+    "filename_pattern": "migration_report_{timestamp}.{format}"
+  },
+  "security": {
+    "mask_passwords_in_logs": true,
+    "secure_connections": true,
+    "validate_certificates": false,
+    "connection_encryption": "prefer"
+  },
+  "advanced": {
+    "parallel_processing": false,
+    "batch_size": 1000,
+    "memory_limit_mb": 512,
+    "connection_pooling": false,
+    "transaction_isolation": "read_committed"
+  }
+}

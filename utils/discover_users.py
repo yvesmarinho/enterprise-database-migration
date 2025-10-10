@@ -24,9 +24,12 @@ from datetime import datetime
 def load_configs():
     """Carrega configurações de ambos os servidores."""
     try:
-        with open('config/source_config.json', 'r', encoding='utf-8') as f:
+        from components.config_manager import get_db_config_path
+        source_config_path = get_db_config_path('postgresql_source_config')
+        dest_config_path = get_db_config_path('postgresql_destination_config')
+        with open(source_config_path, 'r', encoding='utf-8') as f:
             source = json.load(f)
-        with open('config/destination_config.json', 'r', encoding='utf-8') as f:
+        with open(dest_config_path, 'r', encoding='utf-8') as f:
             destination = json.load(f)
         return source, destination
     except Exception as e:
@@ -238,8 +241,8 @@ def suggest_migration_credentials(wf004_users, wfdb02_users):
             print(f"      Senha testada: {'*' * len(best_wfdb02['password'])}")
 
         print(f"\n   3. 🔄 Atualizar arquivos de configuração:")
-        print(f"      - config/source_config.json")
-        print(f"      - config/destination_config.json")
+        print(f"      - secrets/postgresql_source_config.json")
+        print(f"      - secrets/postgresql_destination_config.json")
 
 def main():
     """Função principal."""
@@ -343,7 +346,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
-    from base_component import UtilityComponent, ComponentResult, component_method
+    from components.base_component import UtilityComponent, ComponentResult, component_method
 except ImportError:
     # Fallback se base_component não estiver disponível
     class UtilityComponent:
@@ -382,11 +385,15 @@ class UserDiscoverer(UtilityComponent):
         try:
             self.log_info(f"Descobrindo usuários em {server_name}...")
 
+            # Usar normalização de configuração
+            from components.config_normalizer import normalize_server_config
+            norm_config = normalize_server_config(server_config)
+
             # Usar função existente
-            users_found = discover_users(
-                server_config['host'],
-                server_config['port'],
-                server_config['ssl_mode'],
+            users_found = test_user_combinations(
+                norm_config['host'],
+                norm_config['port'],
+                norm_config['ssl_mode'],
                 server_config.get('possible_users', [])
             )
 
@@ -430,14 +437,14 @@ class UserDiscoverer(UtilityComponent):
                 source_result = self.discover_server_users(source_config, "origem")
                 all_results["origem"] = source_result
                 if source_result.success:
-                    total_users += source_result.data.get("users_count", 0)
+                    total_users += source_result.data.get("users_count", 0) if source_result.data else 0
 
             # Descobrir no servidor destino
             if dest_config:
                 dest_result = self.discover_server_users(dest_config, "destino")
                 all_results["destino"] = dest_result
                 if dest_result.success:
-                    total_users += dest_result.data.get("users_count", 0)
+                    total_users += dest_result.data.get("users_count", 0) if dest_result.data else 0
 
             success = any(result.success for result in all_results.values())
 

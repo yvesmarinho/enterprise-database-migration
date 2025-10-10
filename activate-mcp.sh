@@ -1,12 +1,31 @@
 #!/bin/bash
 
 # Script para ativar o contexto MCP no projeto de migração PostgreSQL
-# Usage: ./activate-mcp.sh
+# Usage: ./activate-mcp.sh OU source ./activate-mcp.sh
 
-set -e
+# Detectar se está sendo executado via source
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    # Executado diretamente - pode usar exit
+    SOURCED=false
+    set -e
+else
+    # Executado via source - não pode usar exit
+    SOURCED=true
+    set -e
+fi
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MCP_FILE="$PROJECT_ROOT/.vscode/mcp.json"
+
+# Função para sair adequadamente dependendo do modo de execução
+safe_exit() {
+    if [ "$SOURCED" = true ]; then
+        echo "❌ Erro detectado. Retornando ao terminal..."
+        return 1
+    else
+        exit 1
+    fi
+}
 
 echo "🚀 Ativando contexto MCP do PostgreSQL Migration System..."
 
@@ -14,14 +33,14 @@ echo "🚀 Ativando contexto MCP do PostgreSQL Migration System..."
 if [ ! -f "$MCP_FILE" ]; then
     echo "❌ Erro: Arquivo mcp.json não encontrado em .vscode/"
     echo "💡 Execute 'make build-mcp' primeiro"
-    exit 1
+    safe_exit
 fi
 
 # Validar JSON (se jq estiver disponível)
 if command -v jq >/dev/null 2>&1; then
     if ! jq . "$MCP_FILE" > /dev/null 2>&1; then
         echo "❌ Erro: Arquivo mcp.json contém JSON inválido"
-        exit 1
+        safe_exit
     fi
 else
     echo "⚠️  jq não encontrado - pulando validação JSON"
@@ -106,22 +125,65 @@ if [ $secrets_configured -eq 0 ]; then
     echo "💡 Execute: make setup-secrets"
 fi
 
-# Verificar dependências Python
+# Configurar ambiente Python
 echo ""
-echo "🐍 Verificando ambiente Python..."
+echo "🐍 Configurando ambiente Python..."
 
 if command -v python3 >/dev/null 2>&1; then
     PYTHON_VERSION=$(python3 --version 2>&1)
     echo "  ✅ $PYTHON_VERSION"
 else
     echo "  ❌ Python 3 não encontrado"
+    safe_exit
 fi
 
-if [ -d "$PROJECT_ROOT/venv" ]; then
-    echo "  ✅ Ambiente virtual encontrado (venv/)"
-else
+# Desativar ambiente virtual atual se houver
+if [ -n "$VIRTUAL_ENV" ]; then
+    echo "  🔄 Desativando ambiente virtual atual: $(basename $VIRTUAL_ENV)"
+    unset VIRTUAL_ENV
+    unset PYTHONPATH
+fi
+
+# Configurar ambiente virtual do projeto
+VENV_PATHS=(
+    "$PROJECT_ROOT/.venv"
+    "$PROJECT_ROOT/venv"
+)
+
+VENV_ACTIVATED=0
+for venv_path in "${VENV_PATHS[@]}"; do
+    if [ -d "$venv_path" ] && [ -f "$venv_path/bin/activate" ]; then
+        echo "  ✅ Ativando ambiente virtual: $venv_path"
+        source "$venv_path/bin/activate"
+        export VIRTUAL_ENV="$venv_path"
+        export PYTHONPATH="$PROJECT_ROOT:$PYTHONPATH"
+        VENV_ACTIVATED=1
+        break
+    fi
+done
+
+if [ $VENV_ACTIVATED -eq 0 ]; then
     echo "  ⚠️  Ambiente virtual não encontrado"
-    echo "     💡 Execute: make install-deps"
+    echo "     💡 Criando ambiente virtual com uv..."
+
+    if command -v uv >/dev/null 2>&1; then
+        cd "$PROJECT_ROOT"
+        uv venv
+        source ".venv/bin/activate"
+        export VIRTUAL_ENV="$PROJECT_ROOT/.venv"
+        export PYTHONPATH="$PROJECT_ROOT:$PYTHONPATH"
+        echo "  ✅ Ambiente virtual criado e ativado: $PROJECT_ROOT/.venv"
+    else
+        echo "     💡 Execute: make install-deps ou instale uv primeiro"
+    fi
+fi
+
+# Verificar se ambiente está ativo
+if [ -n "$VIRTUAL_ENV" ]; then
+    echo "  🎯 Ambiente ativo: $VIRTUAL_ENV"
+    echo "  📁 Python path: $PYTHONPATH"
+else
+    echo "  ❌ Nenhum ambiente virtual ativo"
 fi
 
 # Verificar se há logs ou relatórios
@@ -179,3 +241,17 @@ fi
 
 echo ""
 echo "🚀 Sistema pronto para uso!"
+echo ""
+
+if [ "$SOURCED" = true ]; then
+    echo "✅ Ambiente configurado no terminal atual!"
+    echo "🎯 Agora você pode usar diretamente:"
+    echo "   python main.py status"
+    echo "   uv run main.py status"
+else
+    echo "🔧 Para aplicar as configurações no terminal atual, execute:"
+    echo "   source ./activate-mcp.sh"
+    echo ""
+    echo "🎯 Ou simplesmente use uv que gerencia automaticamente:"
+    echo "   uv run main.py status"
+fi
