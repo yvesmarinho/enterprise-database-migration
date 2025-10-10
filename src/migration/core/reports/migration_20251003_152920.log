@@ -1,0 +1,7 @@
+2025-10-03 15:29:20,457 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 15:29:20,457 | ERROR    | migration | [module_manager] Falha ao carregar sqlalchemy_migration: No module named 'src.migration.core.sqlalchemy_migration'
+2025-10-03 15:29:20,457 | ERROR    | migration | [module_manager] Falha ao carregar scram_checker: No module named 'src.migration.validation'
+2025-10-03 15:29:20,458 | ERROR    | migration | [module_manager] Falha ao carregar connection_tester: No module named 'src.migration.validation'
+2025-10-03 15:29:20,458 | ERROR    | migration | [module_manager] Falha ao carregar user_discoverer: No module named 'src.migration.utils'
+2025-10-03 15:29:20,458 | ERROR    | migration | [module_manager] Falha ao carregar password_analyzer: No module named 'src.migration.utils'
+2025-10-03 15:29:20,458 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_152920

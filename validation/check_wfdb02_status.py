@@ -25,7 +25,8 @@ from datetime import datetime
 
 def load_config():
     """Carrega configuração do servidor destino."""
-    config_path = "config/destination_config.json"
+    from components.config_manager import get_db_config_path
+    config_path = get_db_config_path('postgresql_destination_config')
     try:
         with open(config_path, 'r', encoding='utf-8') as f:
             return json.load(f)

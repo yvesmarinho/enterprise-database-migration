@@ -123,12 +123,12 @@ migrate: migrate-interactive ## Migração padrão (interativa)
 
 migrate-interactive: ## Migração interativa
 	@echo "$(YELLOW)🔄 Iniciando migração interativa...$(NC)"
-	@$(VENV_PYTHON) run_migration.py || $(PYTHON) run_migration.py
+	@$(VENV_PYTHON) cli/run_migration.py || $(PYTHON) cli/run_migration.py
 	@echo "$(GREEN)✅ Migração interativa concluída$(NC)"
 
 migrate-auto: ## Migração automática
 	@echo "$(YELLOW)🤖 Iniciando migração automática...$(NC)"
-	@$(VENV_PYTHON) run_migration.py --auto --verbose || $(PYTHON) run_migration.py --auto --verbose
+	@$(VENV_PYTHON) cli/run_migration.py --auto --verbose || $(PYTHON) cli/run_migration.py --auto --verbose
 	@echo "$(GREEN)✅ Migração automática concluída$(NC)"
 
 migrate-parallel: ## Migração paralela

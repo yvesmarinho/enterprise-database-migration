@@ -24,7 +24,9 @@ from datetime import datetime
 def load_destination_config():
     """Carrega apenas a configuração do servidor destino."""
     try:
-        with open('config/destination_config.json', 'r', encoding='utf-8') as f:
+        from components.config_manager import get_db_config_path
+        dest_config_path = get_db_config_path('postgresql_destination_config')
+        with open(dest_config_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
         print(f"❌ Erro ao carregar configuração: {e}")

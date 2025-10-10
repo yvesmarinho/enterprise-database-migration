@@ -27,14 +27,18 @@ import re
 
 # Importar módulo base
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from base_component import ValidationComponent, ComponentResult, component_method
+from components.base_component import ValidationComponent, ComponentResult, component_method
 
 def load_configs():
     """Carrega configurações de ambos os servidores."""
     try:
-        with open('config/source_config.json', 'r', encoding='utf-8') as f:
+        from components.config_manager import get_db_config_path
+        source_config_path = get_db_config_path('source_config')
+        with open(source_config_path, 'r', encoding='utf-8') as f:
             source = json.load(f)
-        with open('config/destination_config.json', 'r', encoding='utf-8') as f:
+        from components.config_manager import get_db_config_path
+        dest_config_path = get_db_config_path('postgresql_destination_config')
+        with open(dest_config_path, 'r', encoding='utf-8') as f:
             destination = json.load(f)
         return source, destination
     except Exception as e:

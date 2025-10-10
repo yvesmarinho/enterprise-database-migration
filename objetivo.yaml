@@ -17,6 +17,7 @@ prompt:
           - "Templates de configuração devem estar disponíveis para diferentes ambientes"
           - "Sistema deve suportar migrações incrementais e completas"
           - "Validação de performance deve ser executada após migração"
+          - "CRÍTICO: Sistema deve aplicar privilégios corretamente (BUG identificado 03/10/2025)"
     hardware_specification:
       minimum_requirements:
         - "Servidor com pelo menos 16GB de RAM (desenvolvimento)"

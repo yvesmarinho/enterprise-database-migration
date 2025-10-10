@@ -64,15 +64,18 @@ class PostgreSQLCleanup:
     def connect(self) -> bool:
         """Conecta ao servidor PostgreSQL."""
         try:
-            # Construir URL de conexão
+            # Construir URL de conexão usando nova estrutura JSON
+            server_config = self.config['server']
+            auth_config = self.config['authentication']
+
             connection_url = (
-                f"postgresql://{self.config['possible_users'][0]['username']}:"
-                f"{self.config['possible_users'][0]['password']}@"
-                f"{self.config['host']}:{self.config['port']}/postgres"
-                f"?sslmode={self.config['ssl_mode']}"
+                f"postgresql://{auth_config['user']}:"
+                f"{auth_config['password']}@"
+                f"{server_config['host']}:{server_config['port']}/postgres"
+                f"?sslmode={server_config['ssl_mode']}"
             )
 
-            logger.info(f"🔌 Conectando ao {self.server_name} ({self.config['host']}:{self.config['port']})...")
+            logger.info(f"🔌 Conectando ao {self.server_name} ({server_config['host']}:{server_config['port']})...")
 
             self.engine = create_engine(
                 connection_url,
@@ -392,20 +395,22 @@ class PostgreSQLCleanup:
 def log_success(msg):
     logger.info(f"✅ {msg}")
 
-logger.success = log_success
+# Anexar método success ao logger de forma compatível
+if not hasattr(logger, 'success'):
+    setattr(logger, 'success', log_success)
 
 def load_server_config(server_name: str) -> Optional[Dict]:
     """Carrega configuração de servidor."""
     config_map = {
-        'origem': 'source_config.json',
-        'destino': 'destination_config.json'
+        'origem': 'postgresql_source_config.json',
+        'destino': 'postgresql_destination_config.json'
     }
 
     if server_name not in config_map:
         logger.error(f"❌ Servidor inválido: {server_name}")
         return None
 
-    config_file = Path("src/migration/config") / config_map[server_name]
+    config_file = Path("/home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-migration/secrets") / config_map[server_name]
 
     if not config_file.exists():
         logger.error(f"❌ Arquivo de configuração não encontrado: {config_file}")
@@ -537,8 +542,8 @@ Exemplos de uso:
         if config:
             servers_info.append({
                 'name': server_name,
-                'host': config['host'],
-                'port': config['port']
+                'host': config['server']['host'],
+                'port': config['server']['port']
             })
 
     # Confirmar ação

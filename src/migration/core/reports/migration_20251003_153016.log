@@ -1,0 +1,7 @@
+2025-10-03 15:30:16,683 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 15:30:17,273 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 15:30:17,308 | ERROR    | migration | [module_manager] Falha ao carregar scram_checker: No module named 'base_component'
+2025-10-03 15:30:17,407 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 15:30:17,410 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 15:30:17,411 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 15:30:17,412 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_153016

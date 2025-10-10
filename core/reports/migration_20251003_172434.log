@@ -1,0 +1,12 @@
+2025-10-03 17:24:34,766 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 17:24:34,895 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 17:24:34,901 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 17:24:34,915 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 17:24:34,918 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 17:24:34,918 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 17:24:34,919 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_172434
+2025-10-03 17:24:38,664 | INFO     | migration | [step.load_configurations] 🚀 Iniciando: Carregar configurações de migração
+2025-10-03 17:24:38,664 | INFO     | migration | [config] Regras carregadas: 3 seções
+2025-10-03 17:24:38,664 | INFO     | migration | [config] Configurações de servidor carregadas: 0/2
+2025-10-03 17:24:38,664 | INFO     | migration | [step.load_configurations] ✅ Concluído: Carregar configurações de migração (0.00s)
+2025-10-03 17:24:47,664 | INFO     | migration | [orchestrator] ❌ Migração cancelada pelo usuário

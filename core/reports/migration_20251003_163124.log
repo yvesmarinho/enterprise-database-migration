@@ -1,0 +1,23 @@
+2025-10-03 16:31:24,693 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 16:31:24,822 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 16:31:24,829 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 16:31:24,843 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 16:31:24,843 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 16:31:24,844 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 16:31:24,844 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_163124
+2025-10-03 16:31:32,164 | INFO     | migration | [orchestrator] 📊 Executando análise detalhada (dry-run)...
+2025-10-03 16:31:32,165 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 16:31:32,165 | INFO     | migration | [environment] Python 3.13.3
+2025-10-03 16:31:32,165 | INFO     | migration | [step.validate_environment] ✅ Concluído: Validar ambiente e dependências (0.00s)
+2025-10-03 16:31:32,165 | INFO     | migration | [step.load_configurations] 🚀 Iniciando: Carregar configurações de migração
+2025-10-03 16:31:32,165 | INFO     | migration | [config] Regras carregadas: 3 seções
+2025-10-03 16:31:32,165 | INFO     | migration | [config] Configurações de servidor carregadas: 0/2
+2025-10-03 16:31:32,166 | INFO     | migration | [step.load_configurations] ✅ Concluído: Carregar configurações de migração (0.00s)
+2025-10-03 16:31:32,166 | INFO     | migration | [step.check_modules] 🚀 Iniciando: Verificar módulos carregados
+2025-10-03 16:31:32,166 | INFO     | migration | [module_manager] Todos os módulos carregados com sucesso
+2025-10-03 16:31:32,166 | INFO     | migration | [step.check_modules] ✅ Concluído: Verificar módulos carregados (0.00s)
+2025-10-03 16:31:32,166 | INFO     | migration | [step.test_connectivity] 🚀 Iniciando: Testar conectividade com servidores
+2025-10-03 16:31:32,166 | INFO     | migration | [connectivity] Testando conectividade com servidores...
+2025-10-03 16:31:32,166 | INFO     | migration | [connectivity] Usando métodos reais do SQLAlchemy migrator
+2025-10-03 16:31:37,703 | INFO     | migration | [connectivity] Conectividade real testada com sucesso
+2025-10-03 16:31:37,703 | INFO     | migration | [step.test_connectivity] ✅ Concluído: Testar conectividade com servidores (5.54s)

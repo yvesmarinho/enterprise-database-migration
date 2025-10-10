@@ -1,71 +1,21 @@
 # Dependências do PostgreSQL Migration System
+# ============================================
+# Apenas dependências realmente utilizadas no código
 
 # Core PostgreSQL dependencies
-asyncpg==0.29.0
-psycopg2-binary==2.9.9
-SQLAlchemy==2.0.23
-sqlalchemy[asyncio]==2.0.23
+psycopg2-binary>=2.9.7
+SQLAlchemy>=2.0.23
 
-# CLI and utilities
-click==8.1.7
-rich==13.7.0
-typer==0.9.0
+# Terminal colors and formatting
+colorama>=0.4.6
+
+# MySQL connector (usado em alguns testes)
+mysql-connector-python>=8.1.0
 
 # Configuration and serialization
-PyYAML==6.0.1
-python-dotenv==1.0.0
-pydantic==2.5.2
-pydantic-settings==2.1.0
+jsonschema>=4.20.0
 
-# Monitoring and logging
-prometheus-client==0.19.0
-structlog==23.2.0
-colorlog==6.8.0
-
-# Data validation and processing
-pandas==2.1.4
-numpy==1.26.2
-jsonschema==4.20.0
-
-# Testing
-pytest==7.4.4
-pytest-asyncio==0.21.1
-pytest-cov==4.1.0
-pytest-mock==3.12.0
-
-# Code quality
-black==23.12.1
-isort==5.13.2
-flake8==6.1.0
-pylint==3.0.3
-mypy==1.8.0
-
-# Development tools
-ipython==8.18.1
-jupyter==1.0.0
-pre-commit==3.6.0
-
-# Performance monitoring
-psutil==5.9.6
-memory-profiler==0.61.0
-
-# HTTP client for APIs
-httpx==0.25.2
-aiohttp==3.9.1
-
-# Date and time handling
-python-dateutil==2.8.2
-pytz==2023.3
-
-# Security
-cryptography==41.0.8
-bcrypt==4.1.2
-
-# Optional: FastAPI for web dashboard
-fastapi==0.104.1
-uvicorn==0.24.0
-jinja2==3.1.2
-
-# Optional: Redis for caching
-redis==5.0.1
-aioredis==2.0.1
+# Optional development dependencies (descomente se necessário):
+# pytest>=7.4.4        # Para testes
+# black>=23.12.1        # Para formatação de código
+# flake8>=6.1.0         # Para linting

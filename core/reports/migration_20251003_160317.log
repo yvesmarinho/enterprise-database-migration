@@ -1,0 +1,12 @@
+2025-10-03 16:03:17,525 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 16:03:17,658 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 16:03:17,665 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 16:03:17,679 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 16:03:17,679 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 16:03:17,679 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 16:03:17,680 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_160317
+2025-10-03 16:03:19,554 | INFO     | migration | [step.test_connectivity] 🚀 Iniciando: Testar conectividade com servidores
+2025-10-03 16:03:19,554 | INFO     | migration | [connectivity] Testando conectividade com servidores...
+2025-10-03 16:03:19,554 | INFO     | migration | [connectivity] Usando métodos reais do SQLAlchemy migrator
+2025-10-03 16:03:25,537 | INFO     | migration | [connectivity] Conectividade real testada com sucesso
+2025-10-03 16:03:25,538 | INFO     | migration | [step.test_connectivity] ✅ Concluído: Testar conectividade com servidores (5.98s)

@@ -1,0 +1,10 @@
+2025-10-03 15:35:22,968 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 15:35:23,092 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 15:35:23,101 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 15:35:23,114 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 15:35:23,115 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 15:35:23,115 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 15:35:23,115 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_153522
+2025-10-03 15:35:25,792 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 15:35:25,793 | INFO     | migration | [environment] Python 3.13.3
+2025-10-03 15:35:25,793 | INFO     | migration | [step.validate_environment] ✅ Concluído: Validar ambiente e dependências (0.00s)

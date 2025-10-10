@@ -1,0 +1,10 @@
+2025-10-03 16:03:13,338 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 16:03:13,464 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 16:03:13,471 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 16:03:13,484 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 16:03:13,485 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 16:03:13,485 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 16:03:13,485 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_160313
+2025-10-03 16:03:15,146 | INFO     | migration | [step.check_modules] 🚀 Iniciando: Verificar módulos carregados
+2025-10-03 16:03:15,146 | INFO     | migration | [module_manager] Todos os módulos carregados com sucesso
+2025-10-03 16:03:15,147 | INFO     | migration | [step.check_modules] ✅ Concluído: Verificar módulos carregados (0.00s)
