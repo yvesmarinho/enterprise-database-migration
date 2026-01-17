@@ -1,0 +1,365 @@
+dashboard  | Warning: environ value jdk-21.0.9+10 for key :java-version has been overwritten with 21.0.9
+dashboard  | 2026-01-16 23:10:53,573 INFO metabase.util :: Maximum memory available to JVM: 7.8 GB 
+dashboard  | 2026-01-16 23:10:58,511 INFO util.encryption :: Saved credentials encryption is DISABLED for this Metabase instance. 🔓 
+dashboard  |  For more information, see https://metabase.com/docs/latest/operations-guide/encrypting-database-details-at-rest.html 
+dashboard  | 2026-01-16 23:11:24,795 INFO driver.impl :: [34mRegistered abstract driver :sql[0m  🚚 
+dashboard  | 2026-01-16 23:11:24,917 INFO driver.impl :: [34mRegistered abstract driver :sql-jdbc[0m (parents: [:sql]) 🚚 
+dashboard  | 2026-01-16 23:11:24,958 INFO driver.impl :: [34mRegistered driver :h2[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:25,077 INFO driver.impl :: [34mRegistered driver :mysql[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:25,155 INFO driver.impl :: [34mRegistered driver :postgres[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:27,064 INFO core.core :: 
+dashboard  | Metabase v0.56.19.1 (3986512) 
+dashboard  | 
+dashboard  | Copyright © 2026 Metabase, Inc. 
+dashboard  | 
+dashboard  | Metabase Enterprise Edition extensions are NOT PRESENT. 
+dashboard  | 2026-01-16 23:11:27,073 INFO core.core :: Starting Metabase in STANDALONE mode 
+dashboard  | 2026-01-16 23:11:27,584 INFO server.instance :: Launching Embedded Jetty Webserver with config:
+dashboard  |  {:port 3000, :host "0.0.0.0"}
+dashboard  |  
+dashboard  | 2026-01-16 23:11:27,785 INFO core.core :: Starting Metabase version v0.56.19.1 (3986512) ... 
+dashboard  | 2026-01-16 23:11:27,789 INFO core.core :: System info:
+dashboard  |  {"file.encoding" "UTF-8",
+dashboard  |  "java.runtime.name" "OpenJDK Runtime Environment",
+dashboard  |  "java.runtime.version" "21.0.9+10-LTS",
+dashboard  |  "java.vendor" "Eclipse Adoptium",
+dashboard  |  "java.vendor.url" "https://adoptium.net/",
+dashboard  |  "java.version" "21.0.9",
+dashboard  |  "java.vm.name" "OpenJDK 64-Bit Server VM",
+dashboard  |  "java.vm.version" "21.0.9+10-LTS",
+dashboard  |  "os.name" "Linux",
+dashboard  |  "os.version" "6.1.0-37-amd64",
+dashboard  |  "user.language" "en",
+dashboard  |  "user.timezone" "GMT"}
+dashboard  |  
+dashboard  | 2026-01-16 23:11:27,802 INFO plugins.impl :: Loading plugins in /plugins... 
+dashboard  | 2026-01-16 23:11:27,960 INFO util.files :: Extract file /modules/starburst.metabase-driver.jar -> /plugins/starburst.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:28,153 INFO util.files :: Extract file /modules/athena.metabase-driver.jar -> /plugins/athena.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:28,572 INFO util.files :: Extract file /modules/sqlserver.metabase-driver.jar -> /plugins/sqlserver.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:28,602 INFO util.files :: Extract file /modules/snowflake.metabase-driver.jar -> /plugins/snowflake.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:29,557 INFO util.files :: Extract file /modules/presto-jdbc.metabase-driver.jar -> /plugins/presto-jdbc.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:29,658 INFO analytics.prometheus :: Running prometheus metrics without a webserver 
+dashboard  | 2026-01-16 23:11:29,659 INFO analytics.prometheus :: Starting prometheus metrics collector 
+dashboard  | 2026-01-16 23:11:29,753 INFO util.files :: Extract file /modules/redshift.metabase-driver.jar -> /plugins/redshift.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:29,783 INFO util.files :: Extract file /modules/sparksql.metabase-driver.jar -> /plugins/sparksql.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:29,788 INFO util.files :: Extract file /modules/databricks.metabase-driver.jar -> /plugins/databricks.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:29,835 ERROR middleware.log :: [31mHEAD /api/health 503 17ms (0 DB calls) {:metabase-user-id nil}[0m 
+dashboard  | 2026-01-16 23:11:30,076 INFO util.files :: Extract file /modules/druid-jdbc.metabase-driver.jar -> /plugins/druid-jdbc.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:30,167 INFO util.files :: Extract file /modules/oracle.metabase-driver.jar -> /plugins/oracle.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:30,174 INFO util.files :: Extract file /modules/clickhouse.metabase-driver.jar -> /plugins/clickhouse.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:30,213 INFO util.files :: Extract file /modules/bigquery-cloud-sdk.metabase-driver.jar -> /plugins/bigquery-cloud-sdk.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:30,657 INFO util.files :: Extract file /modules/hive-like.metabase-driver.jar -> /plugins/hive-like.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:31,178 INFO util.files :: Extract file /modules/sqlite.metabase-driver.jar -> /plugins/sqlite.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:31,263 INFO util.files :: Extract file /modules/druid.metabase-driver.jar -> /plugins/druid.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:31,274 INFO util.files :: Extract file /modules/vertica.metabase-driver.jar -> /plugins/vertica.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:31,278 INFO util.files :: Extract file /modules/mongo.metabase-driver.jar -> /plugins/mongo.metabase-driver.jar 
+dashboard  | 2026-01-16 23:11:31,721 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :bigquery-cloud-sdk...[0m 
+dashboard  | 2026-01-16 23:11:31,733 INFO driver.impl :: [34mRegistered driver :bigquery-cloud-sdk[0m (parents: [:sql]) 🚚 
+dashboard  | 2026-01-16 23:11:31,768 INFO plugins.dependencies :: [31mMetabase cannot initialize plugin Metabase Oracle Driver due to required dependencies.[0m Metabase requires the Oracle JDBC driver in order to connect to Oracle databases, but we can't ship it as part of Metabase due to licensing restrictions. See https://metabase.com/docs/latest/administration-guide/databases/oracle.html for more details.
+dashboard  |  
+dashboard  | 2026-01-16 23:11:31,773 INFO plugins.dependencies :: Metabase Oracle Driver dependency {:class oracle.jdbc.OracleDriver} satisfied? false 
+dashboard  | 2026-01-16 23:11:31,775 INFO plugins.dependencies :: [33mPlugins with unsatisfied deps: ["Metabase Oracle Driver"][0m 
+dashboard  | 2026-01-16 23:11:31,788 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :redshift...[0m 
+dashboard  | 2026-01-16 23:11:31,789 INFO driver.impl :: [34mRegistered driver :redshift[0m (parents: [:postgres]) 🚚 
+dashboard  | 2026-01-16 23:11:31,800 INFO plugins.dependencies :: Plugin 'Metabase Spark SQL Driver' depends on plugin 'Metabase Hive Like Abstract Driver' 
+dashboard  | 2026-01-16 23:11:31,802 INFO plugins.dependencies :: Metabase Spark SQL Driver dependency {:plugin Metabase Hive Like Abstract Driver} satisfied? false 
+dashboard  | 2026-01-16 23:11:31,803 INFO plugins.dependencies :: [33mPlugins with unsatisfied deps: ["Metabase Oracle Driver" "Metabase Spark SQL Driver"][0m 
+dashboard  | 2026-01-16 23:11:31,828 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :snowflake...[0m 
+dashboard  | 2026-01-16 23:11:31,830 INFO driver.impl :: [34mRegistered driver :snowflake[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,841 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :druid-jdbc...[0m 
+dashboard  | 2026-01-16 23:11:31,843 INFO driver.impl :: [34mRegistered driver :druid-jdbc[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,848 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :sqlite...[0m 
+dashboard  | 2026-01-16 23:11:31,849 INFO driver.impl :: [34mRegistered driver :sqlite[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,856 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :druid...[0m 
+dashboard  | 2026-01-16 23:11:31,857 INFO driver.impl :: [34mRegistered driver :druid[0m  🚚 
+dashboard  | 2026-01-16 23:11:31,876 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :athena...[0m 
+dashboard  | 2026-01-16 23:11:31,878 INFO driver.impl :: [34mRegistered driver :athena[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,913 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :hive-like...[0m 
+dashboard  | 2026-01-16 23:11:31,914 INFO driver.impl :: [34mRegistered abstract driver :hive-like[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,915 INFO plugins.dependencies :: Metabase Spark SQL Driver dependency {:plugin Metabase Hive Like Abstract Driver} satisfied? true 
+dashboard  | 2026-01-16 23:11:31,916 DEBUG plugins.initialize :: [33mDependencies satisfied; these plugins will now be loaded: ["Metabase Spark SQL Driver"][0m 
+dashboard  | 2026-01-16 23:11:31,917 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :sparksql...[0m 
+dashboard  | 2026-01-16 23:11:31,917 INFO driver.impl :: [34mRegistered driver :sparksql[0m (parents: [:hive-like]) 🚚 
+dashboard  | 2026-01-16 23:11:31,935 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :mongo...[0m 
+dashboard  | 2026-01-16 23:11:31,936 INFO driver.impl :: [34mRegistered driver :mongo[0m  🚚 
+dashboard  | 2026-01-16 23:11:31,942 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :sqlserver...[0m 
+dashboard  | 2026-01-16 23:11:31,943 INFO driver.impl :: [34mRegistered driver :sqlserver[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,959 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :presto-jdbc...[0m 
+dashboard  | 2026-01-16 23:11:31,960 INFO driver.impl :: [34mRegistered driver :presto-jdbc[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:31,977 INFO plugins.dependencies :: Plugin 'Metabase Databricks Driver' depends on plugin 'Metabase Hive Like Abstract Driver' 
+dashboard  | 2026-01-16 23:11:31,978 INFO plugins.dependencies :: Metabase Databricks Driver dependency {:plugin Metabase Hive Like Abstract Driver} satisfied? true 
+dashboard  | 2026-01-16 23:11:31,979 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :databricks...[0m 
+dashboard  | 2026-01-16 23:11:31,979 INFO driver.impl :: [34mRegistered driver :databricks[0m (parents: [:hive-like]) 🚚 
+dashboard  | 2026-01-16 23:11:31,986 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :clickhouse...[0m 
+dashboard  | 2026-01-16 23:11:31,992 INFO driver.impl :: [34mRegistered driver :clickhouse[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:32,002 INFO plugins.dependencies :: [31mMetabase cannot initialize plugin Metabase Vertica Driver due to required dependencies.[0m Metabase requires the Vertica JDBC driver in order to connect to Vertica databases, but we can't ship it as part of Metabase due to licensing restrictions. See https://metabase.com/docs/latest/administration-guide/databases/vertica.html for more details.
+dashboard  |  
+dashboard  | 2026-01-16 23:11:32,002 INFO plugins.dependencies :: Metabase Vertica Driver dependency {:class com.vertica.jdbc.Driver} satisfied? false 
+dashboard  | 2026-01-16 23:11:32,003 INFO plugins.dependencies :: [33mPlugins with unsatisfied deps: ["Metabase Oracle Driver" "Metabase Vertica Driver"][0m 
+dashboard  | 2026-01-16 23:11:32,106 DEBUG plugins.lazy-loaded-driver :: [35mRegistering lazy loading driver :starburst...[0m 
+dashboard  | 2026-01-16 23:11:32,107 INFO driver.impl :: [34mRegistered driver :starburst[0m (parents: [:sql-jdbc]) 🚚 
+dashboard  | 2026-01-16 23:11:32,146 INFO core.core :: Setting up and migrating Metabase DB. Please sit tight, this may take a minute... 
+dashboard  | 2026-01-16 23:11:32,160 INFO app-db.setup :: [36mVerifying postgres Database Connection ...[0m 
+dashboard  | 2026-01-16 23:11:32,229 INFO app-db.setup :: Successfully verified PostgreSQL 16.10 (Debian 16.10-1.pgdg12+1) application database connection. ✅ 
+dashboard  | 2026-01-16 23:11:32,230 INFO app-db.setup :: [36mChecking if a database downgrade is required...[0m 
+dashboard  | 2026-01-16 23:11:32,591 INFO liquibase.database :: Set default schema name to public 
+dashboard  | 2026-01-16 23:11:32,890 INFO liquibase.changelog :: Reading resource: migrations/001_update_migrations.yaml 
+dashboard  | 2026-01-16 23:11:33,067 WARN yaml.YamlChangeLogParser$CustomSafeConstructor :: duplicate keys found : sql 
+dashboard  | 2026-01-16 23:11:34,419 INFO liquibase.changelog :: Reading resource: migrations/056_update_migrations.yaml 
+dashboard  | 2026-01-16 23:11:34,474 INFO liquibase :: Parsed changelog file 'liquibase.yaml' 
+dashboard  | 2026-01-16 23:11:34,787 INFO app-db.setup :: Running Database Migrations... 
+dashboard  | 2026-01-16 23:11:34,789 INFO app-db.setup :: Setting up Liquibase... 
+dashboard  | 2026-01-16 23:11:34,967 INFO liquibase.database :: Set default schema name to public 
+dashboard  | 2026-01-16 23:11:34,974 INFO liquibase.changelog :: Reading resource: migrations/001_update_migrations.yaml 
+dashboard  | 2026-01-16 23:11:35,122 WARN yaml.YamlChangeLogParser$CustomSafeConstructor :: duplicate keys found : sql 
+dashboard  | 2026-01-16 23:11:35,454 INFO liquibase.changelog :: Reading resource: migrations/056_update_migrations.yaml 
+dashboard  | 2026-01-16 23:11:35,489 INFO liquibase :: Parsed changelog file 'liquibase.yaml' 
+dashboard  | 2026-01-16 23:11:35,582 INFO app-db.liquibase :: Updating liquibase table to reflect consolidated changeset filenames 
+dashboard  | 2026-01-16 23:11:35,625 INFO liquibase.logging :: Successfully acquired change log lock 
+dashboard  | 2026-01-16 23:11:35,625 INFO app-db.liquibase :: No migration lock found. 
+dashboard  | 2026-01-16 23:11:35,625 INFO app-db.liquibase :: Migration lock acquired. 
+dashboard  | 2026-01-16 23:11:35,698 INFO liquibase.logging :: Successfully released change log lock 
+dashboard  | 2026-01-16 23:11:35,701 INFO app-db.setup :: Liquibase is ready. 
+dashboard  | 2026-01-16 23:11:35,702 INFO app-db.liquibase :: Checking if Database has unrun migrations... 
+dashboard  | 2026-01-16 23:11:35,771 INFO liquibase.database :: Set default schema name to public 
+dashboard  | 2026-01-16 23:11:35,802 INFO liquibase.changelog :: Reading resource: migrations/001_update_migrations.yaml 
+dashboard  | 2026-01-16 23:11:35,869 WARN yaml.YamlChangeLogParser$CustomSafeConstructor :: duplicate keys found : sql 
+dashboard  | 2026-01-16 23:11:36,079 INFO liquibase.changelog :: Reading resource: migrations/056_update_migrations.yaml 
+dashboard  | 2026-01-16 23:11:36,105 INFO liquibase :: Parsed changelog file 'liquibase.yaml' 
+dashboard  | 2026-01-16 23:11:36,193 INFO liquibase.changelog :: Reading from "public"."databasechangelog" 
+dashboard  | 2026-01-16 23:11:37,134 INFO app-db.liquibase :: No unrun migrations found. 
+dashboard  | 2026-01-16 23:11:37,138 INFO app-db.setup :: Database Migrations Current ... ✅ 
+dashboard  | 2026-01-16 23:11:37,323 INFO metabase.util :: [32mDatabase setup took 5.2 s[0m 
+dashboard  | 2026-01-16 23:11:37,486 INFO core.core :: Setting up prometheus metrics 
+dashboard  | 2026-01-16 23:11:37,613 INFO impl.StdSchedulerFactory :: Using default implementation for ThreadExecutor 
+dashboard  | 2026-01-16 23:11:37,683 INFO core.SchedulerSignalerImpl :: Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+dashboard  | 2026-01-16 23:11:37,684 INFO core.QuartzScheduler :: Quartz Scheduler v.2.3.2 created. 
+dashboard  | 2026-01-16 23:11:37,687 INFO jdbcjobstore.JobStoreTX :: Using db table-based data access locking (synchronization). 
+dashboard  | 2026-01-16 23:11:37,693 INFO jdbcjobstore.JobStoreTX :: JobStoreTX initialized. 
+dashboard  | 2026-01-16 23:11:37,695 INFO core.QuartzScheduler :: Scheduler meta-data: Quartz Scheduler (v2.3.2) 'MetabaseScheduler' with instanceId '91fdf94c7c2d1768605097621'
+dashboard  |   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+dashboard  |   NOT STARTED.
+dashboard  |   Currently in standby mode.
+dashboard  |   Number of jobs executed: 0
+dashboard  |   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+dashboard  |   Using job-store 'org.quartz.impl.jdbcjobstore.JobStoreTX' - which supports persistence. and is clustered.
+dashboard  |  
+dashboard  | 2026-01-16 23:11:37,696 INFO impl.StdSchedulerFactory :: Quartz scheduler 'MetabaseScheduler' initialized from default resource file in Quartz package: 'quartz.properties' 
+dashboard  | 2026-01-16 23:11:37,696 INFO impl.StdSchedulerFactory :: Quartz scheduler version: 2.3.2 
+dashboard  | 2026-01-16 23:11:37,697 INFO core.QuartzScheduler :: Scheduler MetabaseScheduler_$_91fdf94c7c2d1768605097621 paused. 
+dashboard  | 2026-01-16 23:11:37,699 INFO core.QuartzScheduler :: JobFactory set to: metabase.task.job_factory$create$reify__55054@117affb9 
+dashboard  | 2026-01-16 23:11:37,703 INFO task.impl :: Task scheduler initialized into standby mode. 
+dashboard  | 2026-01-16 23:11:38,414 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.9 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,469 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.1 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,500 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.12 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,528 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.2 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,536 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.5 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,602 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.6 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,628 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.truncate-audit-tables.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,648 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.3 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,736 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.4 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,784 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.task-history-cleanup.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,813 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.9 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,863 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.search-index.reindex.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,958 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.6 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:38,990 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.10 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,093 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.5 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,160 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.4 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,195 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.refresh-channel-cache.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,274 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.sync-and-analyze.trigger.11 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,315 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.3 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,356 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.2 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,413 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.1 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,511 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.anonymous-stats.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,561 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.send-pulse.trigger.8.0_0_10_?_*_6_* reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,600 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.10 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,633 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.follow-up-emails.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,649 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.11 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,671 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.update-field-values.trigger.12 reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,687 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.creator-sentiment-emails.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,703 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.upgrade-checks.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,719 INFO jdbcjobstore.JobStoreTX :: Trigger DEFAULT.metabase.task.session-cleanup.trigger reset from ERROR state to: WAITING 
+dashboard  | 2026-01-16 23:11:39,727 INFO task.impl :: Initializing task [32mPersistPrune[0m 📆 
+dashboard  | 2026-01-16 23:11:39,794 INFO task.impl :: Initializing task [32mSyncDatabases[0m 📆 
+dashboard  | 2026-01-16 23:11:39,902 INFO task.sync-databases :: Updated default schedules for 0 databases 
+dashboard  | 2026-01-16 23:11:39,903 INFO task.impl :: Initializing task [32mTaskHistoryCleanup[0m 📆 
+dashboard  | 2026-01-16 23:11:40,044 INFO task.impl :: Initializing task [32mCheckForNewVersions[0m 📆 
+dashboard  | 2026-01-16 23:11:40,220 INFO task.impl :: Initializing task [32mSearchIndexReindex[0m 📆 
+dashboard  | 2026-01-16 23:11:40,380 INFO task.impl :: Initializing task [32mSendCreatorSentimentEmails[0m 📆 
+dashboard  | 2026-01-16 23:11:40,581 INFO task.impl :: Initializing task [32mModelIndexValues[0m 📆 
+dashboard  | 2026-01-16 23:11:40,605 INFO task.impl :: Initializing task [32mTruncateAuditTables[0m 📆 
+dashboard  | 2026-01-16 23:11:41,067 INFO task.impl :: Initializing task [32mSendPulses[0m 📆 
+dashboard  | 2026-01-16 23:11:41,516 INFO task.impl :: Initializing task [32mPersistRefresh[0m 📆 
+dashboard  | 2026-01-16 23:11:41,737 INFO driver.impl :: [33mInitializing driver :sql...[0m 
+dashboard  | 2026-01-16 23:11:41,738 INFO driver.impl :: [33mInitializing driver :sql-jdbc...[0m 
+dashboard  | 2026-01-16 23:11:41,738 INFO driver.impl :: [33mInitializing driver :mysql...[0m 
+dashboard  | 2026-01-16 23:11:41,833 INFO driver.impl :: [33mInitializing driver :h2...[0m 
+dashboard  | 2026-01-16 23:11:41,961 INFO driver.impl :: [33mInitializing driver :bigquery-cloud-sdk...[0m 
+dashboard  | 2026-01-16 23:11:41,965 INFO classloader.impl :: Added URL file:/plugins/bigquery-cloud-sdk.metabase-driver.jar to classpath 
+dashboard  | 2026-01-16 23:11:41,968 DEBUG plugins.init-steps :: [34mLoading plugin namespace metabase.driver.bigquery-cloud-sdk...[0m 
+dashboard  | 2026-01-16 23:11:42,280 INFO driver.impl :: [34mRegistered driver :bigquery-cloud-sdk[0m (parents: [:sql]) 🚚 
+dashboard  | 2026-01-16 23:11:42,332 INFO metabase.util :: [32m[35mLazy loading o driver :bigquery-cloud-sdk[0m took 363.9 ms[0m 
+dashboard  | 2026-01-16 23:11:42,426 INFO driver.impl :: [33mInitializing driver :postgres...[0m 
+dashboard  | 2026-01-16 23:11:42,632 INFO task.impl :: Initializing task [32mSendNotifications[0m 📆 
+dashboard  | 2026-01-16 23:11:43,151 INFO task.impl :: Initializing task [32mRefreshSlackChannelsAndUsers[0m 📆 
+dashboard  | 2026-01-16 23:11:43,398 INFO task.impl :: Initializing task [32mSendWarnPulseRemovalEmail[0m 📆 
+dashboard  | 2026-01-16 23:11:43,481 INFO task.impl :: Initializing task [32mSendAnonymousUsageStats[0m 📆 
+dashboard  | 2026-01-16 23:11:43,786 INFO task.impl :: Initializing task [32mSessionCleanup[0m 📆 
+dashboard  | 2026-01-16 23:11:43,903 INFO task.impl :: Initializing task [32mSendFollowUpEmails[0m 📆 
+dashboard  | 2026-01-16 23:11:44,336 INFO util.files :: File system at #object[java.net.URI 0x52917c71 jar:file:/app/metabase.jar!/sample-database.db.mv.db] already exists 
+dashboard  | 2026-01-16 23:11:44,390 INFO util.files :: Extract file /sample-database.db.mv.db -> /plugins/sample-database.db.mv.db 
+dashboard  | 2026-01-16 23:11:44,480 INFO notification.seed :: Seeding default notifications 
+dashboard  | 2026-01-16 23:11:45,086 INFO notification.seed :: Seeded notifications: {:skip 3} 
+dashboard  | 2026-01-16 23:11:45,118 INFO models.database :: [36mHealth check: queueing Pesquisas Politicas 121 {:id 2}[0m 
+dashboard  | 2026-01-16 23:11:45,125 INFO models.database :: [36mHealth check: queueing Survey {:id 3}[0m 
+dashboard  | 2026-01-16 23:11:45,126 INFO models.database :: [36mHealth check: queueing SDRPatriaCidadania {:id 9}[0m 
+dashboard  | 2026-01-16 23:11:45,127 INFO models.database :: [36mHealth check: queueing DW-Dialer {:id 5}[0m 
+dashboard  | 2026-01-16 23:11:45,129 INFO models.database :: [36mHealth check: queueing DW-Dialer-Paschoalotto {:id 6}[0m 
+dashboard  | 2026-01-16 23:11:45,130 INFO models.database :: [36mHealth check: queueing DW-PerfexCRM {:id 11}[0m 
+dashboard  | 2026-01-16 23:11:45,130 INFO models.database :: [36mHealth check: queueing DW-Journey {:id 4}[0m 
+dashboard  | 2026-01-16 23:11:45,130 INFO models.database :: [36mHealth check: queueing DW-Chat {:id 10}[0m 
+dashboard  | 2026-01-16 23:11:45,130 INFO models.database :: [36mHealth check: queueing Khomp {:id 12}[0m 
+dashboard  | 2026-01-16 23:11:45,134 INFO models.database :: [36mHealth check: checking Pesquisas Politicas 121 {:id 2}[0m 
+dashboard  | 2026-01-16 23:11:45,135 INFO startup.core :: Running setup logic [32mSearchIndexInit[0m ☑️ 
+dashboard  | 2026-01-16 23:11:45,187 INFO jdbcjobstore.JobStoreTX :: ClusterManager: detected 1 failed or restarted instances. 
+dashboard  | 2026-01-16 23:11:45,188 INFO jdbcjobstore.JobStoreTX :: ClusterManager: Scanning for instance "d7411ce3180a1761570300125"'s failed in-progress jobs. 
+dashboard  | 2026-01-16 23:11:45,209 INFO jdbcjobstore.JobStoreTX :: ClusterManager: ......Freed 1 acquired trigger(s). 
+dashboard  | 2026-01-16 23:11:45,256 INFO core.QuartzScheduler :: Scheduler MetabaseScheduler_$_91fdf94c7c2d1768605097621 started. 
+dashboard  | 2026-01-16 23:11:45,257 INFO task.impl :: Task scheduler started 
+dashboard  | 2026-01-16 23:11:45,268 INFO util.queue :: Starting listener [32msearch-index-update[0m with 1 threads 🎧 
+dashboard  | 2026-01-16 23:11:45,274 INFO core.core :: Metabase Initialization COMPLETE in 1.0 mins 
+dashboard  | 2026-01-16 23:11:45,301 INFO search.core :: Initializing search indexes 
+dashboard  | 2026-01-16 23:11:45,435 INFO jdbcjobstore.JobStoreTX :: Handling 16 trigger(s) that missed their scheduled fire-time. 
+dashboard  | 2026-01-16 23:11:45,566 INFO search.core :: Found existing search index, and using it. 
+dashboard  | 2026-01-16 23:11:46,697 INFO task.send-pulses :: Initializing SendPulse triggers for dashboard subscriptions {mb-quartz-job-type=InitSendPulseTriggers}
+dashboard  | 2026-01-16 23:11:46,839 INFO task.send :: Initializing SendNotification triggers {mb-quartz-job-type=InitNotificationTriggers}
+dashboard  | 2026-01-16 23:11:47,128 INFO task.refresh-slack-channel-user-cache :: Slack is not configured, not refreshing slack user/channel cache. {mb-quartz-job-type=RefreshCacheOnStartup}
+dashboard  | 2026-01-16 23:11:47,320 INFO models.database :: [32mHealth check: success Pesquisas Politicas 121 {:id 2}[0m 
+dashboard  | 2026-01-16 23:11:47,321 INFO models.database :: [36mHealth check: checking Survey {:id 3}[0m 
+dashboard  | 2026-01-16 23:11:49,357 INFO models.database :: [32mHealth check: success Survey {:id 3}[0m 
+dashboard  | 2026-01-16 23:11:49,359 INFO models.database :: [36mHealth check: checking SDRPatriaCidadania {:id 9}[0m 
+dashboard  | 2026-01-16 23:11:51,407 INFO models.database :: [32mHealth check: success SDRPatriaCidadania {:id 9}[0m 
+dashboard  | 2026-01-16 23:11:51,409 INFO models.database :: [36mHealth check: checking DW-Dialer {:id 5}[0m 
+dashboard  | 2026-01-16 23:11:51,491 INFO models.database :: [32mHealth check: success DW-Dialer {:id 5}[0m 
+dashboard  | 2026-01-16 23:11:51,495 INFO models.database :: [36mHealth check: checking DW-Dialer-Paschoalotto {:id 6}[0m 
+dashboard  | 2026-01-16 23:11:51,497 INFO driver.mysql :: You may need to add 'trustServerCertificate=true' to the additional connection options to connect with SSL. 
+dashboard  | 2026-01-16 23:12:00,171 INFO task.sync-databases :: Starting sync task for Database 3. {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:01,498 ERROR models.database :: [31mHealth check: failure with error DW-Dialer-Paschoalotto {:id 6 :reason exception :message Timed out after 10.0 s}[0m 
+dashboard  | java.util.concurrent.TimeoutException: Timed out after 10.0 s
+dashboard  | 	at metabase.util.jvm$deref_with_timeout.invokeStatic(jvm.clj:274)
+dashboard  | 	at metabase.util.jvm$deref_with_timeout.invoke(jvm.clj:266)
+dashboard  | 	at metabase.util.jvm$do_with_timeout.invokeStatic(jvm.clj:281)
+dashboard  | 	at metabase.util.jvm$do_with_timeout.invoke(jvm.clj:277)
+dashboard  | 	at metabase.warehouses.models.database$health_check_database_BANG_$fn__70124.invoke(database.clj:209)
+dashboard  | 	at clojure.lang.AFn.applyToHelper(AFn.java:152)
+dashboard  | 	at clojure.lang.AFn.applyTo(AFn.java:144)
+dashboard  | 	at clojure.core$apply.invokeStatic(core.clj:667)
+dashboard  | 	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+dashboard  | 	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+dashboard  | 	at clojure.lang.RestFn.invoke(RestFn.java:428)
+dashboard  | 	at clojure.lang.AFn.applyToHelper(AFn.java:156)
+dashboard  | 	at clojure.lang.RestFn.applyTo(RestFn.java:135)
+dashboard  | 	at clojure.core$apply.invokeStatic(core.clj:671)
+dashboard  | 	at clojure.core$bound_fn_STAR_$fn__5839.doInvoke(core.clj:2020)
+dashboard  | 	at clojure.lang.RestFn.invoke(RestFn.java:400)
+dashboard  | 	at clojure.lang.AFn.call(AFn.java:18)
+dashboard  | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+dashboard  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+dashboard  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+dashboard  | 	at java.base/java.lang.Thread.run(Unknown Source)
+dashboard  | 2026-01-16 23:12:01,539 INFO models.database :: [36mHealth check: checking DW-PerfexCRM {:id 11}[0m 
+dashboard  | 2026-01-16 23:12:01,848 ERROR models.database :: [31mHealth check: failure with error DW-PerfexCRM {:id 11 :reason exception :message Could not connect to address=(host=82.197.64.145)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)}[0m 
+dashboard  | java.sql.SQLTransientConnectionException: Could not connect to address=(host=82.197.64.145)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+dashboard  | 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:79)
+dashboard  | 	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:197)
+dashboard  | 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1395)
+dashboard  | 	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:635)
+dashboard  | 	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:150)
+dashboard  | 	at org.mariadb.jdbc.Driver.connect(Driver.java:89)
+dashboard  | 	at java.sql/java.sql.DriverManager.getConnection(Unknown Source)
+dashboard  | 	at java.sql/java.sql.DriverManager.getConnection(Unknown Source)
+dashboard  | 	at clojure.java.jdbc$get_driver_connection.invokeStatic(jdbc.clj:271)
+dashboard  | 	at clojure.java.jdbc$get_driver_connection.invoke(jdbc.clj:250)
+dashboard  | 	at clojure.java.jdbc$get_connection.invokeStatic(jdbc.clj:411)
+dashboard  | 	at clojure.java.jdbc$get_connection.invoke(jdbc.clj:274)
+dashboard  | 	at clojure.java.jdbc$db_query_with_resultset_STAR_.invokeStatic(jdbc.clj:1111)
+dashboard  | 	at clojure.java.jdbc$db_query_with_resultset_STAR_.invoke(jdbc.clj:1093)
+dashboard  | 	at clojure.java.jdbc$query.invokeStatic(jdbc.clj:1182)
+dashboard  | 	at clojure.java.jdbc$query.invoke(jdbc.clj:1144)
+dashboard  | 	at clojure.java.jdbc$query.invokeStatic(jdbc.clj:1160)
+dashboard  | 	at clojure.java.jdbc$query.invoke(jdbc.clj:1144)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$can_connect_with_spec_QMARK_.invokeStatic(connection.clj:368)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$can_connect_with_spec_QMARK_.invoke(connection.clj:365)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$can_connect_QMARK_$fn__95954.invoke(connection.clj:377)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$do_with_connection_spec_for_testing_connection$fn__95936.invoke(connection.clj:353)
+dashboard  | 	at metabase.driver.sql_jdbc.connection.ssh_tunnel$do_with_ssh_tunnel.invokeStatic(ssh_tunnel.clj:153)
+dashboard  | 	at metabase.driver.sql_jdbc.connection.ssh_tunnel$do_with_ssh_tunnel.invoke(ssh_tunnel.clj:142)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$do_with_connection_spec_for_testing_connection.invokeStatic(connection.clj:348)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$do_with_connection_spec_for_testing_connection.invoke(connection.clj:344)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$can_connect_QMARK_.invokeStatic(connection.clj:376)
+dashboard  | 	at metabase.driver.sql_jdbc.connection$can_connect_QMARK_.invoke(connection.clj:372)
+dashboard  | 	at metabase.driver.sql_jdbc$fn__98194.invokeStatic(sql_jdbc.clj:52)
+dashboard  | 	at metabase.driver.sql_jdbc$fn__98194.invoke(sql_jdbc.clj:50)
+dashboard  | 	at metabase.driver.mysql$fn__119229.invokeStatic(mysql.clj:159)
+dashboard  | 	at metabase.driver.mysql$fn__119229.invoke(mysql.clj:155)
+dashboard  | 	at clojure.lang.MultiFn.invoke(MultiFn.java:234)
+dashboard  | 	at metabase.warehouses.models.database$health_check_database_BANG_$fn__70124$fn__70125.invoke(database.clj:210)
+dashboard  | 	at clojure.core$binding_conveyor_fn$fn__5844.invoke(core.clj:2047)
+dashboard  | 	at clojure.lang.AFn.call(AFn.java:18)
+dashboard  | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+dashboard  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+dashboard  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+dashboard  | 	at java.base/java.lang.Thread.run(Unknown Source)
+dashboard  | Caused by: java.sql.SQLException: RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+dashboard  | 	at org.mariadb.jdbc.internal.com.send.authentication.CachingSha2PasswordPlugin.process(CachingSha2PasswordPlugin.java:189)
+dashboard  | 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:767)
+dashboard  | 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:571)
+dashboard  | 	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1390)
+dashboard  | 	... 37 more
+dashboard  | 2026-01-16 23:12:01,950 INFO models.database :: [36mHealth check: checking DW-Journey {:id 4}[0m 
+dashboard  | 2026-01-16 23:12:02,211 INFO sync.util :: [35mSTARTING: Sync metadata for mysql Database 3 ''Survey'' (free: 0.20G, total: 0.57G, ratio: 0.35)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:02,309 INFO models.database :: [32mHealth check: success DW-Journey {:id 4}[0m 
+dashboard  | 2026-01-16 23:12:02,320 INFO models.database :: [36mHealth check: checking DW-Chat {:id 10}[0m 
+dashboard  | 2026-01-16 23:12:02,727 INFO models.database :: [32mHealth check: success DW-Chat {:id 10}[0m 
+dashboard  | 2026-01-16 23:12:02,730 INFO models.database :: [36mHealth check: checking Khomp {:id 12}[0m 
+dashboard  | 2026-01-16 23:12:03,413 INFO models.database :: [32mHealth check: success Khomp {:id 12}[0m 
+dashboard  | 2026-01-16 23:12:03,778 INFO sql-jdbc.execute :: Obtaining a fresh resilient connection {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:04,464 INFO sync.describe-database :: "migrations": SELECT privileges confirmed {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:04,826 INFO sync.describe-database :: "SURVEYS": SELECT privileges confirmed {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:05,138 INFO sync.describe-database :: "SURVEYS_RESPONSES": SELECT privileges confirmed {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:05,867 INFO sync.util :: [35mSTARTING: step ''sync-dbms-version'' for mysql Database 3 ''Survey'' (free: 0.19G, total: 0.57G, ratio: 0.33)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:06,617 INFO sync.util :: [35mFINISHED: step ''sync-dbms-version'' for mysql Database 3 ''Survey'' (749.8 ms) (free: 0.18G, total: 0.57G, ratio: 0.32)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:06,618 INFO sync.util :: [35mSTARTING: step ''sync-timezone'' for mysql Database 3 ''Survey'' (free: 0.18G, total: 0.57G, ratio: 0.32)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,031 INFO sync-metadata.sync-timezone :: :mysql database 3 default timezone is "-03:00" {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,207 INFO sync.util :: [35mFINISHED: step ''sync-timezone'' for mysql Database 3 ''Survey'' (588.9 ms) (free: 0.18G, total: 0.57G, ratio: 0.32)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,215 INFO sync.util :: [35mSTARTING: step ''sync-tables'' for mysql Database 3 ''Survey'' (free: 0.18G, total: 0.57G, ratio: 0.32)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,405 INFO sync-metadata.tables :: Updating table metadata for Table 22 ''SURVEYS_RESPONSES'' {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,406 INFO sync-metadata.tables :: Updating table metadata for Table 23 ''SURVEYS'' {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,406 INFO sync-metadata.tables :: Updating table metadata for Table 21 ''migrations'' {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,612 INFO sync.util :: [35mFINISHED: step ''sync-tables'' for mysql Database 3 ''Survey'' (397.1 ms) (free: 0.17G, total: 0.57G, ratio: 0.29)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:07,613 INFO sync.util :: [35mSTARTING: step ''sync-fields'' for mysql Database 3 ''Survey'' (free: 0.17G, total: 0.57G, ratio: 0.29)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:11,573 INFO sync.util :: [35mFINISHED: step ''sync-fields'' for mysql Database 3 ''Survey'' (4.0 s) (free: 0.15G, total: 0.57G, ratio: 0.27)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:11,574 INFO sync.util :: [35mSTARTING: step ''sync-fks'' for mysql Database 3 ''Survey'' (free: 0.15G, total: 0.57G, ratio: 0.27)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,501 INFO sync.util :: [35mFINISHED: step ''sync-fks'' for mysql Database 3 ''Survey'' (926.7 ms) (free: 0.15G, total: 0.57G, ratio: 0.26)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,503 INFO sync.util :: [35mSTARTING: step ''sync-indexes'' for mysql Database 3 ''Survey'' (free: 0.15G, total: 0.57G, ratio: 0.26)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,640 INFO sync.util :: [35mFINISHED: step ''sync-indexes'' for mysql Database 3 ''Survey'' (136.5 ms) (free: 0.15G, total: 0.57G, ratio: 0.26)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,641 INFO sync.util :: [35mSTARTING: step ''sync-metabase-metadata'' for mysql Database 3 ''Survey'' (free: 0.15G, total: 0.57G, ratio: 0.26)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,760 INFO sync.util :: [35mFINISHED: step ''sync-metabase-metadata'' for mysql Database 3 ''Survey'' (111.6 ms) (free: 0.15G, total: 0.57G, ratio: 0.26)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,826 INFO sync.util :: [35mFINISHED: Sync metadata for mysql Database 3 ''Survey'' (10.6 s) (free: 0.14G, total: 0.57G, ratio: 0.25)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,834 INFO sync.util :: [35mSTARTING: Analyze data for mysql Database 3 ''Survey'' (free: 0.14G, total: 0.57G, ratio: 0.25)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:12,906 INFO sync.util :: [35mSTARTING: step ''fingerprint-fields'' for mysql Database 3 ''Survey'' (free: 0.14G, total: 0.57G, ratio: 0.25)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,097 INFO sync.analyze :: [34mfingerprint-fields Analyzed [*******···········································] 😞   14% Table 22 ''SURVEYS_RESPONSES''[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,116 INFO sync.analyze :: [34mfingerprint-fields Analyzed [**************····································] 😒   29% Table 23 ''SURVEYS''[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,169 INFO sync.util :: [35mFINISHED: step ''fingerprint-fields'' for mysql Database 3 ''Survey'' (260.8 ms) (free: 0.14G, total: 0.57G, ratio: 0.24)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,171 INFO sync.util :: [35mSTARTING: step ''classify-fields'' for mysql Database 3 ''Survey'' (free: 0.14G, total: 0.57G, ratio: 0.24)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,238 INFO sync.analyze :: [34mclassify-fields Analyzed [*********************·····························] 😐   43% Table 22 ''SURVEYS_RESPONSES''[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,256 INFO sync.analyze :: [34mclassify-fields Analyzed [****************************······················] 😌   57% Table 23 ''SURVEYS''[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,287 INFO sync.util :: [35mFINISHED: step ''classify-fields'' for mysql Database 3 ''Survey'' (114.2 ms) (free: 0.13G, total: 0.57G, ratio: 0.23)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,289 INFO sync.util :: [35mSTARTING: step ''classify-tables'' for mysql Database 3 ''Survey'' (free: 0.13G, total: 0.57G, ratio: 0.23)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,359 INFO sync.analyze :: [34mclassify-tables Analyzed [***********************************···············] 😋   71% Table 22 ''SURVEYS_RESPONSES''[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,361 INFO sync.analyze :: [34mclassify-tables Analyzed [******************************************········] 😊   86% Table 23 ''SURVEYS''[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,393 INFO sync.util :: [35mFINISHED: step ''classify-tables'' for mysql Database 3 ''Survey'' (103.8 ms) (free: 0.13G, total: 0.57G, ratio: 0.23)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:13,493 INFO sync.util :: [35mFINISHED: Analyze data for mysql Database 3 ''Survey'' (658.1 ms) (free: 0.13G, total: 0.57G, ratio: 0.22)[0m {mb-quartz-job-type=SyncAndAnalyzeDatabase}
+dashboard  | 2026-01-16 23:12:15,199 DEBUG middleware.log :: [32mHEAD /api/health 200 2ms (0 DB calls) App DB connections: 0/7 Jetty threads: 5/50 (3 idle, 0 queued) (44 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id nil}[0m 
+dashboard  | 2026-01-16 23:13:00,845 DEBUG middleware.log :: [32mHEAD /api/health 200 1ms (0 DB calls) App DB connections: 0/7 Jetty threads: 5/50 (3 idle, 0 queued) (44 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id nil}[0m 
+dashboard  | 2026-01-16 23:13:46,023 DEBUG middleware.log :: [32mHEAD /api/health 200 2ms (0 DB calls) App DB connections: 0/7 Jetty threads: 5/50 (3 idle, 0 queued) (41 total active threads) Queries in flight: 0 (0 queued) {:metabase-user-id nil}[0m 

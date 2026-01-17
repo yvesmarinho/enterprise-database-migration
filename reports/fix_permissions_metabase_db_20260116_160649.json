@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-01-16T16:06:45.848220",
+  "database_name": "metabase_db",
+  "database_info": {
+    "name": "metabase_db",
+    "exists": true,
+    "owner": "postgres",
+    "encoding": "UTF8",
+    "tablespace": "ts_enterprise_data",
+    "size": "145 MB",
+    "total_tables": 9,
+    "total_schemas": 0
+  },
+  "expected_users": [
+    "metabase_db_user",
+    "metabase_db_readonly"
+  ],
+  "user_permissions": {
+    "metabase_db_user": {
+      "username": "metabase_db_user",
+      "exists": false,
+      "can_login": false,
+      "is_superuser": false,
+      "connect_privilege": false,
+      "usage_on_schema": false,
+      "tables_with_select": 0,
+      "tables_with_insert": 0,
+      "tables_with_update": 0,
+      "tables_with_delete": 0,
+      "total_tables": 9,
+      "missing_permissions": [
+        "USER_NOT_EXISTS"
+      ]
+    },
+    "metabase_db_readonly": {
+      "username": "metabase_db_readonly",
+      "exists": false,
+      "can_login": false,
+      "is_superuser": false,
+      "connect_privilege": false,
+      "usage_on_schema": false,
+      "tables_with_select": 0,
+      "tables_with_insert": 0,
+      "tables_with_update": 0,
+      "tables_with_delete": 0,
+      "total_tables": 9,
+      "missing_permissions": [
+        "USER_NOT_EXISTS"
+      ]
+    }
+  },
+  "fixes_applied": [],
+  "summary": "An\u00e1lise conclu\u00edda. 0 corre\u00e7\u00f5es aplicadas (0 sucesso, 0 falhas)"
+}

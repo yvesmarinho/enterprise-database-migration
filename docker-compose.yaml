@@ -1,0 +1,47 @@
+# ======================================================
+# Modelo de docker-compose para utilização com o Traefik
+# ======================================================
+# Modifications.....:
+# Date          Rev    Author            Description
+# 27/08/2024    0      Yves Marinho      Elaboração
+# 04/05/2025    0      Vanderson Andrade atualizando versao Metabase 0.52.9 => 0.54.5 
+# 20/05/2025    0      Vanderson Andrade atualizando versao Metabase 0.54.5 => 0.54.9 
+# ======================================================
+services:
+  metabase:
+    image: metabase/metabase:latest
+    container_name: "dashboard"
+    volumes:
+      - /dev/urandom:/dev/random:ro
+    healthcheck:
+      test: curl --fail -I http://localhost:3000/api/health || exit 1
+      interval: 45s
+      timeout: 5s
+      retries: 5
+    env_file:
+      - .env
+    ports:
+      - "3002:3000"
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.dashboard.rule=Host(`dashboard.vya.digital`)'
+      - 'traefik.http.routers.dashboard.tls=true'
+      - 'traefik.http.routers.dashboard.entrypoints=websecure'
+      - 'traefik.http.routers.dashboard.tls.certresolver=lets-encrypt'
+      - 'traefik.http.middlewares.dashboard.headers.SSLRedirect=true'
+      - 'traefik.http.middlewares.dashboard.headers.STSSeconds=315360000'
+      - 'traefik.http.middlewares.dashboard.headers.browserXSSFilter=true'
+      - 'traefik.http.middlewares.dashboard.headers.contentTypeNosniff=true'
+      - 'traefik.http.middlewares.dashboard.headers.forceSTSHeader=true'
+      - 'traefik.http.middlewares.dashboard.headers.SSLHost=vya.digital'
+      - 'traefik.http.middlewares.dashboard.headers.STSIncludeSubdomains=true'
+      - 'traefik.http.middlewares.dashboard.headers.STSPreload=true'
+      - 'traefik.http.routers.dashboard.middlewares=dashboard@docker'
+      - 'traefik.port=3000'
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true

@@ -8,7 +8,7 @@ import os
 # Adicionar o diretório pai ao path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from core.sqlalchemy_migration import SQLAlchemyPostgreSQLMigrator
+from app.core.sqlalchemy_migration import SQLAlchemyPostgreSQLMigrator
 
 def test_privilege_collection():
     """Testa especificamente a coleta de privilégios da origem."""

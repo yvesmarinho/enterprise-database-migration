@@ -27,7 +27,7 @@ main.py                               # 🎛️ Controlador principal (CLI)
 └── secrets/                          # 🔐 Credenciais de conexão
 ├── secrets/                          # Configurações de conexão
 ├── logs/                            # Logs de execução
-├── reports/                         # Relatórios de migração
+├── reports/                         # Relatórios do desenvolvimento
 ├── extracted_data/                  # Dados extraídos (JSON)
 └── generated_scripts/               # Scripts SQL gerados
 ```

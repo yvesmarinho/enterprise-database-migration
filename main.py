@@ -32,22 +32,24 @@ sys.path.insert(0, str(project_root))
 
 # Importar sistema v4.0.0
 try:
-    from core.migration_orchestrator import MigrationOrchestrator
+    from app.core.migration_orchestrator import MigrationOrchestrator
     SYSTEM_V4_AVAILABLE = True
 except ImportError:
     print("⚠️ Sistema v4.0.0 não encontrado, usando modo de compatibilidade")
     SYSTEM_V4_AVAILABLE = False
 
 # === IMPORTS CONDICIONAIS PARA TODOS OS MÓDULOS ===
+
+
 def check_module_availability():
     """Verifica disponibilidade de módulos do sistema."""
     modules_to_check = {
-        'migration_structure': 'core.migration_structure',
-        'orchestrator_pure_python': 'orchestrator_pure_python',
-        'validator': 'validator',
-        'sqlalchemy_migration': 'core.sqlalchemy_migration',
-        'complete_migration': 'core.complete_migration',
-        'migrate_users': 'core.migrate_users',
+        'migration_structure': 'app.core.migration_structure',
+        'orchestrator_pure_python': 'app.orchestrators.orchestrator_pure_python',
+        'validator': 'app.validation.validator',
+        'sqlalchemy_migration': 'app.core.sqlalchemy_migration',
+        'complete_migration': 'app.core.complete_migration',
+        'migrate_users': 'app.core.migrate_users',
         'cleanup_database': 'cleanup.cleanup_database',
         'monitor': 'monitor',
         'database_utils': 'utils.database_utils',
@@ -76,6 +78,7 @@ def check_module_availability():
 
     return availability
 
+
 def setup_project_environment():
     """Configura ambiente do projeto com todas as variáveis necessárias."""
     project_home = Path(os.environ['PROJECT_HOME'])
@@ -86,7 +89,8 @@ def setup_project_environment():
     os.environ['PROJECT_CORE_DIR'] = str(project_home / 'core')
     os.environ['PROJECT_UTILS_DIR'] = str(project_home / 'utils')
     os.environ['PROJECT_VALIDATION_DIR'] = str(project_home / 'validation')
-    os.environ['PROJECT_ORCHESTRATORS_DIR'] = str(project_home / 'orchestrators')
+    os.environ['PROJECT_ORCHESTRATORS_DIR'] = str(
+        project_home / 'orchestrators')
     os.environ['PROJECT_COMPONENTS_DIR'] = str(project_home / 'components')
     os.environ['PROJECT_CLEANUP_DIR'] = str(project_home / 'cleanup')
     os.environ['PROJECT_CLI_DIR'] = str(project_home / 'cli')
@@ -104,6 +108,7 @@ def setup_project_environment():
 
     return project_home
 
+
 def setup_logging(level: str = "INFO") -> logging.Logger:
     """Configura logging centralizado do sistema."""
     logging.basicConfig(
@@ -112,6 +117,7 @@ def setup_logging(level: str = "INFO") -> logging.Logger:
         datefmt='%Y-%m-%d %H:%M:%S'
     )
     return logging.getLogger(__name__)
+
 
 def show_system_status():
     """Mostra status dos componentes do sistema."""
@@ -140,6 +146,7 @@ def show_system_status():
 
     print(f"\n📁 Diretório do projeto: {project_root}")
     print("="*60)
+
 
 def run_migration(mode: str = "interactive"):
     """Executa migração usando run_migration.py."""
@@ -176,6 +183,7 @@ def run_migration(mode: str = "interactive"):
             sys.argv = original_argv
         return False
 
+
 def run_orchestrator(orchestrator_type: str = "pure_python"):
     """Executa orquestrador específico."""
     logger = setup_logging()
@@ -183,17 +191,21 @@ def run_orchestrator(orchestrator_type: str = "pure_python"):
 
     try:
         if orchestrator_type == "pure_python":
-            from orchestrators.orchestrator_pure_python import main as orchestrator_main
+            from app.orchestrators.orchestrator_pure_python import (
+                main as orchestrator_main,
+            )
             return orchestrator_main()
         elif orchestrator_type == "sqlalchemy":
-            from orchestrators.migration_orchestrator import main as migration_main
+            from app.orchestrators.migration_orchestrator import main as migration_main
             return migration_main()
         else:
-            logger.error(f"Tipo de orquestrador não reconhecido: {orchestrator_type}")
+            logger.error(
+                f"Tipo de orquestrador não reconhecido: {orchestrator_type}")
             return False
     except ImportError as e:
         logger.error(f"Erro ao importar orquestrador {orchestrator_type}: {e}")
         return False
+
 
 def run_validation():
     """Executa validação do sistema."""
@@ -209,51 +221,57 @@ def run_validation():
         logger.error(f"Erro na validação: {e}")
         return False
 
+
 def run_cleanup():
     """Executa limpeza do sistema."""
     logger = setup_logging()
     logger.info("Iniciando limpeza do sistema")
 
     try:
-        from cleanup.cleanup_database import main as cleanup_main
+        from app.cleanup.cleanup_database import main as cleanup_main
         return cleanup_main()
     except ImportError as e:
         logger.error(f"Erro ao importar cleanup: {e}")
         return False
 
 # === FUNÇÕES ESPECÍFICAS DE CADA MÓDULO ===
+
+
 def run_core_complete_migration():
     """Executa migração completa psycopg2."""
     logger = setup_logging()
     logger.info("Iniciando migração completa psycopg2")
     try:
-        from core.complete_migration import main as complete_migration_main
+        from app.core.complete_migration import main as complete_migration_main
         return complete_migration_main()
     except ImportError as e:
         logger.error(f"Módulo core.complete_migration não disponível: {e}")
         return False
+
 
 def run_core_migrate_users():
     """Executa migração específica de usuários."""
     logger = setup_logging()
     logger.info("Iniciando migração de usuários")
     try:
-        from core.migrate_users import main as migrate_users_main
+        from app.core.migrate_users import main as migrate_users_main
         return migrate_users_main()
     except ImportError as e:
         logger.error(f"Módulo core.migrate_users não disponível: {e}")
         return False
+
 
 def run_core_migration_structure():
     """Executa migração apenas de estruturas."""
     logger = setup_logging()
     logger.info("Iniciando migração de estruturas")
     try:
-        from core.migration_structure import main as migration_structure_main
+        from app.core.migration_structure import main as migration_structure_main
         return migration_structure_main()
     except ImportError as e:
         logger.error(f"Módulo core.migration_structure não disponível: {e}")
         return False
+
 
 def run_utils_debug_connection():
     """Executa debug de conexões."""
@@ -266,6 +284,7 @@ def run_utils_debug_connection():
         logger.error(f"Módulo utils.debug_connection não disponível: {e}")
         return False
 
+
 def run_utils_discover_users():
     """Executa descoberta de usuários."""
     logger = setup_logging()
@@ -276,6 +295,7 @@ def run_utils_discover_users():
     except ImportError as e:
         logger.error(f"Módulo utils.discover_users não disponível: {e}")
         return False
+
 
 def run_utils_analyze_password():
     """Executa análise de senhas."""
@@ -288,16 +308,18 @@ def run_utils_analyze_password():
         logger.error(f"Módulo utils.analyze_password não disponível: {e}")
         return False
 
+
 def run_validation_test_migration():
     """Executa testes de migração."""
     logger = setup_logging()
     logger.info("Iniciando testes de migração")
     try:
-        from validation.test_migration import main as test_migration_main
+        from app.validation.test_migration import main as test_migration_main
         return test_migration_main()
     except ImportError as e:
         logger.error(f"Módulo validation.test_migration não disponível: {e}")
         return False
+
 
 def run_validation_wfdb02_tests():
     """Executa testes WFDB02."""
@@ -315,19 +337,21 @@ def run_validation_wfdb02_tests():
 
     try:
         if choice == '1':
-            from validation.test_wfdb02_connection import main as wfdb02_connection_main
+            from app.validation.test_wfdb02_connection import (
+                main as wfdb02_connection_main,
+            )
             return wfdb02_connection_main()
         elif choice == '2':
-            from validation.test_wfdb02_simple import main as wfdb02_simple_main
+            from app.validation.test_wfdb02_simple import main as wfdb02_simple_main
             return wfdb02_simple_main()
         elif choice == '3':
-            from validation.test_wfdb02_minimal import main as wfdb02_minimal_main
+            from app.validation.test_wfdb02_minimal import main as wfdb02_minimal_main
             return wfdb02_minimal_main()
         elif choice == '4':
-            from validation.test_wfdb02_only import main as wfdb02_only_main
+            from app.validation.test_wfdb02_only import main as wfdb02_only_main
             return wfdb02_only_main()
         elif choice == '5':
-            from validation.check_wfdb02_status import main as wfdb02_status_main
+            from app.validation.check_wfdb02_status import main as wfdb02_status_main
             return wfdb02_status_main()
         else:
             print("❌ Opção inválida")
@@ -336,27 +360,30 @@ def run_validation_wfdb02_tests():
         logger.error(f"Módulo de teste WFDB02 não disponível: {e}")
         return False
 
+
 def run_cleanup_database():
     """Executa limpeza de banco de dados."""
     logger = setup_logging()
     logger.info("Iniciando limpeza de banco")
     try:
-        from cleanup.cleanup_database import main as cleanup_database_main
+        from app.cleanup.cleanup_database import main as cleanup_database_main
         return cleanup_database_main()
     except ImportError as e:
         logger.error(f"Módulo cleanup.cleanup_database não disponível: {e}")
         return False
+
 
 def run_cleanup_examples():
     """Executa exemplos de limpeza."""
     logger = setup_logging()
     logger.info("Iniciando exemplos de limpeza")
     try:
-        from cleanup.exemplo_cleanup import run_cleanup_example
+        from app.cleanup.exemplo_cleanup import run_cleanup_example
         return run_cleanup_example()
     except ImportError as e:
         logger.error(f"Módulo cleanup.exemplo_cleanup não disponível: {e}")
         return False
+
 
 def run_quick_cli():
     """Executa CLI rápido."""
@@ -369,6 +396,7 @@ def run_quick_cli():
         logger.error(f"Módulo cli.quick_migration não disponível: {e}")
         return False
 
+
 def run_documentation_examples():
     """Executa exemplos de uso."""
     logger = setup_logging()
@@ -379,6 +407,7 @@ def run_documentation_examples():
     except ImportError as e:
         logger.error(f"Módulo docs.exemplos_uso não disponível: {e}")
         return False
+
 
 def create_expanded_menu():
     """Cria menu expandido com todas as funcionalidades."""
@@ -434,6 +463,7 @@ def create_expanded_menu():
     print("\n" + "="*70)
     return availability
 
+
 def handle_menu_choice(choice: str, availability: dict):
     """Processa escolha do menu expandido."""
 
@@ -441,25 +471,25 @@ def handle_menu_choice(choice: str, availability: dict):
     if choice == '1':
         return run_migration()
     elif choice == '2':
-        from orchestrators.orchestrator_pure_python import (
+        from app.orchestrators.orchestrator_pure_python import (
             PostgreSQLMigrationOrchestrator,
         )
         orch = PostgreSQLMigrationOrchestrator()
         return orch.validate_environment()
     elif choice == '3':
-        from orchestrators.orchestrator_pure_python import (
+        from app.orchestrators.orchestrator_pure_python import (
             PostgreSQLMigrationOrchestrator,
         )
         orch = PostgreSQLMigrationOrchestrator()
         return orch.check_modules()
     elif choice == '4':
-        from orchestrators.orchestrator_pure_python import (
+        from app.orchestrators.orchestrator_pure_python import (
             PostgreSQLMigrationOrchestrator,
         )
         orch = PostgreSQLMigrationOrchestrator()
         return orch.test_connectivity()
     elif choice == '5':
-        from orchestrators.orchestrator_pure_python import (
+        from app.orchestrators.orchestrator_pure_python import (
             PostgreSQLMigrationOrchestrator,
         )
         orch = PostgreSQLMigrationOrchestrator()
@@ -488,7 +518,7 @@ def handle_menu_choice(choice: str, availability: dict):
     elif choice == '14' and availability.get('VALIDATION', False):
         return run_validation_wfdb02_tests()
     elif choice == '15' and availability.get('VALIDATION', False):
-        from validation.check_wfdb02_status import main as wfdb02_status_main
+        from app.validation.check_wfdb02_status import main as wfdb02_status_main
         return wfdb02_status_main()
 
     # Opções de CLEANUP
@@ -518,6 +548,7 @@ def handle_menu_choice(choice: str, availability: dict):
     else:
         print("❌ Opção inválida ou módulo não disponível")
         return False
+
 
 def show_expanded_help():
     """Mostra ajuda expandida do sistema."""
@@ -557,6 +588,7 @@ def show_expanded_help():
     print("  docs/         - Documentação")
 
     print("="*70)
+
 
 def show_help():
     """Mostra ajuda básica do sistema."""
@@ -653,6 +685,7 @@ def show_expanded_help():
 
 Para suporte técnico, consulte: docs/README.md
     """)
+
 
 def handle_menu_choice(choice, availability):
     """Processa a escolha do menu."""
@@ -1083,7 +1116,8 @@ class MainController:
         print("🚀 PostgreSQL Enterprise Migration System v4.0.0")
         print("=" * 60)
         print(f"📁 Projeto: {self.project_home}")
-        print(f"✅ Sistema v4.0.0: {'Disponível' if SYSTEM_V4_AVAILABLE else 'Indisponível'}")
+        print(
+            f"✅ Sistema v4.0.0: {'Disponível' if SYSTEM_V4_AVAILABLE else 'Indisponível'}")
 
         if self.orchestrator:
             print(f"⚙️ Orquestrador: Inicializado")
@@ -1111,29 +1145,29 @@ Exemplos de uso:
 
     # Comandos principais
     parser.add_argument('--complete', action='store_true',
-                       help='Executar migração completa (3 fases)')
+                        help='Executar migração completa (3 fases)')
     parser.add_argument('--extract', action='store_true',
-                       help='Executar apenas extração de dados')
+                        help='Executar apenas extração de dados')
     parser.add_argument('--generate', action='store_true',
-                       help='Executar apenas geração de scripts')
+                        help='Executar apenas geração de scripts')
     parser.add_argument('--execute', action='store_true',
-                       help='Executar apenas scripts gerados')
+                        help='Executar apenas scripts gerados')
     parser.add_argument('--info', action='store_true',
-                       help='Mostrar informações do sistema')
+                        help='Mostrar informações do sistema')
 
     # Opções de controle
     parser.add_argument('--dry-run', action='store_true',
-                       help='Modo simulação (não faz alterações)')
+                        help='Modo simulação (não faz alterações)')
     parser.add_argument('--interactive', action='store_true',
-                       help='Modo interativo (pede confirmação)')
+                        help='Modo interativo (pede confirmação)')
     parser.add_argument('--config', type=str,
-                       help='Arquivo de configuração personalizado')
+                        help='Arquivo de configuração personalizado')
     parser.add_argument('--output', type=str,
-                       help='Arquivo de saída (para extração)')
+                        help='Arquivo de saída (para extração)')
     parser.add_argument('--input', type=str,
-                       help='Arquivo de entrada (para geração/execução)')
+                        help='Arquivo de entrada (para geração/execução)')
     parser.add_argument('--verbose', action='store_true',
-                       help='Logs detalhados')
+                        help='Logs detalhados')
 
     args = parser.parse_args()
 

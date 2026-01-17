@@ -2,13 +2,13 @@
 """
 Teste específico para privilégios - diagnóstico de problemas.
 """
-import sys
+from app.core.sqlalchemy_migration import SQLAlchemyPostgreSQLMigrator
 import os
+import sys
 
 # Adicionar o diretório pai ao path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from core.sqlalchemy_migration import SQLAlchemyPostgreSQLMigrator
 
 def test_privileges_debug():
     """Testa especificamente a aplicação de privilégios com debug."""
@@ -30,7 +30,8 @@ def test_privileges_debug():
     # Testar função get_existing_users diretamente
     from sqlalchemy import text
     with migrator.dest_engine.connect() as conn:
-        result = conn.execute(text("SELECT rolname FROM pg_roles WHERE rolname NOT LIKE 'pg_%' ORDER BY rolname"))
+        result = conn.execute(text(
+            "SELECT rolname FROM pg_roles WHERE rolname NOT LIKE 'pg_%' ORDER BY rolname"))
         users = [row.rolname for row in result]
 
     print(f"\n📋 USUÁRIOS ENCONTRADOS ({len(users)}):")
@@ -45,10 +46,12 @@ def test_privileges_debug():
     print(f"\n🔍 Verificando usuários específicos:")
     for user in test_users:
         exists = user in users
-        print(f"  {'✅' if exists else '❌'} {user}: {'existe' if exists else 'NÃO existe'}")
+        print(
+            f"  {'✅' if exists else '❌'} {user}: {'existe' if exists else 'NÃO existe'}")
 
     print("\n✅ Teste de diagnóstico concluído")
     return True
+
 
 if __name__ == "__main__":
     test_privileges_debug()

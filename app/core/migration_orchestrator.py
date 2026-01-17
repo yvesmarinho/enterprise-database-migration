@@ -7,6 +7,9 @@ Desenvolvido a partir dos snippets testados e validados na migração WF004→WF
 Consolida todos os componentes em um sistema robusto e reutilizável.
 """
 
+from app.core.modules.script_generator import SQLScriptGenerator
+from app.core.modules.migration_executor import ControlledMigrationExecutor
+from app.core.modules.data_extractor import WF004DataExtractor
 import argparse
 import json
 import logging
@@ -16,12 +19,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-# Adicionar módulos locais ao path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'core', 'modules'))
-
-from core.modules.data_extractor import WF004DataExtractor
-from core.modules.migration_executor import ControlledMigrationExecutor
-from core.modules.script_generator import SQLScriptGenerator
+# Adicionar módulos locais ao path para imports relativos
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 
 class MigrationOrchestrator:
@@ -204,7 +203,8 @@ class MigrationOrchestrator:
             scripts = self.generator.run_generation()
 
             if scripts:
-                self.logger.info(f"✅ FASE 2 CONCLUÍDA: {len(scripts)} scripts gerados")
+                self.logger.info(
+                    f"✅ FASE 2 CONCLUÍDA: {len(scripts)} scripts gerados")
                 return True
             else:
                 self.logger.error("❌ FASE 2 FALHOU")
@@ -215,7 +215,7 @@ class MigrationOrchestrator:
             return False
 
     def phase_3_execution(self, dry_run: bool = False,
-                         interactive: bool = False) -> bool:
+                          interactive: bool = False) -> bool:
         """
         Fase 3: Execução controlada da migração.
 
@@ -260,8 +260,8 @@ class MigrationOrchestrator:
                 self.executor.close_connection()
 
     def run_complete_migration(self, extraction_file: Optional[str] = None,
-                              dry_run_first: bool = True,
-                              interactive: bool = False) -> bool:
+                               dry_run_first: bool = True,
+                               interactive: bool = False) -> bool:
         """
         Executa migração completa (todas as 3 fases).
 
@@ -274,7 +274,8 @@ class MigrationOrchestrator:
             True se bem-sucedido, False caso contrário
         """
         self.logger.info("🌟 INICIANDO MIGRAÇÃO COMPLETA")
-        self.logger.info(f"🕒 Início: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        self.logger.info(
+            f"🕒 Início: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
         start_time = datetime.now()
 
@@ -302,7 +303,8 @@ class MigrationOrchestrator:
                 if dry_run_first:
                     self.logger.info("\n🔍 Executando DRY RUN primeiro...")
                     if not self.phase_3_execution(dry_run=True, interactive=False):
-                        self.logger.error("❌ Dry run falhou - parando execução")
+                        self.logger.error(
+                            "❌ Dry run falhou - parando execução")
                         return False
 
                 # Execução real
@@ -380,31 +382,31 @@ Exemplos de uso:
 
     # Operações principais
     parser.add_argument('--complete', action='store_true',
-                       help='Executar migração completa (3 fases)')
+                        help='Executar migração completa (3 fases)')
     parser.add_argument('--extract', action='store_true',
-                       help='Executar apenas extração (Fase 1)')
+                        help='Executar apenas extração (Fase 1)')
     parser.add_argument('--generate', action='store_true',
-                       help='Executar apenas geração (Fase 2)')
+                        help='Executar apenas geração (Fase 2)')
     parser.add_argument('--execute', action='store_true',
-                       help='Executar apenas execução (Fase 3)')
+                        help='Executar apenas execução (Fase 3)')
 
     # Parâmetros
     parser.add_argument('--config', default='config/migration_config.json',
-                       help='Arquivo de configuração principal')
+                        help='Arquivo de configuração principal')
     parser.add_argument('--input', help='Arquivo JSON de entrada')
     parser.add_argument('--output', help='Arquivo de saída')
     parser.add_argument('--dry-run', action='store_true',
-                       help='Modo dry run (simular sem alterar)')
+                        help='Modo dry run (simular sem alterar)')
     parser.add_argument('--interactive', action='store_true',
-                       help='Modo interativo')
+                        help='Modo interativo')
     parser.add_argument('--no-dry-run-first', action='store_true',
-                       help='Pular dry run automático antes da execução')
+                        help='Pular dry run automático antes da execução')
 
     # Debug e relatórios
     parser.add_argument('--verbose', action='store_true',
-                       help='Saída detalhada')
+                        help='Saída detalhada')
     parser.add_argument('--report', action='store_true',
-                       help='Gerar relatório ao final')
+                        help='Gerar relatório ao final')
 
     args = parser.parse_args()
 

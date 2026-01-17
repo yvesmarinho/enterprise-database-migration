@@ -1,0 +1,194 @@
+{
+  "description": "Configuração para correção de permissões em bancos de dados PostgreSQL",
+  "version": "1.0.0",
+  "databases": [
+    {
+      "name": "metabase_db",
+      "type": "postgres",
+      "owner": "metabase_user",
+      "description": "Banco de dados do Metabase - BI e Analytics",
+      "operations": [
+        {
+          "type": "transfer_ownership",
+          "target": "tables",
+          "from_user": "yves_marinho",
+          "to_user": "metabase_user"
+        },
+        {
+          "type": "transfer_ownership",
+          "target": "sequences",
+          "from_user": "yves_marinho",
+          "to_user": "metabase_user"
+        },
+        {
+          "type": "transfer_ownership",
+          "target": "views",
+          "from_user": "yves_marinho",
+          "to_user": "metabase_user"
+        },
+        {
+          "type": "grant_privileges",
+          "target": "schema",
+          "schema": "public",
+          "user": "metabase_user",
+          "privileges": [
+            "ALL"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "all_tables",
+          "schema": "public",
+          "user": "metabase_user",
+          "privileges": [
+            "ALL"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "all_sequences",
+          "schema": "public",
+          "user": "metabase_user",
+          "privileges": [
+            "ALL"
+          ]
+        },
+        {
+          "type": "set_default_privileges",
+          "target": "tables",
+          "schema": "public",
+          "user": "metabase_user",
+          "privileges": [
+            "ALL"
+          ]
+        },
+        {
+          "type": "set_default_privileges",
+          "target": "sequences",
+          "schema": "public",
+          "user": "metabase_user",
+          "privileges": [
+            "ALL"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "n8n_db",
+      "type": "postgres",
+      "owner": "n8n_user",
+      "description": "Banco de dados do N8N - Automações",
+      "operations": [
+        {
+          "type": "grant_privileges",
+          "target": "database",
+          "database": "n8n_db",
+          "user": "n8n_user",
+          "privileges": [
+            "CONNECT",
+            "CREATE",
+            "TEMP"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "schema",
+          "schema": "public",
+          "user": "n8n_user",
+          "privileges": [
+            "USAGE",
+            "CREATE"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "all_tables",
+          "schema": "public",
+          "user": "n8n_user",
+          "privileges": [
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "all_sequences",
+          "schema": "public",
+          "user": "n8n_user",
+          "privileges": [
+            "USAGE",
+            "SELECT",
+            "UPDATE"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "evolution_api",
+      "type": "postgres",
+      "owner": "evolution_user",
+      "description": "Banco de dados da Evolution API - WhatsApp",
+      "operations": [
+        {
+          "type": "grant_privileges",
+          "target": "database",
+          "database": "evolution_api",
+          "user": "evolution_user",
+          "privileges": [
+            "CONNECT",
+            "CREATE"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "schema",
+          "schema": "public",
+          "user": "evolution_user",
+          "privileges": [
+            "ALL"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "all_tables",
+          "schema": "public",
+          "user": "evolution_user",
+          "privileges": [
+            "ALL"
+          ]
+        },
+        {
+          "type": "grant_privileges",
+          "target": "all_sequences",
+          "schema": "public",
+          "user": "evolution_user",
+          "privileges": [
+            "ALL"
+          ]
+        }
+      ]
+    }
+  ],
+  "connection": {
+    "config_file": "secrets/postgresql_destination_config.json",
+    "server": {
+      "host": "wfdb02.vya.digital",
+      "port": 5432
+    },
+    "authentication": {
+      "user": "migration_user",
+      "method": "password"
+    }
+  },
+  "verification": {
+    "enabled": true,
+    "checks": [
+      "ownership",
+      "privileges",
+      "default_privileges",
+      "user_exists"
+    ]
+  }
+}
