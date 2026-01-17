@@ -1,0 +1,488 @@
+{
+  "session_info": {
+    "session_id": "20251003_172010",
+    "start_time": "2025-10-03T17:20:15.861955",
+    "end_time": "2025-10-03T17:20:25.969019",
+    "duration": 10.107066
+  },
+  "overall_status": "running",
+  "statistics": {
+    "total_steps": 11,
+    "completed_steps": 10,
+    "failed_steps": 0,
+    "skipped_steps": 1
+  },
+  "steps": [
+    {
+      "name": "validate_environment",
+      "description": "Validar ambiente e dependências",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:15.862840",
+      "end_time": "2025-10-03 17:20:15.863310",
+      "duration": 0.00047,
+      "error_message": null,
+      "result_data": null,
+      "logs": []
+    },
+    {
+      "name": "load_configurations",
+      "description": "Carregar configurações de migração",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:15.863494",
+      "end_time": "2025-10-03 17:20:15.864219",
+      "duration": 0.000725,
+      "error_message": null,
+      "result_data": {
+        "migration_rules_loaded": true,
+        "server_configs_loaded": 0
+      },
+      "logs": []
+    },
+    {
+      "name": "check_modules",
+      "description": "Verificar módulos carregados",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:15.864382",
+      "end_time": "2025-10-03 17:20:15.864666",
+      "duration": 0.000284,
+      "error_message": null,
+      "result_data": {
+        "modules_loaded": 5,
+        "total_modules": 5,
+        "all_modules_ok": true
+      },
+      "logs": []
+    },
+    {
+      "name": "test_connectivity",
+      "description": "Testar conectividade com servidores",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:15.864817",
+      "end_time": "2025-10-03 17:20:20.964360",
+      "duration": 5.099543,
+      "error_message": null,
+      "result_data": {
+        "connectivity_test": "real",
+        "method": "sqlalchemy_engines"
+      },
+      "logs": []
+    },
+    {
+      "name": "discover_source",
+      "description": "Descobrir estrutura do servidor origem",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:20.964526",
+      "end_time": "2025-10-03 17:20:20.966017",
+      "duration": 0.001491,
+      "error_message": null,
+      "result_data": {
+        "users_discovered": "real",
+        "count": 0
+      },
+      "logs": []
+    },
+    {
+      "name": "analyze_compatibility",
+      "description": "Analisar compatibilidade SCRAM-SHA-256",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:20.966171",
+      "end_time": "2025-10-03 17:20:21.966658",
+      "duration": 1.000487,
+      "error_message": null,
+      "result_data": {
+        "scram_compatible": true
+      },
+      "logs": []
+    },
+    {
+      "name": "pre_migration_backup",
+      "description": "Criar backup pré-migração",
+      "required": false,
+      "status": "MigrationStatus.SKIPPED",
+      "start_time": null,
+      "end_time": null,
+      "duration": null,
+      "error_message": "Backup opcional desabilitado",
+      "result_data": null,
+      "logs": []
+    },
+    {
+      "name": "execute_migration",
+      "description": "Executar migração principal",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:21.966976",
+      "end_time": "2025-10-03 17:20:23.967452",
+      "duration": 2.000476,
+      "error_message": null,
+      "result_data": {
+        "migration_executed": true,
+        "method": "fallback"
+      },
+      "logs": []
+    },
+    {
+      "name": "validate_migration",
+      "description": "Validar resultado da migração",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:23.967750",
+      "end_time": "2025-10-03 17:20:24.968072",
+      "duration": 1.000322,
+      "error_message": null,
+      "result_data": {
+        "validation_passed": true
+      },
+      "logs": []
+    },
+    {
+      "name": "test_connections",
+      "description": "Testar conexões pós-migração",
+      "required": true,
+      "status": "MigrationStatus.SUCCESS",
+      "start_time": "2025-10-03 17:20:24.968356",
+      "end_time": "2025-10-03 17:20:25.968682",
+      "duration": 1.000326,
+      "error_message": null,
+      "result_data": {
+        "connections_tested": true
+      },
+      "logs": []
+    },
+    {
+      "name": "generate_report",
+      "description": "Gerar relatório final",
+      "required": true,
+      "status": "MigrationStatus.RUNNING",
+      "start_time": "2025-10-03 17:20:25.968922",
+      "end_time": null,
+      "duration": null,
+      "error_message": null,
+      "result_data": null,
+      "logs": []
+    }
+  ],
+  "logs": {
+    "total_entries": 51,
+    "level_counts": {
+      "INFO": 31,
+      "SUCCESS": 17,
+      "WARNING": 3
+    },
+    "log_file": "/home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-migration/core/reports/migration_20251003_172010.log",
+    "entries": [
+      {
+        "timestamp": "2025-10-03T17:20:10.701606",
+        "level": "INFO",
+        "component": "module_manager",
+        "message": "Carregando módulos de migração..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.831278",
+        "level": "SUCCESS",
+        "component": "module_manager",
+        "message": "Módulo sqlalchemy_migration carregado"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.841076",
+        "level": "SUCCESS",
+        "component": "module_manager",
+        "message": "Módulo scram_checker carregado"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.855086",
+        "level": "SUCCESS",
+        "component": "module_manager",
+        "message": "Módulo connection_tester carregado"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.858520",
+        "level": "SUCCESS",
+        "component": "module_manager",
+        "message": "Módulo user_discoverer carregado"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.858817",
+        "level": "SUCCESS",
+        "component": "module_manager",
+        "message": "Módulo password_analyzer carregado"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.858919",
+        "level": "INFO",
+        "component": "orchestrator",
+        "message": "Orquestrador inicializado - Session ID: 20251003_172010"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.859188",
+        "level": "INFO",
+        "component": "step.load_configurations",
+        "message": "🚀 Iniciando: Carregar configurações de migração"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.859365",
+        "level": "INFO",
+        "component": "config",
+        "message": "Regras carregadas: 3 seções"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.859482",
+        "level": "INFO",
+        "component": "config",
+        "message": "Configurações de servidor carregadas: 0/2"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:10.859567",
+        "level": "SUCCESS",
+        "component": "step.load_configurations",
+        "message": "✅ Concluído: Carregar configurações de migração (0.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.861968",
+        "level": "INFO",
+        "component": "orchestrator",
+        "message": "======================================================================"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.862239",
+        "level": "INFO",
+        "component": "orchestrator",
+        "message": "🚀 INICIANDO MIGRAÇÃO POSTGRESQL COMPLETA"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.862404",
+        "level": "INFO",
+        "component": "orchestrator",
+        "message": "======================================================================"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.862552",
+        "level": "INFO",
+        "component": "orchestrator",
+        "message": "Session ID: 20251003_172010"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.862695",
+        "level": "INFO",
+        "component": "orchestrator",
+        "message": "Timestamp: 2025-10-03 17:20:15.861955"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.862845",
+        "level": "INFO",
+        "component": "step.validate_environment",
+        "message": "🚀 Iniciando: Validar ambiente e dependências"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.862994",
+        "level": "INFO",
+        "component": "environment",
+        "message": "Python 3.13.3"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.863327",
+        "level": "SUCCESS",
+        "component": "step.validate_environment",
+        "message": "✅ Concluído: Validar ambiente e dependências (0.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.863498",
+        "level": "INFO",
+        "component": "step.load_configurations",
+        "message": "🚀 Iniciando: Carregar configurações de migração"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.863817",
+        "level": "INFO",
+        "component": "config",
+        "message": "Regras carregadas: 3 seções"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864047",
+        "level": "INFO",
+        "component": "config",
+        "message": "Configurações de servidor carregadas: 0/2"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864231",
+        "level": "SUCCESS",
+        "component": "step.load_configurations",
+        "message": "✅ Concluído: Carregar configurações de migração (0.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864385",
+        "level": "INFO",
+        "component": "step.check_modules",
+        "message": "🚀 Iniciando: Verificar módulos carregados"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864530",
+        "level": "SUCCESS",
+        "component": "module_manager",
+        "message": "Todos os módulos carregados com sucesso"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864676",
+        "level": "SUCCESS",
+        "component": "step.check_modules",
+        "message": "✅ Concluído: Verificar módulos carregados (0.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864821",
+        "level": "INFO",
+        "component": "step.test_connectivity",
+        "message": "🚀 Iniciando: Testar conectividade com servidores"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.864968",
+        "level": "INFO",
+        "component": "connectivity",
+        "message": "Testando conectividade com servidores..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:15.865154",
+        "level": "INFO",
+        "component": "connectivity",
+        "message": "Usando métodos reais do SQLAlchemy migrator"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.964123",
+        "level": "SUCCESS",
+        "component": "connectivity",
+        "message": "Conectividade real testada com sucesso"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.964375",
+        "level": "SUCCESS",
+        "component": "step.test_connectivity",
+        "message": "✅ Concluído: Testar conectividade com servidores (5.10s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.964528",
+        "level": "INFO",
+        "component": "step.discover_source",
+        "message": "🚀 Iniciando: Descobrir estrutura do servidor origem"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.964878",
+        "level": "INFO",
+        "component": "discovery",
+        "message": "Descobrindo usuários do servidor origem..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.965906",
+        "level": "WARNING",
+        "component": "discovery",
+        "message": "Descoberta não retornou usuários"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.966026",
+        "level": "SUCCESS",
+        "component": "step.discover_source",
+        "message": "✅ Concluído: Descobrir estrutura do servidor origem (0.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.966173",
+        "level": "INFO",
+        "component": "step.analyze_compatibility",
+        "message": "🚀 Iniciando: Analisar compatibilidade SCRAM-SHA-256"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:20.966491",
+        "level": "INFO",
+        "component": "scram",
+        "message": "Analisando compatibilidade SCRAM-SHA-256..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:21.966681",
+        "level": "SUCCESS",
+        "component": "step.analyze_compatibility",
+        "message": "✅ Concluído: Analisar compatibilidade SCRAM-SHA-256 (1.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:21.966886",
+        "level": "INFO",
+        "component": "step.pre_migration_backup",
+        "message": "⏭️ Pulando: Criar backup pré-migração - Backup opcional desabilitado"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:21.966978",
+        "level": "INFO",
+        "component": "step.execute_migration",
+        "message": "🚀 Iniciando: Executar migração principal"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:21.967072",
+        "level": "INFO",
+        "component": "migration",
+        "message": "Executando migração principal..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:21.967197",
+        "level": "WARNING",
+        "component": "migration",
+        "message": "Método migrate_all_users não encontrado, usando fallback"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:21.967298",
+        "level": "WARNING",
+        "component": "migration",
+        "message": "Nenhum método de migração encontrado, executando simulação"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:23.967481",
+        "level": "SUCCESS",
+        "component": "step.execute_migration",
+        "message": "✅ Concluído: Executar migração principal (2.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:23.967753",
+        "level": "INFO",
+        "component": "step.validate_migration",
+        "message": "🚀 Iniciando: Validar resultado da migração"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:23.967884",
+        "level": "INFO",
+        "component": "validation",
+        "message": "Validando resultado da migração..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:24.968101",
+        "level": "SUCCESS",
+        "component": "step.validate_migration",
+        "message": "✅ Concluído: Validar resultado da migração (1.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:24.968359",
+        "level": "INFO",
+        "component": "step.test_connections",
+        "message": "🚀 Iniciando: Testar conexões pós-migração"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:24.968499",
+        "level": "INFO",
+        "component": "post_test",
+        "message": "Testando conexões pós-migração..."
+      },
+      {
+        "timestamp": "2025-10-03T17:20:25.968708",
+        "level": "SUCCESS",
+        "component": "step.test_connections",
+        "message": "✅ Concluído: Testar conexões pós-migração (1.00s)"
+      },
+      {
+        "timestamp": "2025-10-03T17:20:25.968924",
+        "level": "INFO",
+        "component": "step.generate_report",
+        "message": "🚀 Iniciando: Gerar relatório final"
+      }
+    ]
+  }
+}

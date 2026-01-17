@@ -1,0 +1,9 @@
+# Diretório de logs e relatórios
+
+Este diretório armazena:
+- Logs de execução dos scripts de permissões
+- Relatórios de migração
+- Outros arquivos de saída do sistema
+
+Os arquivos de log seguem o padrão:
+- `destination_migration_YYYYMMDD_HHMMSS.log` - Logs do script de permissões

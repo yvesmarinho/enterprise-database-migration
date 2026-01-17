@@ -2,13 +2,13 @@
 """
 Teste do sistema de cleanup com nova configuração JSON.
 """
-import sys
+from app.cleanup.cleanup_database import PostgreSQLCleanup, load_server_config
 import os
+import sys
 
 # Adicionar o diretório pai ao path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from cleanup.cleanup_database import PostgreSQLCleanup, load_server_config
 
 def test_config_loading():
     """Testa o carregamento das configurações."""
@@ -48,6 +48,7 @@ def test_config_loading():
 
     return True
 
+
 def test_cleanup_initialization():
     """Testa a inicialização da classe de cleanup."""
     print("\n🧪 Testando inicialização da classe cleanup...")
@@ -67,6 +68,7 @@ def test_cleanup_initialization():
     print("   ✅ Classe inicializada com sucesso")
 
     return True
+
 
 def main():
     """Função principal de teste."""
@@ -92,6 +94,7 @@ def main():
     print("=" * 60)
 
     return 0 if success else 1
+
 
 if __name__ == "__main__":
     sys.exit(main())

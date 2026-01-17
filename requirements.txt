@@ -15,6 +15,9 @@ mysql-connector-python>=8.1.0
 # Configuration and serialization
 jsonschema>=4.20.0
 
+# Environment configuration
+python-dotenv>=1.0.0
+
 # Optional development dependencies (descomente se necessário):
 # pytest>=7.4.4        # Para testes
 # black>=23.12.1        # Para formatação de código

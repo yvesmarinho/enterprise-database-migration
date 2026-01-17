@@ -1,0 +1,16 @@
+2025-10-03 16:41:16,920 | INFO     | migration | [module_manager] Carregando módulos de migração...
+2025-10-03 16:41:17,081 | INFO     | migration | [module_manager] Módulo sqlalchemy_migration carregado
+2025-10-03 16:41:17,088 | INFO     | migration | [module_manager] Módulo scram_checker carregado
+2025-10-03 16:41:17,103 | INFO     | migration | [module_manager] Módulo connection_tester carregado
+2025-10-03 16:41:17,104 | INFO     | migration | [module_manager] Módulo user_discoverer carregado
+2025-10-03 16:41:17,105 | INFO     | migration | [module_manager] Módulo password_analyzer carregado
+2025-10-03 16:41:17,105 | INFO     | migration | [orchestrator] Orquestrador inicializado - Session ID: 20251003_164116
+2025-10-03 16:41:20,197 | INFO     | migration | [orchestrator] 📊 Executando análise detalhada (dry-run)...
+2025-10-03 16:41:20,197 | INFO     | migration | [step.validate_environment] 🚀 Iniciando: Validar ambiente e dependências
+2025-10-03 16:41:20,198 | INFO     | migration | [environment] Python 3.13.3
+2025-10-03 16:41:20,198 | INFO     | migration | [step.validate_environment] ✅ Concluído: Validar ambiente e dependências (0.00s)
+2025-10-03 16:41:20,198 | INFO     | migration | [step.load_configurations] 🚀 Iniciando: Carregar configurações de migração
+2025-10-03 16:41:20,198 | INFO     | migration | [config] Regras carregadas: 3 seções
+2025-10-03 16:41:20,198 | INFO     | migration | [config] Configurações de servidor carregadas: 0/2
+2025-10-03 16:41:20,198 | INFO     | migration | [step.load_configurations] ✅ Concluído: Carregar configurações de migração (0.00s)
+2025-10-03 16:41:20,199 | INFO     | migration | [orchestrator] ✅ Análise detalhada concluída

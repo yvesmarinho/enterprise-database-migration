@@ -1,0 +1,13 @@
+ bash apply_n8n_fix.sh
+============================================
+  Correção de Permissões n8n_admin
+============================================
+
+✅ Script de correção encontrado
+
+🔍 Verificando conexão com PostgreSQL...
+✅ PostgreSQL acessível
+
+🐳 Verificando containers Docker do n8n...
+⚠️  Nenhum container n8n encontrado rodando
+   Você precisará reiniciar o n8n manualmente após a correção

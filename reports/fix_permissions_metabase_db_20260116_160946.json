@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-01-16T16:09:42.179647",
+  "database_name": "metabase_db",
+  "database_info": {
+    "name": "metabase_db",
+    "exists": true,
+    "owner": "postgres",
+    "encoding": "UTF8",
+    "tablespace": "ts_enterprise_data",
+    "size": "145 MB",
+    "total_tables": 9,
+    "total_schemas": 0
+  },
+  "expected_users": [
+    "metabase_user",
+    "metabase_viewer"
+  ],
+  "user_permissions": {
+    "metabase_user": {
+      "username": "metabase_user",
+      "exists": true,
+      "can_login": true,
+      "is_superuser": false,
+      "connect_privilege": true,
+      "usage_on_schema": true,
+      "tables_with_select": 0,
+      "tables_with_insert": 0,
+      "tables_with_update": 0,
+      "tables_with_delete": 0,
+      "total_tables": 9,
+      "missing_permissions": [
+        "SELECT_ON_TABLES",
+        "INSERT_ON_TABLES",
+        "UPDATE_ON_TABLES",
+        "DELETE_ON_TABLES"
+      ]
+    },
+    "metabase_viewer": {
+      "username": "metabase_viewer",
+      "exists": false,
+      "can_login": false,
+      "is_superuser": false,
+      "connect_privilege": false,
+      "usage_on_schema": false,
+      "tables_with_select": 0,
+      "tables_with_insert": 0,
+      "tables_with_update": 0,
+      "tables_with_delete": 0,
+      "total_tables": 9,
+      "missing_permissions": [
+        "USER_NOT_EXISTS"
+      ]
+    }
+  },
+  "fixes_applied": [
+    {
+      "username": "metabase_user",
+      "action": "GRANT_SELECT, INSERT, UPDATE, DELETE",
+      "sql_command": "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO metabase_user",
+      "success": false,
+      "error_message": "(psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block\n\n[SQL: GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO metabase_user]\n(Background on this error at: https://sqlalche.me/e/20/2j85)"
+    },
+    {
+      "username": "metabase_user",
+      "action": "ALTER_DEFAULT_PRIVILEGES_SELECT, INSERT, UPDATE, DELETE",
+      "sql_command": "ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO metabase_user",
+      "success": true,
+      "error_message": null
+    }
+  ],
+  "summary": "An\u00e1lise conclu\u00edda. 2 corre\u00e7\u00f5es aplicadas (1 sucesso, 1 falhas)"
+}

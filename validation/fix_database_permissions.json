@@ -1,0 +1,15 @@
+{
+  "database": "metabase_db",
+  "users": [
+    {
+      "username": "metabase_user",
+      "permission_type": "admin",
+      "description": "Usuário administrador com permissões totais e GRANT OPTION"
+    },
+    {
+      "username": "metabase_viewer",
+      "permission_type": "readonly",
+      "description": "Usuário somente leitura com permissão apenas de SELECT"
+    }
+  ]
+}

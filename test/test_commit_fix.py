@@ -7,7 +7,7 @@ import json
 
 from sqlalchemy import create_engine, text
 
-from core.sqlalchemy_migration import SQLAlchemyPostgreSQLMigrator
+from app.core.sqlalchemy_migration import SQLAlchemyPostgreSQLMigrator
 
 
 def test_commit_fix():

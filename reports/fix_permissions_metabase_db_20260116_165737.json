@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-01-16T16:54:48.791384",
+  "database_name": "metabase_db",
+  "database_info": {
+    "name": "metabase_db",
+    "exists": true,
+    "owner": "postgres",
+    "encoding": "UTF8",
+    "tablespace": "ts_enterprise_data",
+    "size": "145 MB",
+    "total_tables": 9,
+    "total_schemas": 0
+  },
+  "expected_users": [
+    "metabase_user",
+    "metabase_viewer"
+  ],
+  "user_permissions": {
+    "metabase_user": {
+      "username": "metabase_user",
+      "exists": true,
+      "can_login": true,
+      "is_superuser": false,
+      "connect_privilege": true,
+      "usage_on_schema": true,
+      "tables_with_select": 159,
+      "tables_with_insert": 159,
+      "tables_with_update": 159,
+      "tables_with_delete": 159,
+      "total_tables": 9,
+      "missing_permissions": []
+    },
+    "metabase_viewer": {
+      "username": "metabase_viewer",
+      "exists": true,
+      "can_login": true,
+      "is_superuser": false,
+      "connect_privilege": true,
+      "usage_on_schema": true,
+      "tables_with_select": 159,
+      "tables_with_insert": 159,
+      "tables_with_update": 159,
+      "tables_with_delete": 159,
+      "total_tables": 9,
+      "missing_permissions": []
+    }
+  },
+  "fixes_applied": [],
+  "summary": "An\u00e1lise conclu\u00edda. 0 corre\u00e7\u00f5es aplicadas (0 sucesso, 0 falhas)"
+}

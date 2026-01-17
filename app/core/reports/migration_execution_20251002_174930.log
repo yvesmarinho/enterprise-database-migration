@@ -1,0 +1,253 @@
+2025-10-02 17:49:30 - __main__ - DEBUG - [_setup_logging:210] - Sistema de logging configurado com sucesso
+2025-10-02 17:49:30 - __main__ - INFO - [__init__:169] - ================================================================================
+2025-10-02 17:49:30 - __main__ - INFO - [__init__:170] - PostgreSQL Structure Migrator v1.0.0 Iniciado
+2025-10-02 17:49:30 - __main__ - INFO - [__init__:171] - Data: 2025-10-02T20:49:30.722796+00:00
+2025-10-02 17:49:30 - __main__ - INFO - [__init__:172] - ================================================================================
+2025-10-02 17:49:30 - __main__ - INFO - [load_configurations:240] - 🔧 Carregando configurações do sistema...
+2025-10-02 17:49:30 - __main__ - DEBUG - [load_configurations:244] - Carregando configuração do servidor de origem...
+2025-10-02 17:49:30 - __main__ - INFO - [load_configurations:261] - ✅ Configuração de origem carregada: wf004.vya.digital:5432
+2025-10-02 17:49:30 - __main__ - DEBUG - [load_configurations:265] - Carregando configuração do servidor de destino...
+2025-10-02 17:49:30 - __main__ - INFO - [load_configurations:284] - ✅ Configuração de destino carregada: wfdb02.vya.digital:5432 (porta direta)
+2025-10-02 17:49:30 - __main__ - DEBUG - [load_configurations:288] - Carregando regras de migração...
+2025-10-02 17:49:30 - __main__ - INFO - [load_configurations:297] - ✅ Regras de migração carregadas: 4 fases configuradas
+2025-10-02 17:49:30 - __main__ - INFO - [load_configurations:300] - 🎯 Todas as configurações carregadas com sucesso!
+2025-10-02 17:49:30 - __main__ - INFO - [run_full_migration:491] - 🚀 Iniciando migração completa structure-only...
+2025-10-02 17:49:30 - __main__ - INFO - [run_full_migration:499] - 📋 Coletando bancos de origem...
+2025-10-02 17:49:30 - __main__ - DEBUG - [get_databases_list:662] - 📋 Obtendo lista de bancos de dados...
+2025-10-02 17:49:30 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wf004.vya.digital:5432/postgres
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:31 - __main__ - INFO - [get_databases_list:690] - 📋 Encontrados 29 bancos de dados
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - ai_process_db (12 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - app_workforce (13 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - botpress_db (435 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - botpress_db_dev (135 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - chatwoot002_db (871 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - chatwoot003_db (14 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - chatwoot004_db (1199 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - chatwoot_db (277 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - dify_db (12 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - dw_chatwoot_db (23 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - dw_journey_db (367 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - evolution_api_db (489 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - evolution_api_wea001_db (148 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - evolution_api_wea003_db (40 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - evolution_api_wea004_db (11 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - evolution_api_wea005_db (89 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - flowia_db (23 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - hibernate (8577 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - jackrabbit (8577 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - khomp_db (1150 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - kutt_db (9313 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - kutt_fatura_db (9105 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - langfuse_db (89 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - metabase_db (298 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - n8n_db (1009 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - quartz (8873 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - typebot_db (79 MB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - workflow_ai (8905 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_databases_list:692] -   - workflow_evo_ai (9409 kB)
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:31 - __main__ - INFO - [run_full_migration:509] - ✅ Encontrados 29 bancos para migração
+2025-10-02 17:49:31 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: ai_process_db
+2025-10-02 17:49:31 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para ai_process_db
+2025-10-02 17:49:31 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:32 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:32 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:34 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco ai_process_db criado no destino
+2025-10-02 17:49:34 - __main__ - INFO - [run_full_migration:521] - ✅ ai_process_db migrado com sucesso
+2025-10-02 17:49:34 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: app_workforce
+2025-10-02 17:49:34 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para app_workforce
+2025-10-02 17:49:34 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:35 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:36 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:37 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco app_workforce criado no destino
+2025-10-02 17:49:37 - __main__ - INFO - [run_full_migration:521] - ✅ app_workforce migrado com sucesso
+2025-10-02 17:49:37 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: botpress_db
+2025-10-02 17:49:37 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para botpress_db
+2025-10-02 17:49:37 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:38 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:38 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:39 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco botpress_db criado no destino
+2025-10-02 17:49:39 - __main__ - INFO - [run_full_migration:521] - ✅ botpress_db migrado com sucesso
+2025-10-02 17:49:39 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: botpress_db_dev
+2025-10-02 17:49:39 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para botpress_db_dev
+2025-10-02 17:49:39 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:41 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:41 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:43 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco botpress_db_dev criado no destino
+2025-10-02 17:49:43 - __main__ - INFO - [run_full_migration:521] - ✅ botpress_db_dev migrado com sucesso
+2025-10-02 17:49:43 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: chatwoot002_db
+2025-10-02 17:49:43 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para chatwoot002_db
+2025-10-02 17:49:43 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:44 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:44 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:45 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco chatwoot002_db criado no destino
+2025-10-02 17:49:45 - __main__ - INFO - [run_full_migration:521] - ✅ chatwoot002_db migrado com sucesso
+2025-10-02 17:49:45 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: chatwoot003_db
+2025-10-02 17:49:45 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para chatwoot003_db
+2025-10-02 17:49:45 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:46 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:46 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:48 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco chatwoot003_db criado no destino
+2025-10-02 17:49:48 - __main__ - INFO - [run_full_migration:521] - ✅ chatwoot003_db migrado com sucesso
+2025-10-02 17:49:48 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: chatwoot004_db
+2025-10-02 17:49:48 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para chatwoot004_db
+2025-10-02 17:49:48 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:49 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:49 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:51 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco chatwoot004_db criado no destino
+2025-10-02 17:49:51 - __main__ - INFO - [run_full_migration:521] - ✅ chatwoot004_db migrado com sucesso
+2025-10-02 17:49:51 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: chatwoot_db
+2025-10-02 17:49:51 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para chatwoot_db
+2025-10-02 17:49:51 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:52 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:52 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:52 - __main__ - WARNING - [_create_database_structure:568] - ⚠️ Banco chatwoot_db já existe no destino - pulando
+2025-10-02 17:49:52 - __main__ - INFO - [run_full_migration:521] - ✅ chatwoot_db migrado com sucesso
+2025-10-02 17:49:52 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: dify_db
+2025-10-02 17:49:52 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para dify_db
+2025-10-02 17:49:52 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:53 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:53 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:55 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco dify_db criado no destino
+2025-10-02 17:49:55 - __main__ - INFO - [run_full_migration:521] - ✅ dify_db migrado com sucesso
+2025-10-02 17:49:55 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: dw_chatwoot_db
+2025-10-02 17:49:55 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para dw_chatwoot_db
+2025-10-02 17:49:55 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:56 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:56 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:49:57 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco dw_chatwoot_db criado no destino
+2025-10-02 17:49:57 - __main__ - INFO - [run_full_migration:521] - ✅ dw_chatwoot_db migrado com sucesso
+2025-10-02 17:49:57 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: dw_journey_db
+2025-10-02 17:49:57 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para dw_journey_db
+2025-10-02 17:49:57 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:49:59 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:49:59 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:00 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco dw_journey_db criado no destino
+2025-10-02 17:50:00 - __main__ - INFO - [run_full_migration:521] - ✅ dw_journey_db migrado com sucesso
+2025-10-02 17:50:00 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: evolution_api_db
+2025-10-02 17:50:00 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para evolution_api_db
+2025-10-02 17:50:00 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:01 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:02 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:03 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco evolution_api_db criado no destino
+2025-10-02 17:50:03 - __main__ - INFO - [run_full_migration:521] - ✅ evolution_api_db migrado com sucesso
+2025-10-02 17:50:03 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: evolution_api_wea001_db
+2025-10-02 17:50:03 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para evolution_api_wea001_db
+2025-10-02 17:50:03 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:04 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:05 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:06 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco evolution_api_wea001_db criado no destino
+2025-10-02 17:50:06 - __main__ - INFO - [run_full_migration:521] - ✅ evolution_api_wea001_db migrado com sucesso
+2025-10-02 17:50:06 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: evolution_api_wea003_db
+2025-10-02 17:50:06 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para evolution_api_wea003_db
+2025-10-02 17:50:06 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:07 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:07 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:09 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco evolution_api_wea003_db criado no destino
+2025-10-02 17:50:09 - __main__ - INFO - [run_full_migration:521] - ✅ evolution_api_wea003_db migrado com sucesso
+2025-10-02 17:50:09 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: evolution_api_wea004_db
+2025-10-02 17:50:09 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para evolution_api_wea004_db
+2025-10-02 17:50:09 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:10 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:10 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:11 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco evolution_api_wea004_db criado no destino
+2025-10-02 17:50:11 - __main__ - INFO - [run_full_migration:521] - ✅ evolution_api_wea004_db migrado com sucesso
+2025-10-02 17:50:11 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: evolution_api_wea005_db
+2025-10-02 17:50:11 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para evolution_api_wea005_db
+2025-10-02 17:50:11 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:13 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:13 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:14 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco evolution_api_wea005_db criado no destino
+2025-10-02 17:50:14 - __main__ - INFO - [run_full_migration:521] - ✅ evolution_api_wea005_db migrado com sucesso
+2025-10-02 17:50:14 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: flowia_db
+2025-10-02 17:50:14 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para flowia_db
+2025-10-02 17:50:14 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:16 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:16 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:18 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco flowia_db criado no destino
+2025-10-02 17:50:18 - __main__ - INFO - [run_full_migration:521] - ✅ flowia_db migrado com sucesso
+2025-10-02 17:50:18 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: hibernate
+2025-10-02 17:50:18 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para hibernate
+2025-10-02 17:50:18 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:19 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:19 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:21 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco hibernate criado no destino
+2025-10-02 17:50:21 - __main__ - INFO - [run_full_migration:521] - ✅ hibernate migrado com sucesso
+2025-10-02 17:50:21 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: jackrabbit
+2025-10-02 17:50:21 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para jackrabbit
+2025-10-02 17:50:21 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:22 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:22 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:23 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco jackrabbit criado no destino
+2025-10-02 17:50:23 - __main__ - INFO - [run_full_migration:521] - ✅ jackrabbit migrado com sucesso
+2025-10-02 17:50:23 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: khomp_db
+2025-10-02 17:50:23 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para khomp_db
+2025-10-02 17:50:23 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:24 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:25 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:26 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco khomp_db criado no destino
+2025-10-02 17:50:26 - __main__ - INFO - [run_full_migration:521] - ✅ khomp_db migrado com sucesso
+2025-10-02 17:50:26 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: kutt_db
+2025-10-02 17:50:26 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para kutt_db
+2025-10-02 17:50:26 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:27 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:27 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:29 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco kutt_db criado no destino
+2025-10-02 17:50:29 - __main__ - INFO - [run_full_migration:521] - ✅ kutt_db migrado com sucesso
+2025-10-02 17:50:29 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: kutt_fatura_db
+2025-10-02 17:50:29 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para kutt_fatura_db
+2025-10-02 17:50:29 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:30 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:30 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:31 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco kutt_fatura_db criado no destino
+2025-10-02 17:50:31 - __main__ - INFO - [run_full_migration:521] - ✅ kutt_fatura_db migrado com sucesso
+2025-10-02 17:50:31 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: langfuse_db
+2025-10-02 17:50:31 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para langfuse_db
+2025-10-02 17:50:31 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:33 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:33 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:35 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco langfuse_db criado no destino
+2025-10-02 17:50:35 - __main__ - INFO - [run_full_migration:521] - ✅ langfuse_db migrado com sucesso
+2025-10-02 17:50:35 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: metabase_db
+2025-10-02 17:50:35 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para metabase_db
+2025-10-02 17:50:35 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:36 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:36 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:37 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco metabase_db criado no destino
+2025-10-02 17:50:37 - __main__ - INFO - [run_full_migration:521] - ✅ metabase_db migrado com sucesso
+2025-10-02 17:50:37 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: n8n_db
+2025-10-02 17:50:37 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para n8n_db
+2025-10-02 17:50:37 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:38 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:39 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:40 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco n8n_db criado no destino
+2025-10-02 17:50:40 - __main__ - INFO - [run_full_migration:521] - ✅ n8n_db migrado com sucesso
+2025-10-02 17:50:40 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: quartz
+2025-10-02 17:50:40 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para quartz
+2025-10-02 17:50:40 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:41 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:41 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:43 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco quartz criado no destino
+2025-10-02 17:50:43 - __main__ - INFO - [run_full_migration:521] - ✅ quartz migrado com sucesso
+2025-10-02 17:50:43 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: typebot_db
+2025-10-02 17:50:43 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para typebot_db
+2025-10-02 17:50:43 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:44 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:44 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:45 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco typebot_db criado no destino
+2025-10-02 17:50:45 - __main__ - INFO - [run_full_migration:521] - ✅ typebot_db migrado com sucesso
+2025-10-02 17:50:45 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: workflow_ai
+2025-10-02 17:50:45 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para workflow_ai
+2025-10-02 17:50:45 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:46 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:47 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:49 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco workflow_ai criado no destino
+2025-10-02 17:50:49 - __main__ - INFO - [run_full_migration:521] - ✅ workflow_ai migrado com sucesso
+2025-10-02 17:50:49 - __main__ - INFO - [run_full_migration:515] - 🔄 Migrando banco: workflow_evo_ai
+2025-10-02 17:50:49 - __main__ - DEBUG - [_create_database_structure:564] - 🏗️ Criando estrutura para workflow_evo_ai
+2025-10-02 17:50:49 - __main__ - DEBUG - [get_connection:354] - 🔌 Estabelecendo conexão: wfdb02.vya.digital:5432/postgres
+2025-10-02 17:50:50 - __main__ - DEBUG - [get_connection:371] - ✅ Conexão estabelecida com sucesso
+2025-10-02 17:50:50 - __main__ - DEBUG - [get_connection:387] - 🔌 Conexão fechada
+2025-10-02 17:50:51 - __main__ - DEBUG - [_create_database_structure:599] - ✅ Banco workflow_evo_ai criado no destino
+2025-10-02 17:50:51 - __main__ - INFO - [run_full_migration:521] - ✅ workflow_evo_ai migrado com sucesso

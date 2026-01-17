@@ -1,0 +1,70 @@
+# PostgreSQL Migration Structure - Requirements
+# ============================================
+#
+# Dependências necessárias para o sistema de migração PostgreSQL
+# enterprise-database-install-transfer-structure
+#
+# Instalação:
+#   pip install -r requirements.migration.txt
+#
+# Ou com uv (recomendado):
+#   uv pip install -r requirements.migration.txt
+
+# PostgreSQL Database Connector
+# Conector oficial para PostgreSQL com suporte completo a recursos avançados
+psycopg2-binary>=2.9.7
+
+# Alternative PostgreSQL connector (mais moderno)
+# Descomente se preferir usar asyncpg para operações assíncronas
+# asyncpg>=0.28.0
+
+# JSON Schema Validation
+# Para validação de arquivos de configuração JSON
+jsonschema>=4.19.0
+
+# Type Checking Support
+# Para validação de tipos em runtime (desenvolvimento)
+typing-extensions>=4.7.0
+
+# Progress Bars and CLI Utilities
+# Para interface de linha de comando mais amigável
+rich>=13.5.0
+click>=8.1.0
+
+# Data Validation
+# Para validação robusta de dados
+pydantic>=2.3.0
+
+# Logging Enhancements
+# Para logging estruturado e rotação de arquivos
+structlog>=23.1.0
+
+# Configuration Management
+# Para gerenciamento avançado de configurações
+python-dotenv>=1.0.0
+
+# Date/Time Utilities
+# Para manipulação avançada de datas e fusos horários
+python-dateutil>=2.8.0
+
+# Testing Framework (desenvolvimento)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Memory Profiling (opcional)
+# Para análise de uso de memória durante migração
+# memory-profiler>=0.61.0
+
+# Network Utilities
+# Para testes de conectividade e latência
+requests>=2.31.0
+
+# System Information
+# Para coleta de informações do sistema
+psutil>=5.9.0
+
+# Development Tools (opcional)
+# black>=23.7.0
+# flake8>=6.0.0
+# mypy>=1.5.0
