@@ -1,0 +1,36 @@
+{
+  "host": "localhost",
+  "port": 5432,
+  "ssl_mode": "false",
+  "possible_users": [
+    {
+      "username": "migration_user",
+      "password": "senha_do_usuario",
+      "priority": 0
+    },
+    {
+      "username": "postgres",
+      "password": "senha_admin",
+      "priority": 1
+    },
+    {
+      "username": "backup_user",
+      "password": "senha_backup",
+      "priority": 2
+    }
+  ],
+  "db_source": "producao_db",
+  "db_destiny": "producao_db_clone",
+  "connect_timeout": 10,
+  "application_name": "pg_clone_system",
+  "pool_size": 5,
+  "max_overflow": 10,
+  "max_retries": 3,
+  "retry_delay": 2.0,
+  "extra_params": {
+    "_comment": "ATENÇÃO: Parâmetros como 'options' com '-c' NÃO são suportados no startup da conexão",
+    "_comment2": "Use apenas parâmetros válidos do psycopg2: sslcert, sslkey, channel_binding, etc",
+    "_comment3": "Para definir statement_timeout, use: SET statement_timeout=0 APÓS conectar",
+    "channel_binding": "prefer"
+  }
+}

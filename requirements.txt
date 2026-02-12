@@ -11,6 +11,8 @@ colorama>=0.4.6
 
 # MySQL connector (usado em alguns testes)
 mysql-connector-python>=8.1.0
+PyMySQL>=1.1.0
+cryptography>=41.0.0
 
 # Configuration and serialization
 jsonschema>=4.20.0
