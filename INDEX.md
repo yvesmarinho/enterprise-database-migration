@@ -2,7 +2,28 @@
 
 ## 🚀 COMECE AQUI
 
-### NOVO: Sistema fix_permissions (Adicionado 2026-01-16) ⭐
+### NOVO: Utilitários Operacionais `tools/` (Adicionado 2026-02-19) ⭐
+
+**Ferramentas reutilizáveis para migração de usuários e correção de permissões PostgreSQL**
+
+| Ferramenta | Arquivo | Status |
+|------------|---------|--------|
+| migrate_users | `tools/migrate_users/migrate_targeted_users_and_db.py` | ✅ Testado produção |
+| fix_permissions | `tools/fix_permissions/fix_permissions.py` | ✅ Refatorado |
+| Documentação | `tools/README.md` | ✅ Completo |
+| Atalhos | `tools/Makefile` | ✅ Completo |
+
+**Migração executada em produção (2026-02-19):**  
+8 usuários + `app_workforce` migrados de wfdb02→home016
+
+**Sessão 2026-02-19**:
+- 📄 **docs/SESSION/2026-02-19/DAILY_ACTIVITIES_2026-02-19.md** - Atividades do dia
+- 📄 **docs/SESSION/2026-02-19/SESSION_REPORT_2026-02-19.md** - Relatório técnico
+- 📄 **docs/SESSION/2026-02-19/FINAL_STATUS_2026-02-19.md** - Estado final
+
+---
+
+### Sistema fix_permissions (Adicionado 2026-01-16) ⭐
 **Gestão Automatizada de Permissões PostgreSQL**
 
 1. 📄 **fix_permissions/README.md** - Guia completo (291 linhas)

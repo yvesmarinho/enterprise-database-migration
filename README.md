@@ -250,7 +250,61 @@ WHERE d.datname NOT IN ('postgres', 'template0', 'template1')
 ORDER BY d.datname, grantee;
 ```
 
-## 📈 Métricas de Sucesso WF004→WFDB02
+## �️ Utilitários Operacionais (`tools/`) — Adicionado 2026-02-19
+
+Ferramentas reutilizáveis para manutenção contínua dos servidores PostgreSQL.
+
+```
+tools/
+├── README.md              ← documentação completa
+├── Makefile               ← atalhos de uso rápido
+├── migrate_users/
+│   └── migrate_targeted_users_and_db.py   ✅ testado em produção
+└── fix_permissions/
+    ├── fix_permissions.py          ← corrige ownership/grants declarativamente
+    ├── fix_permissions.json        ← config: metabase_db, n8n_db, evolution_api
+    └── fix_permissions_wf008.json  ← config: app_workforce (wf008)
+```
+
+### migrate_users — Migração de usuários selecionados
+
+```bash
+# Listar configs disponíveis
+python3 tools/migrate_users/migrate_targeted_users_and_db.py --list-configs
+
+# Executar
+python3 tools/migrate_users/migrate_targeted_users_and_db.py \
+    --source  wfdb02_source_config.json \
+    --destiny home016_destiny_config.json
+
+# Via Makefile (a partir de tools/)
+make migrate SOURCE=wfdb02_source_config.json DESTINY=home016_destiny_config.json
+make migrate-dry SOURCE=wfdb02_source_config.json DESTINY=home016_destiny_config.json
+```
+
+### fix_permissions — Correção declarativa de permissões
+
+```bash
+# Dry-run (padrão seguro)
+python3 tools/fix_permissions/fix_permissions.py \
+    --server postgresql_destination_config.json \
+    --database metabase_db
+
+# Executar
+python3 tools/fix_permissions/fix_permissions.py \
+    --server postgresql_destination_config.json \
+    --database metabase_db --execute
+
+# Via Makefile
+make -f tools/Makefile fix-dry SERVER=postgresql_destination_config.json DB=metabase_db
+make -f tools/Makefile fix     SERVER=postgresql_destination_config.json DB=metabase_db
+```
+
+**Migração executada em produção (2026-02-19)**: 8 usuários + banco `app_workforce` migrados de wfdb02→home016 com sucesso.
+
+---
+
+## �📈 Métricas de Sucesso WF004→WFDB02
 
 ✅ **39 usuários** migrados com sucesso
 ✅ **29 bases de dados** criadas (435MB+ de dados)
