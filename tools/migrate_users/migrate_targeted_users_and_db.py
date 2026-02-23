@@ -43,7 +43,17 @@ except ImportError:
 # Caminhos base
 # ---------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
+SCRIPT_DIR = Path(__file__).resolve().parent
+SETTINGS_FILE = SCRIPT_DIR / "migration_settings.json"
 SECRETS_DIR = BASE_DIR / "secrets"
+
+
+def load_migration_settings() -> dict:
+    """Carrega migration_settings.json do diretório do script, se existir."""
+    if SETTINGS_FILE.exists():
+        with open(SETTINGS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
 
 
 def list_available_configs() -> None:
@@ -368,15 +378,37 @@ def _resolve_config_path(value: str) -> Path:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Migra usuários selecionados e banco app_workforce (source → destiny)"
+        description="Migra usuários selecionados e banco app_workforce (source → destiny)",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "Defaults de --source e --destiny são lidos automaticamente de\n"
+            f"  {SETTINGS_FILE}\n"
+            "quando os argumentos não são informados na linha de comando."
+        ),
     )
     parser.add_argument(
         "--source", metavar="ARQUIVO",
-        help="JSON de configuração do servidor ORIGEM (nome em secrets/ ou caminho completo)",
+        help=(
+            "JSON de configuração do servidor ORIGEM "
+            "(nome em secrets/ ou caminho completo). "
+            "Se omitido, usa o valor em migration_settings.json → source.file"
+        ),
     )
     parser.add_argument(
         "--destiny", metavar="ARQUIVO",
-        help="JSON de configuração do servidor DESTINO (nome em secrets/ ou caminho completo)",
+        help=(
+            "JSON de configuração do servidor DESTINO "
+            "(nome em secrets/ ou caminho completo). "
+            "Se omitido, usa o valor em migration_settings.json → destiny.file"
+        ),
+    )
+    parser.add_argument(
+        "--settings", metavar="ARQUIVO",
+        default=str(SETTINGS_FILE),
+        help=(
+            f"Arquivo JSON com configurações padrão do script "
+            f"(padrão: migration_settings.json no mesmo diretório)"
+        ),
     )
     parser.add_argument("--dry-run", action="store_true",
                         help="Simula sem aplicar alterações")
@@ -390,12 +422,34 @@ def main():
         list_available_configs()
         sys.exit(0)
 
+    # ---- Carregar defaults do migration_settings.json (ou --settings) ----
+    settings_path = Path(args.settings)
+    if settings_path.exists():
+        with open(settings_path, encoding="utf-8") as f:
+            settings = json.load(f)
+    else:
+        settings = {}
+    cfg_dir = settings.get("configs_dir", "secrets/")
+    default_source = settings.get("source", {}).get("file", "")
+    default_destiny = settings.get("destiny", {}).get("file", "")
+
     # ---- Solicitar interativamente se não fornecido ----
     if not args.source:
-        list_available_configs()
-        args.source = input("🔵 Nome/caminho do JSON de ORIGEM  : ").strip()
+        if default_source:
+            print(
+                f"   📄 Usando origem  do settings: {cfg_dir}{default_source}")
+            args.source = cfg_dir + default_source
+        else:
+            list_available_configs()
+            args.source = input("🔵 Nome/caminho do JSON de ORIGEM  : ").strip()
     if not args.destiny:
-        args.destiny = input("🟢 Nome/caminho do JSON de DESTINO : ").strip()
+        if default_destiny:
+            print(
+                f"   📄 Usando destino do settings: {cfg_dir}{default_destiny}")
+            args.destiny = cfg_dir + default_destiny
+        else:
+            args.destiny = input(
+                "🟢 Nome/caminho do JSON de DESTINO : ").strip()
 
     source_path = _resolve_config_path(args.source)
     destiny_path = _resolve_config_path(args.destiny)

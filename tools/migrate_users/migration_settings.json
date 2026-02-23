@@ -1,0 +1,27 @@
+{
+  "configs_dir": "/home/yves_marinho/Documentos/DevOps/Vya-Jobs/enterprise-database-migration/secrets/",
+  "source": {
+    "file": "wfdb02_source_config.json",
+    "description": "Servidor origem — wfdb02 (82.197.64.145)",
+    "host": "82.197.64.145",
+    "port": 5432
+  },
+  "destiny": {
+    "file": "wf008-postgresql.json",
+    "description": "Servidor destino — home016 (127.0.0.1)",
+    "host": "127.0.0.1",
+    "port": 5432
+  },
+  "migration": {
+    "target_database": "app_workforce",
+    "target_users_exact": [
+      "migration_user",
+      "backup",
+      "yves_marinho",
+      "vanderson_andrade"
+    ],
+    "target_users_prefix": [
+      "journey"
+    ]
+  }
+}
