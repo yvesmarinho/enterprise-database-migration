@@ -1,0 +1,18 @@
+{
+  "operation": "database_recreation",
+  "database": "chatwoot004_dev_db",
+  "type": "postgresql",
+  "metadata_before": {
+    "database_name": "chatwoot004_dev_db",
+    "exists": true,
+    "type": "postgresql",
+    "encoding": "UTF8",
+    "collate": "pt_BR.UTF-8",
+    "ctype": "pt_BR.UTF-8",
+    "size": "1367 MB",
+    "table_count": 9,
+    "timestamp": "2026-03-05T10:30:15.133428"
+  },
+  "config_file": "../../secrets/wfdb02_postgres.json",
+  "timestamp": "20260305_103015"
+}

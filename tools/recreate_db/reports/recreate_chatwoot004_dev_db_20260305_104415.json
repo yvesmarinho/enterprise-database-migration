@@ -1,0 +1,24 @@
+{
+  "operation": "database_recreation",
+  "database": "chatwoot004_dev_db",
+  "type": "postgresql",
+  "metadata_before": {
+    "database_name": "chatwoot004_dev_db",
+    "exists": true,
+    "type": "postgresql",
+    "encoding": "UTF8",
+    "collate": "pt_BR.UTF-8",
+    "ctype": "pt_BR.UTF-8",
+    "size": "1367 MB",
+    "table_count": 9,
+    "grants": {
+      "database": "chatwoot004_dev_db",
+      "owner": "postgres",
+      "acl": "{=CTc/postgres,postgres=CTc/postgres,backup=c/postgres,chatwoot_user=CTc/postgres,journey_system=Cc/postgres}",
+      "acl_list": "{=CTc/postgres,postgres=CTc/postgres,backup=c/postgres,chatwoot_user=CTc/postgres,journey_system=Cc/postgres}"
+    },
+    "timestamp": "2026-03-05T10:44:15.747108"
+  },
+  "config_file": "../../secrets/wfdb02_postgres.json",
+  "timestamp": "20260305_104415"
+}

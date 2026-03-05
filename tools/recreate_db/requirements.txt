@@ -1,0 +1,11 @@
+# Database Recreator - Dependências Python
+
+# MySQL Support
+pymysql>=1.0.2
+
+# PostgreSQL Support
+psycopg2-binary>=2.9.3
+
+# Opcional: para ambientes de desenvolvimento
+# ipython>=8.0.0
+# pytest>=7.0.0
