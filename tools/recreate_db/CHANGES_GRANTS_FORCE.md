@@ -1,6 +1,17 @@
 # Correções Implementadas no Database Recreator
 
-## ✅ Mudanças Realizadas
+> ⚠️ **ATENÇÃO:** Este arquivo documenta a implementação INICIAL de coleta de grants.
+>
+> **VERSÃO ATUALIZADA:** A coleta de grants foi EXPANDIDA em 2026-03-11.
+> **Consulte:** `GRANTS_COLLECTION_FIX.md` para a implementação completa e atualizada.
+>
+> ### Principais melhorias na versão atual:
+> - ✅ PostgreSQL: Agora coleta grants de schemas, tabelas e views
+> - ✅ MySQL: Agora coleta grants de tabelas e colunas
+> - ✅ Estrutura expandida com contador `total_grants`
+> - ✅ Conexão temporária ao banco específico (PostgreSQL)
+
+## ✅ Mudanças Realizadas (Versão Inicial)
 
 ### 1. Coleta de Grants (Permissões)
 

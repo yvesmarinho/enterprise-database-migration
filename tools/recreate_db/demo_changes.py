@@ -14,24 +14,26 @@ print("="*70)
 
 print("\n📋 1. COLETA DE GRANTS (Permissões)")
 print("-" * 70)
-recreator = DatabaseRecreator(
-    'secrets/wfdb02_postgres.json',
-    'chatwoot_dev_db'
-)
+
+# Cria instância mock sem carregar config (apenas para verificar métodos)
+recreator = DatabaseRecreator.__new__(DatabaseRecreator)
 
 print(f"✅ Método _collect_mysql_grants: {'EXISTE' if hasattr(recreator, '_collect_mysql_grants') else 'NÃO EXISTE'}")
 print(f"✅ Método _collect_postgresql_grants: {'EXISTE' if hasattr(recreator, '_collect_postgresql_grants') else 'NÃO EXISTE'}")
 
 print("\n   📝 O que é coletado:")
 print("   MySQL:")
-print("     - GRANTEE (usuário)")
-print("     - PRIVILEGE_TYPE (SELECT, INSERT, UPDATE, etc.)")
-print("     - IS_GRANTABLE (pode repassar permissão?)")
+print("     - schema_privileges: Grants a nível de banco (GRANTEE, PRIVILEGE_TYPE, IS_GRANTABLE)")
+print("     - table_privileges: Grants a nível de tabela (agrupados por tabela)")
+print("     - column_privileges: Grants a nível de coluna")
+print("     - total_grants: Contador total de permissões")
 print("\n   PostgreSQL:")
-print("     - database (nome do banco)")
-print("     - owner (dono do banco)")
-print("     - acl (Access Control List)")
-print("     - acl_list (lista de ACLs)")
+print("     - database: Nome do banco")
+print("     - owner: Dono do banco")
+print("     - database_acl: Access Control List do banco")
+print("     - schema_privileges: Grants de schemas (public, etc)")
+print("     - table_privileges: Grants de tabelas/views (owner, privileges)")
+print("     - total_grants: Contador total de permissões")
 
 print("\n📋 2. FORCE POR PADRÃO (Sempre termina conexões)")
 print("-" * 70)

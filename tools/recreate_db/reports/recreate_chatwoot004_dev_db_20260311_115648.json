@@ -1,0 +1,24 @@
+{
+  "operation": "database_recreation",
+  "database": "chatwoot004_dev_db",
+  "type": "postgresql",
+  "metadata_before": {
+    "database_name": "chatwoot004_dev_db",
+    "exists": true,
+    "type": "postgresql",
+    "encoding": "UTF8",
+    "collate": "pt_BR.UTF-8",
+    "ctype": "pt_BR.UTF-8",
+    "size": "1387 MB",
+    "table_count": 9,
+    "grants": {
+      "database": "chatwoot004_dev_db",
+      "owner": "migration_user",
+      "acl": null,
+      "acl_list": []
+    },
+    "timestamp": "2026-03-11T11:56:48.689801"
+  },
+  "config_file": "../../secrets/wfdb02_postgres.json",
+  "timestamp": "20260311_115648"
+}

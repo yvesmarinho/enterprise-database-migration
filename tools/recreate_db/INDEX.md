@@ -6,15 +6,21 @@ Módulo para recriação segura de bancos de dados MySQL/PostgreSQL.
 
 ```
 tools/recreate_db/
-├── __init__.py                 # Módulo Python (permite imports)
-├── recreate_database.py        # ⭐ Script principal (executável)
-├── example_usage.py            # 📚 Exemplos de uso (executável)
-├── test_recreator.py           # 🧪 Testes automatizados (executável)
-├── recreate.sh                 # 🔧 Script bash helper (executável)
-├── requirements.txt            # 📦 Dependências Python
-├── README.md                   # 📖 Documentação completa
-├── INDEX.md                    # 📋 Este arquivo
-└── .gitignore                  # 🚫 Arquivos ignorados pelo git
+├── __init__.py                      # Módulo Python (permite imports)
+├── recreate_database.py             # ⭐ Script principal (executável)
+├── example_usage.py                 # 📚 Exemplos de uso (executável)
+├── test_recreator.py                # 🧪 Testes automatizados (executável)
+├── test_grants_collection.py        # 🧪 Testes de coleta de grants (executável)
+├── demo_changes.py                  # 🔬 Demonstração de funcionalidades
+├── recreate.sh                      # 🔧 Script bash helper (executável)
+├── requirements.txt                 # 📦 Dependências Python
+├── README.md                        # 📖 Documentação completa
+├── INDEX.md                         # 📋 Este arquivo
+├── TODO.md                          # ✅ Lista de tarefas (CORRIGIDO)
+├── GRANTS_COLLECTION_FIX.md         # 📘 Documentação da correção de grants
+├── CHANGES_GRANTS_FORCE.md          # 📙 Documentação inicial (histórico)
+├── JSON_REVISION.md                 # 📗 Revisão de estrutura JSON
+└── .gitignore                       # 🚫 Arquivos ignorados pelo git
 ```
 
 ## 📄 Descrição dos Arquivos

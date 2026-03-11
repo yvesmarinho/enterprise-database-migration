@@ -277,9 +277,18 @@ class DatabaseRecreator:
             'timestamp': datetime.now().isoformat()
         }
 
-    def _collect_mysql_grants(self, cursor) -> list:
+    def _collect_mysql_grants(self, cursor) -> dict:
         """Coleta grants/permissões do MySQL para o banco de dados"""
         try:
+            grants_info = {
+                'database': self.database_name,
+                'schema_privileges': [],
+                'table_privileges': [],
+                'column_privileges': [],
+                'total_grants': 0
+            }
+
+            # 1. Coleta grants a nível de SCHEMA (banco de dados)
             cursor.execute(
                 """
                 SELECT
@@ -292,16 +301,90 @@ class DatabaseRecreator:
                 """,
                 (self.database_name,)
             )
-            grants = cursor.fetchall()
-            logger.info(f"Coletados {len(grants)} grants do MySQL")
-            return [dict(g) for g in grants] if grants else []
+            schema_grants = cursor.fetchall()
+            grants_info['schema_privileges'] = [dict(g) for g in schema_grants] if schema_grants else []
+
+            # 2. Coleta grants a nível de TABELA
+            cursor.execute(
+                """
+                SELECT
+                    GRANTEE,
+                    TABLE_NAME,
+                    PRIVILEGE_TYPE,
+                    IS_GRANTABLE
+                FROM information_schema.TABLE_PRIVILEGES
+                WHERE TABLE_SCHEMA = %s
+                ORDER BY TABLE_NAME, GRANTEE, PRIVILEGE_TYPE
+                LIMIT 100
+                """,
+                (self.database_name,)
+            )
+            table_grants = cursor.fetchall()
+
+            # Agrupa grants por tabela
+            table_grants_dict = {}
+            for tg in table_grants:
+                table_name = tg['TABLE_NAME']
+                if table_name not in table_grants_dict:
+                    table_grants_dict[table_name] = []
+                table_grants_dict[table_name].append({
+                    'grantee': tg['GRANTEE'],
+                    'privilege_type': tg['PRIVILEGE_TYPE'],
+                    'is_grantable': tg['IS_GRANTABLE']
+                })
+
+            for table_name, privs in table_grants_dict.items():
+                grants_info['table_privileges'].append({
+                    'table_name': table_name,
+                    'privileges': privs
+                })
+
+            # 3. Coleta grants a nível de COLUNA (se houver)
+            cursor.execute(
+                """
+                SELECT
+                    GRANTEE,
+                    TABLE_NAME,
+                    COLUMN_NAME,
+                    PRIVILEGE_TYPE,
+                    IS_GRANTABLE
+                FROM information_schema.COLUMN_PRIVILEGES
+                WHERE TABLE_SCHEMA = %s
+                ORDER BY TABLE_NAME, COLUMN_NAME, GRANTEE
+                LIMIT 50
+                """,
+                (self.database_name,)
+            )
+            column_grants = cursor.fetchall()
+            grants_info['column_privileges'] = [dict(g) for g in column_grants] if column_grants else []
+
+            # Calcula total de grants
+            grants_info['total_grants'] = (
+                len(grants_info['schema_privileges']) +
+                sum(len(t['privileges']) for t in grants_info['table_privileges']) +
+                len(grants_info['column_privileges'])
+            )
+
+            logger.info(f"Coletados {grants_info['total_grants']} grants do MySQL: "
+                       f"schema={len(grants_info['schema_privileges'])}, "
+                       f"tables={sum(len(t['privileges']) for t in grants_info['table_privileges'])}, "
+                       f"columns={len(grants_info['column_privileges'])}")
+            return grants_info
+
         except Exception as e:
             logger.warning(f"Erro ao coletar grants MySQL: {e}")
-            return []
+            return {
+                'database': self.database_name,
+                'schema_privileges': [],
+                'table_privileges': [],
+                'column_privileges': [],
+                'total_grants': 0
+            }
 
-    def _collect_postgresql_grants(self, cursor) -> list:
+    def _collect_postgresql_grants(self, cursor) -> dict:
         """Coleta grants/permissões do PostgreSQL para o banco de dados"""
         try:
+            # 1. Coleta informações do banco e owner
             cursor.execute(
                 """
                 SELECT
@@ -318,19 +401,133 @@ class DatabaseRecreator:
             grants_info = {
                 'database': db_acl['datname'] if db_acl else None,
                 'owner': db_acl['owner'] if db_acl else None,
-                'acl': db_acl['datacl'] if db_acl else None,
-                'acl_list': []
+                'database_acl': db_acl['datacl'] if db_acl and db_acl['datacl'] else [],
+                'schema_privileges': [],
+                'table_privileges': [],
+                'total_grants': 0
             }
 
-            # Coleta ACLs detalhadas se o banco existe
-            if db_acl and db_acl['datacl']:
-                grants_info['acl_list'] = db_acl['datacl']
+            # 2. Conecta temporariamente ao banco específico para coletar grants detalhados
+            # Salva a conexão atual
+            original_connection = self.connection
 
-            logger.info(f"Coletados grants do PostgreSQL (owner: {grants_info['owner']})")
+            try:
+                # Cria conexão temporária ao banco específico
+                params = self._get_connection_params()
+                import psycopg2
+                from psycopg2.extras import RealDictCursor
+
+                temp_conn = psycopg2.connect(
+                    host=params['host'],
+                    port=params['port'],
+                    user=params['user'],
+                    password=params['password'],
+                    database=self.database_name,
+                    cursor_factory=RealDictCursor
+                )
+                temp_cursor = temp_conn.cursor()
+
+                # 2.1. Coleta grants a nível de SCHEMA
+                temp_cursor.execute("""
+                    SELECT
+                        nspname as schema_name,
+                        nspowner::regrole::text as schema_owner,
+                        nspacl as schema_acl
+                    FROM pg_namespace
+                    WHERE nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+                    ORDER BY nspname
+                """)
+                schema_grants = temp_cursor.fetchall()
+
+                for sg in schema_grants:
+                    grants_info['schema_privileges'].append({
+                        'schema': sg['schema_name'],
+                        'owner': sg['schema_owner'],
+                        'acl': sg['schema_acl'] if sg['schema_acl'] else []
+                    })
+
+                # 2.2. Coleta grants a nível de TABLE/VIEW
+                temp_cursor.execute("""
+                    SELECT
+                        schemaname,
+                        tablename as object_name,
+                        tableowner as object_owner,
+                        'table' as object_type
+                    FROM pg_tables
+                    WHERE schemaname NOT IN ('pg_catalog', 'information_schema')
+
+                    UNION ALL
+
+                    SELECT
+                        schemaname,
+                        viewname as object_name,
+                        viewowner as object_owner,
+                        'view' as object_type
+                    FROM pg_views
+                    WHERE schemaname NOT IN ('pg_catalog', 'information_schema')
+
+                    ORDER BY schemaname, object_name
+                    LIMIT 100
+                """)
+                table_grants = temp_cursor.fetchall()
+
+                for tg in table_grants:
+                    # Para cada tabela/view, coleta suas permissões específicas
+                    temp_cursor.execute("""
+                        SELECT
+                            grantee,
+                            privilege_type,
+                            is_grantable
+                        FROM information_schema.table_privileges
+                        WHERE table_schema = %s
+                        AND table_name = %s
+                        ORDER BY grantee, privilege_type
+                    """, (tg['schemaname'], tg['object_name']))
+
+                    privs = temp_cursor.fetchall()
+
+                    if privs:
+                        grants_info['table_privileges'].append({
+                            'schema': tg['schemaname'],
+                            'object_name': tg['object_name'],
+                            'object_type': tg['object_type'],
+                            'owner': tg['object_owner'],
+                            'privileges': [dict(p) for p in privs]
+                        })
+
+                # Calcula total de grants coletados
+                grants_info['total_grants'] = (
+                    len(grants_info.get('database_acl', [])) +
+                    len(grants_info['schema_privileges']) +
+                    sum(len(t.get('privileges', [])) for t in grants_info['table_privileges'])
+                )
+
+                temp_cursor.close()
+                temp_conn.close()
+
+            except Exception as e:
+                logger.warning(f"Erro ao coletar grants detalhados: {e}")
+                # Se não conseguir conectar ao banco específico, mantém apenas informações básicas
+
+            # Restaura conexão original
+            self.connection = original_connection
+
+            logger.info(f"Coletados grants do PostgreSQL: owner={grants_info['owner']}, "
+                       f"schemas={len(grants_info['schema_privileges'])}, "
+                       f"table_grants={len(grants_info['table_privileges'])}, "
+                       f"total={grants_info['total_grants']}")
             return grants_info
+
         except Exception as e:
             logger.warning(f"Erro ao coletar grants PostgreSQL: {e}")
-            return {'database': self.database_name, 'owner': None, 'acl': None, 'acl_list': []}
+            return {
+                'database': self.database_name,
+                'owner': None,
+                'database_acl': [],
+                'schema_privileges': [],
+                'table_privileges': [],
+                'total_grants': 0
+            }
 
     def drop_database(self, force: bool = True) -> bool:
         """
