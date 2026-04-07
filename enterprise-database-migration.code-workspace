@@ -176,7 +176,7 @@
       "statusBar.background": "#2E7D32",
       "statusBar.foreground": "#FFFFFF"
     },
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Dark+",
     "git.ignoreLimitWarning": true,
     "explorer.fileNesting.enabled": false,
     "breadcrumbs.enabled": true,
