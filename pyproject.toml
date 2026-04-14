@@ -38,7 +38,7 @@ dependencies = [
 [project.optional-dependencies]
 # Dependências de desenvolvimento (opcional)
 dev = [
-    "pytest>=8.0.0",          # Versão mais moderna com Python 3.11+
+    "pytest>=9.0.3",          # Versão mais moderna com Python 3.11+
     "pytest-asyncio>=0.23.0", # Melhor suporte async com Python moderno
     "pytest-cov>=4.1.0",
     "pytest-mock>=3.12.0",
