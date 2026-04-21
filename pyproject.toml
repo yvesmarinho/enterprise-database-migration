@@ -28,7 +28,7 @@ dependencies = [
     "colorama>=0.4.6", # Terminal colors (orchestrator_pure_python)
     "mysql-connector-python>=8.1.0", # MySQL connector (testes de validação)
     "jsonschema>=4.20.0", # JSON validation
-    "python-dotenv>=1.0.0",
+    "python-dotenv>=1.2.2",
     "requests>=2.32.5",
     "yamllint>=1.37.1",
     "pymysql>=1.1.2",
@@ -55,7 +55,7 @@ advanced = [
     "rich>=13.7.0",           # Enhanced CLI formatting
     "click>=8.1.7",           # CLI framework
     "structlog>=23.2.0",      # Structured logging
-    "python-dotenv>=1.0.0",   # Environment variables
+    "python-dotenv>=1.2.2",   # Environment variables
     "PyYAML>=6.0.1",          # YAML configuration
     "pydantic>=2.5.2",        # Data validation
 ]
